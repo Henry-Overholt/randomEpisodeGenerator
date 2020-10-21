@@ -1,0 +1,18 @@
+<body>
+  <button (click)="getRandomEpisode()">Get Random Episode</button>
+  <div class="episodeContainer" *ngIf="startRandom">
+    <i class="fas fa-sync-alt" *ngIf="!foundRandomEpisode"></i>
+    <div class="show" *ngIf="foundRandomEpisode">
+      <div class="titleContainer">
+        <h2>"{{ randomEpisode.name }}"</h2>
+        <p>
+          Season: {{ randomEpisode.season_number }}, Episode:
+          {{ randomEpisode.episode_number }}
+        </p>
+      </div>
+      <img src="{{ photoPath }}{{ randomEpisode.still_path }}" alt="" />
+      <h3>Description</h3>
+      <p class="description">{{ randomEpisode.overview }}</p>
+    </div>
+  </div>
+</body>

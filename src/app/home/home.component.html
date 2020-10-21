@@ -1,1 +1,23 @@
-<p>home works!</p>
+<body>
+  <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
+    <label for="search"> Search: </label>
+    <input
+      type="text"
+      name="search"
+      placeholder="Search for New Show"
+      ngModel
+    />
+    <button>Search</button>
+  </form>
+  <h3>Popular Shows</h3>
+  <div class="showContainer">
+    <div class="shows" *ngFor="let show of shows; index as i">
+      <img
+        class="showPoster"
+        src="{{ posterPath }}{{ show.img }}"
+        (click)="handleClick(i)"
+        alt=""
+      />
+    </div>
+  </div>
+</body>

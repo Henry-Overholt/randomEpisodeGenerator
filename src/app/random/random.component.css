@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+button {
+  margin: 20px 0px;
+  height: 40px;
+  width: 80%;
+  outline: none;
+  background: white;
+  border: 3px solid orange;
+  border-radius: 10px;
+  font-size: 18px;
+  color: orange;
+}
+.episodeContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.titleContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+img {
+  width: 70%;
+  border-radius: 10px;
+}
+h3 {
+  margin: 5px 0px;
+}
+.description {
+  text-indent: 20px;
+  width: 100%;
+}

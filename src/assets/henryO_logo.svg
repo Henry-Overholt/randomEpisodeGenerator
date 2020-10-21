@@ -1,0 +1,23 @@
+<svg
+          width="20.46"
+          height="21.6"
+          viewBox="0 0 27.28 28.8"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="svgGroup"
+            stroke-linecap="round"
+            fill-rule="evenodd"
+            font-size="9pt"
+            stroke="#000"
+            stroke-width="0.25mm"
+            fill="none"
+            style="stroke: yellow; stroke-width: 1; fill: rgb(0, 0, 56)"
+          >
+            <path
+              class="tinyPath"
+              d="M 20.08 0 L 27.28 0 L 22.24 28.8 L 15 28.8 L 16.84 18.4 L 9.04 18.4 L 7.24 28.8 L 0 28.8 L 5.08 0 L 12.28 0 L 10.12 12.16 L 17.92 12.16 L 20.08 0 Z"
+              vector-effect="non-scaling-stroke"
+            />
+          </g>
+        </svg>

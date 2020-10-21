@@ -1,0 +1,25 @@
+img {
+  width: 20px;
+}
+.henryO_logo {
+  width: 10px;
+  border: 1px solid rgb(0, 0, 56);
+  padding: 2px;
+}
+.containers {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3px;
+}
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+}
+#disclaimer {
+  font-size: 8px;
+}
