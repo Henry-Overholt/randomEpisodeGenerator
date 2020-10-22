@@ -1,7 +1,22 @@
 <footer>
   <div class="containers">
-    <img src="./../../assets/blue_square_2.svg" alt="" />
-    <img class="henryO_logo" src="./../../assets/henryO_logo.svg" alt="" />
+    <div class="logoContainer">
+      <p>Powered by :</p>
+      <img
+        (click)="goToLink(0)"
+        src="./../../assets/blue_square_2.svg"
+        alt=""
+      />
+    </div>
+    <div class="logoContainer">
+      <p>Built by :</p>
+      <img
+        (click)="goToLink(1)"
+        class="henryO_logo"
+        src="./../../assets/henryO_logo.svg"
+        alt=""
+      />
+    </div>
   </div>
 
   <p id="disclaimer">

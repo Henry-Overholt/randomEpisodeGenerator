@@ -7,11 +7,18 @@ img {
   padding: 2px;
 }
 .containers {
-  width: 40%;
+  width: 70%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 3px;
+}
+.logoContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 12px;
 }
 footer {
   width: 100%;
