@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+  position: relative;
+}
+button {
+  margin: 30px 0px;
+  height: 50px;
+  width: 80%;
+  outline: none;
+  background: white;
+  border: 3px solid orange;
+  border-radius: 10px;
+  font-size: 18px;
+  color: orange;
+}
+.showContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imgContainer {
+  position: relative;
+}
+img {
+  border: 3px solid lightblue;
+  border-radius: 20px;
+}
+#score {
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  border: 2px solid white;
+  background: rgb(179, 179, 179);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.showInfo {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.showTotals {
+  margin-top: 10px;
+}
+span {
+  color: orange;
+}
+.description {
+  text-indent: 10px;
+  margin: 10px 0px;
+}
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.networks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.network {
+  border-radius: 0;
+  width: 50px;
+  border: none;
+}

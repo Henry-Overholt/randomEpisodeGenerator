@@ -49,7 +49,12 @@ export class ApiService {
       poster_path: '/f496cm9enuEsZkSPzCwnTESEK5s.jpg',
       seasons: 10,
     },
-
+    {
+      title: "Schitt's Creek",
+      id: 61662,
+      poster_path: '/iRfSzrPS5VYWQv7KVSEg2BZZL6C.jpg',
+      seasons: 6,
+    },
     {
       title: 'The West Wing',
       id: 688,
@@ -69,7 +74,7 @@ export class ApiService {
       seasons: 8,
     },
   ];
-  showToRandomize: Shows = this.shows[0];
+  showToRandomize: Shows;
   showToView: any;
   search: string;
 

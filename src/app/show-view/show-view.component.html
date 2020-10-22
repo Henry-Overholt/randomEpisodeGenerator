@@ -1,4 +1,39 @@
 <body>
   <button (click)="navigateToRandom()">Get Random Episode</button>
-  <img src="{{ photoPath }}{{ show.poster_path }}" alt="" />
+  <div class="showContainer" *ngIf="show != undefined">
+    <div class="imgContainer">
+      <img src="{{ photoPath }}{{ show.poster_path }}" alt="" />
+      <div id="score" [style.background]="color">
+        <p title="{{ show.vote_count }} votes">{{ show.vote_average }}</p>
+      </div>
+    </div>
+    <div class="showInfo">
+      <h2>{{ show.name }}</h2>
+      <h3>
+        {{ show.first_air_date | date }} - {{ show.last_air_date | date }}
+      </h3>
+      <h4 class="showTotals">
+        <span>{{ show.number_of_episodes }}</span> episodes,
+        <span> {{ show.number_of_seasons }}</span> season<em
+          *ngIf="show.number_of_seasons > 1"
+          >s</em
+        >
+      </h4>
+
+      <p class="description">{{ show.overview }}</p>
+      <div class="genres">
+        <p *ngFor="let genre of show.genres">| {{ genre.name }} |</p>
+      </div>
+      <div class="networks">
+        <h4>Networks :</h4>
+        <img
+          *ngFor="let network of show.networks"
+          title="{{ network.name }}"
+          class="network"
+          src="{{ photoPath }}{{ network.logo_path }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
 </body>

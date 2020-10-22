@@ -21,7 +21,6 @@ export class SearchResultsComponent implements OnInit {
     if (this.apiService.search === undefined) {
       this.search = 'No Results';
     }
-    console.log(this.searchResults);
   }
   handleSearch(form: NgForm) {
     if (form.value.search != '') {

@@ -18,7 +18,11 @@ export class RandomComponent implements OnInit {
   ngOnInit(): void {
     this.show = this.apiService.showToRandomize;
     this.photoPath = this.apiService.posterPath;
-    this.getRandomEpisode();
+    if (this.show != undefined) {
+      this.getRandomEpisode();
+    } else {
+      this.router.navigate(['/home']);
+    }
   }
   getRandomEpisode(): void {
     this.foundRandomEpisode = false;
@@ -26,7 +30,6 @@ export class RandomComponent implements OnInit {
     let season = this.randomInt(this.show.seasons);
     let episode;
     this.apiService.getSeason(this.show.id, season).subscribe((res) => {
-      // console.log(res.episodes.length);
       episode = this.randomInt(res.episodes.length);
       this.apiService
         .getRandomEpisode(this.show.id, season, episode)
