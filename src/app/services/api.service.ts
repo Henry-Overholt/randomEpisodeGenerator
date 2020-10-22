@@ -80,6 +80,9 @@ export class ApiService {
   setShow(i: number) {
     this.showToRandomize = this.shows[i];
   }
+  setNewShow(show: Shows) {
+    this.showToRandomize = show;
+  }
   getMovieIds(query: string): Observable<any> {
     this.search = query;
     return this.http.get(
