@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RandomComponent } from './random/random.component';
 import { FormsModule } from '@angular/forms';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { ShowViewComponent } from './show-view/show-view.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     RandomComponent,
+    SearchResultsComponent,
+    ShowViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

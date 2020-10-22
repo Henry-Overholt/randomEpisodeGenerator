@@ -14,7 +14,8 @@
     <div class="shows" *ngFor="let show of shows; index as i">
       <img
         class="showPoster"
-        src="{{ posterPath }}{{ show.img }}"
+        title="{{ show.title }}"
+        src="{{ posterPath }}{{ show.poster_path }}"
         (click)="handleClick(i)"
         alt=""
       />

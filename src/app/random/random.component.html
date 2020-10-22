@@ -1,4 +1,5 @@
 <body>
+  <i class="fas fa-backward" (click)="navigateToHome()"></i>
   <button (click)="getRandomEpisode()">Get Random Episode</button>
   <div class="episodeContainer" *ngIf="startRandom">
     <i class="fas fa-sync-alt" *ngIf="!foundRandomEpisode"></i>
@@ -11,8 +12,20 @@
         </p>
       </div>
       <img src="{{ photoPath }}{{ randomEpisode.still_path }}" alt="" />
+      <h3>
+        Orginally Aired:
+        <span class="date">{{ randomEpisode.air_date | date }}</span>
+      </h3>
       <h3>Description</h3>
       <p class="description">{{ randomEpisode.overview }}</p>
+      <h3>Guest Stars</h3>
+      <div class="guestStarContainer">
+        <p *ngFor="let star of randomEpisode.guest_stars">{{ star.name }}</p>
+      </div>
+      <h3>Crew</h3>
+      <p *ngFor="let crew of randomEpisode.crew" class="crew">
+        <span>{{ crew.job }}</span> - {{ crew.name }}
+      </p>
     </div>
   </div>
 </body>

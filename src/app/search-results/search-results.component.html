@@ -1,0 +1,29 @@
+<body>
+  <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
+    <label for="search"> Search: </label>
+    <input
+      type="text"
+      name="search"
+      placeholder="Search for New Show"
+      ngModel
+    />
+    <button>Search</button>
+  </form>
+  <h3>{{ search }}</h3>
+  <div class="searchResultsContainer">
+    <div
+      class="searchResult"
+      *ngFor="let result of searchResults; index as i"
+      (click)="navigateToDetails(i)"
+    >
+      <img
+        *ngIf="result.poster_path != null"
+        src="{{ posterPath }}{{ result.poster_path }}"
+        alt=""
+      />
+      <p class="noImageText" *ngIf="result.poster_path === null">
+        {{ result.name }}
+      </p>
+    </div>
+  </div>
+</body>

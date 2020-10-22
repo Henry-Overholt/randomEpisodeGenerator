@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { ApiService } from './../services/api.service';
 
 @Component({
@@ -13,13 +13,15 @@ export class RandomComponent implements OnInit {
   startRandom: boolean = false;
   foundRandomEpisode: boolean = false;
   photoPath: string;
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
     this.show = this.apiService.showToRandomize;
     this.photoPath = this.apiService.posterPath;
+    this.getRandomEpisode();
   }
   getRandomEpisode(): void {
+    this.foundRandomEpisode = false;
     this.startRandom = true;
     let season = this.randomInt(this.show.seasons);
     let episode;
@@ -36,5 +38,8 @@ export class RandomComponent implements OnInit {
   }
   randomInt(n: number): number {
     return Math.floor(Math.random() * n + 1);
+  }
+  navigateToHome() {
+    this.router.navigate(['/home']);
   }
 }

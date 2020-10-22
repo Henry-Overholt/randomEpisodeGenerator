@@ -10,9 +10,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  shows: Shows[];
+  shows: any[];
   result;
   posterPath: string;
+  title: string = 'Popular Shows';
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
@@ -23,7 +24,10 @@ export class HomeComponent implements OnInit {
     let search = form.value.search;
     if (search != '') {
       this.apiService.getMovieIds(form.value.search).subscribe((res) => {
-        console.log(res);
+        console.log(res.results[0]);
+        // this.shows = res.results;
+        this.apiService.setSearchResults(res.results);
+        this.router.navigate(['/search']);
       });
     }
     form.reset();
