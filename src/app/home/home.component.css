@@ -1,5 +1,4 @@
 body {
-  height: 100%;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -8,7 +7,11 @@ body {
 }
 form {
   margin: 20px 0px;
-  width: 95%;
+  padding: 5px;
+  background: white;
+  border-radius: 15px;
+
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +45,12 @@ img {
   border-radius: 20px;
 }
 .showContainer {
-  width: 80%;
+  width: 350px;
+
+  background: white;
+  padding: 3px;
+  border-radius: 20px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -51,4 +59,35 @@ img {
 
 h3 {
   color: grey;
+}
+@media screen and (min-width: 718px) {
+  body {
+    height: 90vh;
+    background: linear-gradient(
+      to bottom,
+      orange 50%,
+      lightblue 50%,
+      lightblue 52%,
+      white 52%
+    );
+  }
+  form {
+    width: 400px;
+    border: 5px solid lightblue;
+    padding: 10px;
+    border-radius: 20px;
+
+    background: white;
+  }
+  .showContainer {
+    border: 5px solid lightblue;
+    border-radius: 20px;
+    width: 700px;
+    background: white;
+    margin-bottom: 40px;
+  }
+  h3 {
+    font-size: 30px;
+    margin: 10px 0px;
+  }
 }

@@ -25,3 +25,11 @@ h2 {
 .fa-user {
   margin-right: 10px;
 }
+@media screen and (min-width: 718px) {
+  header {
+    height: 60px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+}
