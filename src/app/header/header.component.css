@@ -13,15 +13,23 @@ header {
   align-items: center;
   justify-content: center;
   font-family: "Raleway", sans-serif;
+  position: relative;
 }
 h2 {
   font-size: 17px;
   color: black;
 }
 .fa-random {
-  margin-left: 10px;
+  position: absolute;
+  left: 5px;
+  padding: 5px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
   font-size: 20px;
+  background: linear-gradient(to left top, lightblue, orange);
 }
+
 .fa-user {
   margin-right: 10px;
 }
@@ -31,5 +39,8 @@ h2 {
   }
   h2 {
     font-size: 30px;
+  }
+  .fa-random {
+    font-size: 35px;
   }
 }

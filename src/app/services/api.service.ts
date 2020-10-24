@@ -75,7 +75,7 @@ export class ApiService {
     },
   ];
   showToRandomize: Shows;
-  showToView: any;
+  showToView: any = this.shows[5];
   search: string;
 
   constructor(private http: HttpClient) {}
@@ -111,6 +111,11 @@ export class ApiService {
   ): Observable<any> {
     return this.http.get(
       `https:api.themoviedb.org/3/tv/${id}/season/${season}/episode/${episode}?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+  getVideosForTV(id: number): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${this.apiKey}&language=en-US`
     );
   }
   setSearchResults(results) {

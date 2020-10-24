@@ -7,9 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RandomComponent } from './random/random.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 import { FormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ShowViewComponent } from './show-view/show-view.component';
+import { RandomMovieComponent } from './random-movie/random-movie.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,15 @@ import { ShowViewComponent } from './show-view/show-view.component';
     RandomComponent,
     SearchResultsComponent,
     ShowViewComponent,
+    RandomMovieComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    YouTubePlayerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

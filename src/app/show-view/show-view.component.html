@@ -25,7 +25,7 @@
         <p *ngFor="let genre of show.genres">| {{ genre.name }} |</p>
       </div>
       <div class="networks">
-        <h4>Networks :</h4>
+        <h4>Network<span *ngIf="show.networks.length > 1">s</span> :</h4>
         <img
           *ngFor="let network of show.networks"
           title="{{ network.name }}"
@@ -34,6 +34,20 @@
           alt=""
         />
       </div>
+    </div>
+  </div>
+  <div class="videosContainer" *ngIf="showVideos">
+    <h3>{{ videoString }}</h3>
+    <div class="videoContainers">
+      <youtube-player
+        class="video"
+        *ngFor="let video of videos; index as i"
+        videoId="{{ video.key }}"
+        suggestedQuality="highres"
+        [height]="145"
+        [width]="290"
+      >
+      </youtube-player>
     </div>
   </div>
 </body>

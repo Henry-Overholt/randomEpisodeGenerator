@@ -10,7 +10,7 @@
     <button>Search</button>
   </form>
   <h3>{{ search }}</h3>
-  <div class="searchResultsContainer">
+  <div class="searchResultsContainer" *ngIf="searchResults.length > 0">
     <div
       class="searchResult"
       *ngFor="let result of searchResults; index as i"

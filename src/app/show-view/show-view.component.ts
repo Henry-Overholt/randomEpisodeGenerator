@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../services/api.service';
 import { Router } from '@angular/router';
 import { Shows } from './../interfaces/shows';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @Component({
   selector: 'app-show-view',
@@ -15,6 +16,9 @@ export class ShowViewComponent implements OnInit {
   randomEpisode: Shows;
   showDetails: any;
   color: string;
+  showVideos: boolean = false;
+  videos: any[];
+  videoString: string = 'Loading Possible Videos ...';
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
@@ -24,6 +28,7 @@ export class ShowViewComponent implements OnInit {
       this.apiService.getTVShow(this.isShow.id).subscribe((res) => {
         this.show = res;
         this.setScore(this.show.vote_average);
+        this.getVideos(this.show.id);
       });
     } else {
       this.router.navigate(['/search']);
@@ -41,7 +46,6 @@ export class ShowViewComponent implements OnInit {
   }
   setScore(score: number): void {
     let color: string = 'green';
-    let element = document.getElementById('score');
     let precentage = Math.floor((score / 10) * 60);
     if (precentage >= 45) {
       color = 'green';
@@ -54,6 +58,19 @@ export class ShowViewComponent implements OnInit {
     this.color = `linear-gradient(to top,  ${color} ${precentage}px, rgb(179, 179, 179) ${
       60 - secondPrecentage
     }px)`;
+  }
+  getVideos(id: number): void {
+    this.apiService.getVideosForTV(id).subscribe((res) => {
+      this.showVideos = true;
+      this.videos = res.results;
+      if (this.videos.length === 0) {
+        this.videoString = 'No available videos';
+      } else if (this.videos.length === 1) {
+        this.videoString = 'There is 1 possible video to check out';
+      } else {
+        this.videoString = `There are ${this.videos.length} possible videos to check out`;
+      }
+    });
   }
   navigateToResults(): void {
     this.router.navigate(['/search']);
