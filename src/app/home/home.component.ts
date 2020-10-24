@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
     let search = form.value.search;
     if (search != '') {
       this.apiService.getMovieIds(form.value.search).subscribe((res) => {
-        console.log(res.results[0]);
         // this.shows = res.results;
         this.apiService.setSearchResults(res.results);
         this.router.navigate(['/search']);
