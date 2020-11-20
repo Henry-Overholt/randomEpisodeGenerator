@@ -1,16 +1,17 @@
 <body>
+  <div class="sliderContainer" (click)="toggleMovie()">
+    <h3>SHOWS</h3>
+    <h3>MOVIES</h3>
+    <div class="slider" [ngClass]="movies ? 'movie' : 'show'"></div>
+  </div>
   <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
     <label for="search"> Search: </label>
-    <input
-      type="text"
-      name="search"
-      placeholder="Search for New Show"
-      ngModel
-    />
+    <input type="text" name="search" [placeholder]="placeholder" ngModel />
     <button>Search</button>
   </form>
-  <h3>Popular Shows</h3>
-  <div class="showContainer">
+
+  <h3>{{ title }}</h3>
+  <div class="showContainer" *ngIf="!movies">
     <div class="shows" *ngFor="let show of shows; index as i">
       <img
         class="showPoster"
@@ -20,5 +21,16 @@
         alt=""
       />
     </div>
+  </div>
+  <div class="showContainer" *ngIf="movies">
+    <!-- <div class="shows" *ngFor="let show of shows; index as i">
+      <img
+        class="showPoster"
+        title="{{ show.title }}"
+        src="{{ posterPath }}{{ show.poster_path }}"
+        (click)="handleClick(i)"
+        alt=""
+      />
+    </div> -->
   </div>
 </body>

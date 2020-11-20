@@ -12,6 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ShowViewComponent } from './show-view/show-view.component';
 import { RandomMovieComponent } from './random-movie/random-movie.component';
+import { MovieSearchComponent } from './movie-search/movie-search.component';
+import { CustomChoiceComponent } from './custom-choice/custom-choice.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { CollectionComponent } from './collection/collection.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { RandomMovieComponent } from './random-movie/random-movie.component';
     SearchResultsComponent,
     ShowViewComponent,
     RandomMovieComponent,
+    MovieSearchComponent,
+    CustomChoiceComponent,
+    MovieDetailsComponent,
+    CollectionComponent,
   ],
   imports: [
     BrowserModule,
