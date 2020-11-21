@@ -1,0 +1,56 @@
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+}
+button {
+  margin-top: 30px;
+  height: 40px;
+  width: 80%;
+  outline: none;
+  background: white;
+  border: 3px solid lightblue;
+  border-radius: 10px;
+  font-size: 18px;
+  color: lightblue;
+}
+.collectionContainer {
+  width: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.movies {
+  margin: 0px 50px;
+  width: 90%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  height: 60px;
+  text-align: center;
+}
+img {
+  width: 80%;
+  border: 5px solid lightblue;
+  border-radius: 20px;
+}
+.paragraphContainer {
+  width: 90%;
+  height: 100px;
+  overflow: scroll;
+  margin: 10px 0px;
+}
+p {
+  text-indent: 10px;
+}

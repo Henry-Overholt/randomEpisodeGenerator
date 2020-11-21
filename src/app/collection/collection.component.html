@@ -1,1 +1,20 @@
-<p>collection works!</p>
+<main>
+  <button (click)="randomizeMovies()">{{ buttonText }}</button>
+  <p *ngIf="collection">
+    Total Movies <span>{{ movies.length }}</span>
+  </p>
+  <div class="collectionContainer" *ngIf="collection">
+    <div class="movies">
+      <h2>{{ movie.title }}</h2>
+      <img
+        src="{{ posterPath }}{{ movie.poster_path }}"
+        class="poster"
+        alt=""
+      />
+      <h5>Overview</h5>
+      <div class="paragraphContainer">
+        <p>{{ movie.overview }}</p>
+      </div>
+    </div>
+  </div>
+</main>

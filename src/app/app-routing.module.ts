@@ -5,6 +5,7 @@ import { RandomComponent } from './random/random.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ShowViewComponent } from './show-view/show-view.component';
 import { RandomMovieComponent } from './random-movie/random-movie.component';
+import { CollectionComponent } from './collection/collection.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'search', component: SearchResultsComponent },
   { path: 'view_show', component: ShowViewComponent },
   { path: 'movie', component: RandomMovieComponent },
+  { path: 'collections', component: CollectionComponent },
   { path: '**', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

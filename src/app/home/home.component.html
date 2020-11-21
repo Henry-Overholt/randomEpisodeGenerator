@@ -1,5 +1,5 @@
 <body>
-  <div class="sliderContainer" (click)="toggleMovie()">
+  <div class="sliderContainer" (click)="toggleToMovie()">
     <h3>SHOWS</h3>
     <h3>MOVIES</h3>
     <div class="slider" [ngClass]="movies ? 'movie' : 'show'"></div>
@@ -18,19 +18,26 @@
         title="{{ show.title }}"
         src="{{ posterPath }}{{ show.poster_path }}"
         (click)="handleClick(i)"
-        alt=""
+        alt="Image Not Available"
       />
     </div>
   </div>
   <div class="showContainer" *ngIf="movies">
-    <!-- <div class="shows" *ngFor="let show of shows; index as i">
+    <!-- <img
+      class="showPoster"
+      title=""
+      src="{{ posterPath }}"
+      (click)="handleClick(i)"
+      alt=""
+    /> -->
+    <div class="shows" *ngFor="let collection of collections; index as i">
       <img
         class="showPoster"
-        title="{{ show.title }}"
-        src="{{ posterPath }}{{ show.poster_path }}"
+        title="{{ collection.title }}"
+        src="{{ posterPath }}{{ collection.poster_path }}"
         (click)="handleClick(i)"
         alt=""
       />
-    </div> -->
+    </div>
   </div>
 </body>
