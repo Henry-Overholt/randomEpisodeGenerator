@@ -109,6 +109,10 @@ export class MovieDetailsComponent implements OnInit {
     this.ngOnInit();
     this.seeCollection = false;
   }
+  randomizeMovie(): void {
+    this.movieService.randomNewCollection();
+    this.router.navigate(['/collections']);
+  }
   navigateToSearch(): void {
     this.router.navigate(['/search-results']);
   }

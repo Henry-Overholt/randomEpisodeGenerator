@@ -27,9 +27,11 @@ export class SearchResultsComponent implements OnInit {
     this.posterPath = this.apiService.posterPath;
     if (!this.movieOrShow) {
       this.placeholder = 'Search for New Show';
+      this.searchKeyword = this.apiService.search;
       this.searchResults = this.apiService.searchResults;
     } else {
       this.placeholder = 'Search for Movies';
+      this.searchKeyword = this.movieService.searchKeyword;
       this.searchResults = this.movieService.getSearchResults();
     }
     if (this.searchKeyword === undefined) {
@@ -72,5 +74,7 @@ export class SearchResultsComponent implements OnInit {
     } else {
       this.placeholder = 'Search for New Show';
     }
+    this.search = 'No Results Showing';
+    this.searchResults = [];
   }
 }

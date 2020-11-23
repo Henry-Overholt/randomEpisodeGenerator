@@ -91,6 +91,7 @@ export class MovieService {
   }
   //search Movies with a query
   searchMovies(query: string): Observable<any> {
+    this.searchKeyword = query;
     return this.http.get(
       `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=en-US&query=${query}&page=1&include_adult=false`
     );
@@ -108,6 +109,6 @@ export class MovieService {
     );
   }
   randomNewCollection(): void {
-    this.collections = this.newCollection;
+    this.collectionToRandomize = this.newCollection;
   }
 }

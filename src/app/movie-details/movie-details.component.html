@@ -18,7 +18,7 @@
   </div>
   <div class="listContainer" [ngClass]="seeCollection ? 'open' : 'close'">
     <i class="fas fa-times-circle" (click)="closeCollectionView()"></i>
-    <button>Randomize Movie</button>
+    <button (click)="randomizeMovie()">Randomize Movie</button>
     <h3>Current List to Randomize</h3>
     <div class="movies" *ngFor="let item of collection; index as i">
       <img
@@ -30,5 +30,6 @@
       <h5>{{ item.title }}</h5>
       <i class="fas fa-trash-alt" (click)="removeFromCollection(i)"></i>
     </div>
+    <i class="fas fa-plus" (click)="navigateToSearch()"></i>
   </div>
 </body>

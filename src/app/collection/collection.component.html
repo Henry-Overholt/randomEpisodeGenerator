@@ -1,7 +1,7 @@
 <main>
   <button (click)="randomizeMovies()">{{ buttonText }}</button>
   <p *ngIf="collection">
-    Total Movies <span>{{ movies.length }}</span>
+    Movies to Randomize <span>{{ movies.length }}</span>
   </p>
   <div class="collectionContainer" *ngIf="collection">
     <div class="movies">

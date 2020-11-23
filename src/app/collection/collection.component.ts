@@ -23,12 +23,17 @@ export class CollectionComponent implements OnInit {
     if (this.collection) {
       console.log(this.collection);
       this.posterPath = this.movieService.posterPath;
-      this.movies = this.collection.parts;
-      this.movie = {
-        title: this.collection.name,
-        poster_path: this.collection.poster_path,
-        overview: this.collection.overview,
-      };
+      if (this.collection.parts) {
+        this.movies = this.collection.parts;
+        this.movie = {
+          title: this.collection.name,
+          poster_path: this.collection.poster_path,
+          overview: this.collection.overview,
+        };
+      } else {
+        this.movies = this.collection;
+        this.movie = this.collection[0];
+      }
       this.loadRandomizeMovies();
     } else {
       this.router.navigate(['/home']);
