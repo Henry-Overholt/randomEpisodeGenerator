@@ -6,6 +6,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { ShowViewComponent } from './show-view/show-view.component';
 import { RandomMovieComponent } from './random-movie/random-movie.component';
 import { CollectionComponent } from './collection/collection.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes: Routes = [
   {
@@ -13,9 +14,10 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: 'random', component: RandomComponent },
-  { path: 'search', component: SearchResultsComponent },
+  { path: 'search-results', component: SearchResultsComponent },
   { path: 'view_show', component: ShowViewComponent },
-  { path: 'movie', component: RandomMovieComponent },
+  { path: 'view_movie', component: MovieDetailsComponent },
+  { path: 'random-movie', component: RandomMovieComponent },
   { path: 'collections', component: CollectionComponent },
   { path: '**', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

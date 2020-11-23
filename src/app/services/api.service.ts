@@ -77,8 +77,16 @@ export class ApiService {
   showToRandomize: Shows;
   showToView: any = this.shows[5];
   search: string;
+  movieOrShow: boolean = true;
 
   constructor(private http: HttpClient) {}
+  setMovieOrShow(): boolean {
+    this.movieOrShow = !this.movieOrShow;
+    return this.movieOrShow;
+  }
+  getMovieOrShow(): boolean {
+    return this.movieOrShow;
+  }
   getPresetShows(): Shows[] {
     return this.shows;
   }

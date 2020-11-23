@@ -1,0 +1,145 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: scroll;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+  position: relative;
+}
+button {
+  margin: 30px 0px;
+  height: 50px;
+  width: 80%;
+  outline: none;
+  background: white;
+  border: 3px solid lightblue;
+  border-radius: 10px;
+  font-size: 18px;
+  color: orange;
+}
+.movieContainer {
+  margin: 40px 0px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imgContainer {
+  position: relative;
+}
+img {
+  border: 3px solid lightblue;
+  border-radius: 20px;
+  height: 250px;
+}
+#score {
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  border: 2px solid white;
+  background: rgb(179, 179, 179);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.showInfo {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.showTotals {
+  margin-top: 10px;
+}
+span {
+  color: orange;
+}
+.description {
+  text-indent: 10px;
+  margin: 10px 0px;
+}
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.networks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.networks span {
+  color: black;
+}
+.network {
+  border-radius: 0;
+  width: 50px;
+  border: none;
+}
+.videosContainer {
+  display: none;
+}
+.listContainer {
+  overflow: scroll;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  height: 100%;
+  background: white;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  border: 3px solid transparent;
+}
+.movies {
+  width: 90%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.movies h5 {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+}
+.collectionMovie {
+  height: 100px;
+}
+.open {
+  width: 300px;
+  border-color: orange;
+}
+.close {
+  width: 0;
+  border-color: transparent;
+}
+.fa-trash-alt {
+  font-size: 25px;
+  color: lightblue;
+}
+.fa-times-circle {
+  margin: 10px;
+  padding-left: 20px;
+  font-size: 30px;
+  color: orange;
+  width: 100%;
+  text-align: left;
+}
+.fa-chevron-circle-left {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: lightblue;
+  font-size: 30px;
+}

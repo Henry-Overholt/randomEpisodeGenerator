@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../services/api.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-search-results',
@@ -10,31 +11,66 @@ import { NgForm } from '@angular/forms';
 })
 export class SearchResultsComponent implements OnInit {
   searchResults: any = [];
+  placeholder: string;
   search: string;
+  searchKeyword: string;
   posterPath: string;
-  constructor(private apiService: ApiService, private router: Router) {}
+  movieOrShow: boolean;
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private movieService: MovieService
+  ) {}
 
   ngOnInit(): void {
-    this.searchResults = this.apiService.searchResults;
+    this.movieOrShow = this.apiService.getMovieOrShow();
     this.posterPath = this.apiService.posterPath;
-    this.search = `Showing Results for "${this.apiService.search}"`;
-    if (this.apiService.search === undefined) {
+    if (!this.movieOrShow) {
+      this.placeholder = 'Search for New Show';
+      this.searchResults = this.apiService.searchResults;
+    } else {
+      this.placeholder = 'Search for Movies';
+      this.searchResults = this.movieService.getSearchResults();
+    }
+    if (this.searchKeyword === undefined) {
       this.search = 'No Results';
+    } else {
+      this.search = `Showing Results for "${this.searchKeyword}"`;
     }
   }
   handleSearch(form: NgForm) {
     if (form.value.search != '') {
-      this.search = `Showing Results for "${form.value.search}"`;
-      this.apiService.getMovieIds(form.value.search).subscribe((res) => {
-        this.searchResults = res.results;
-        this.apiService.setSearchResults(res.results);
-      });
+      this.searchKeyword = form.value.search;
+      if (!this.movieOrShow) {
+        this.apiService.getMovieIds(form.value.search).subscribe((res) => {
+          this.searchResults = res.results;
+          this.apiService.setSearchResults(res.results);
+        });
+      } else {
+        this.movieService.searchMovies(form.value.search).subscribe((res) => {
+          this.searchResults = res.results;
+          this.movieService.setSearchResults(res.results);
+        });
+      }
+      this.search = `Showing Results for "${this.searchKeyword}"`;
     }
-
     form.reset();
   }
   navigateToDetails(i: number): void {
-    this.apiService.setShowToView(this.searchResults[i]);
-    this.router.navigate(['/view_show']);
+    if (!this.movieOrShow) {
+      this.apiService.setShowToView(this.searchResults[i]);
+      this.router.navigate(['/view_show']);
+    } else {
+      this.movieService.setMovieToView(this.searchResults[i]);
+      this.router.navigate(['/view_movie']);
+    }
+  }
+  toggleMovieShow(): void {
+    this.movieOrShow = this.apiService.setMovieOrShow();
+    if (this.movieOrShow) {
+      this.placeholder = 'Search for Movies';
+    } else {
+      this.placeholder = 'Search for New Show';
+    }
   }
 }

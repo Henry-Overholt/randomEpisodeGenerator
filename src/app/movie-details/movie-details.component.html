@@ -1,1 +1,34 @@
-<p>movie-details works!</p>
+<body>
+  <i class="fas fa-chevron-circle-left" (click)="navigateToSearch()"></i>
+  <div class="movieContainer" *ngIf="movie != undefined">
+    <div class="imgContainer">
+      <img
+        src="{{ posterPath }}{{ movie.poster_path }}"
+        alt="{{ movie.title }}"
+      />
+      <div id="score" [style.background]="color">
+        <p title="{{ movie.vote_count }} votes">{{ movie.vote_average }}</p>
+      </div>
+    </div>
+    <div class="showInfo">
+      <h2>{{ movie.title }}</h2>
+      <button (click)="addToCollection()">{{ buttonText }}</button>
+      <p>{{ movie.overview }}</p>
+    </div>
+  </div>
+  <div class="listContainer" [ngClass]="seeCollection ? 'open' : 'close'">
+    <i class="fas fa-times-circle" (click)="closeCollectionView()"></i>
+    <button>Randomize Movie</button>
+    <h3>Current List to Randomize</h3>
+    <div class="movies" *ngFor="let item of collection; index as i">
+      <img
+        (click)="resetMovieToView(i)"
+        src="{{ posterPath }}{{ item.poster_path }}"
+        class="collectionMovie"
+        alt="item.title"
+      />
+      <h5>{{ item.title }}</h5>
+      <i class="fas fa-trash-alt" (click)="removeFromCollection(i)"></i>
+    </div>
+  </div>
+</body>

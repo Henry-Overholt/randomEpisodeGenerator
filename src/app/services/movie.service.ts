@@ -10,6 +10,8 @@ export class MovieService {
   apiKey: string = environment.movieDB.apiKey;
   posterPath: string = 'https://image.tmdb.org/t/p/w154';
   searchResults: any[] = [];
+  searchKeyword: string;
+  movieToView: any;
   collections: any[] = [
     {
       title: 'Star Wars',
@@ -41,6 +43,17 @@ export class MovieService {
   collectionToRandomize: any[];
   newCollection: any[] = [];
   constructor(private http: HttpClient) {}
+  getNewCollection(): any[] {
+    return this.newCollection;
+  }
+  addToCollection(movie: any): any[] {
+    this.newCollection.unshift(movie);
+    return this.newCollection;
+  }
+  deleteFromCollection(i: number): any[] {
+    this.newCollection.splice(i, 1);
+    return this.newCollection;
+  }
   returnCollections(): any[] {
     return this.collections;
   }
@@ -50,11 +63,45 @@ export class MovieService {
   returnCollectionRandomize(): any {
     return this.collectionToRandomize;
   }
+  setSearchResults(searchResults: any): void {
+    this.searchResults = searchResults;
+  }
+  getSearchResults(): any[] {
+    return this.searchResults;
+  }
+  setMovieToView(movie: any): void {
+    this.movieToView = movie;
+    console.log(this.movieToView);
+  }
+  getMovieToView(): any {
+    return this.movieToView;
+  }
+  //get possible videos for movies
+  getVideosForMovie(id: number): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+  //search collections with a query
   searchCollections(query: string): Observable<any> {
+    this.searchKeyword = query;
     return this.http.get(
       `https://api.themoviedb.org/3/search/collection?api_key=${this.apiKey}&language=en-US&query=${query}&page=1`
     );
   }
+  //search Movies with a query
+  searchMovies(query: string): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=en-US&query=${query}&page=1&include_adult=false`
+    );
+  }
+  //get Movie by ID
+  getMovie(id: number): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+  //get a collection by an ID
   getCollection(id: number): Observable<any> {
     return this.http.get(
       `https://api.themoviedb.org/3/collection/${id}?api_key=${this.apiKey}&language=en-US`

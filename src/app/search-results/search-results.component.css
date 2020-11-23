@@ -5,6 +5,37 @@
   align-items: center;
   justify-content: center;
 }
+.sliderContainer {
+  width: 80%;
+  height: 40px;
+  border: 1px solid grey;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0px;
+}
+.slider {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: orange;
+  transition: all 0.3s ease-in-out;
+}
+.show {
+  background: orange;
+  left: 0;
+}
+.movie {
+  left: 50%;
+  background: lightblue;
+}
+.sliderContainer h3 {
+  /* padding: 0px 20px; */
+  z-index: 1;
+}
 img {
   height: 100%;
 }

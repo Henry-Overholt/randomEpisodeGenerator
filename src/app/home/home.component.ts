@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
   collections: any[];
   result;
   posterPath: string;
-  title: string = 'Popular Shows to Randomize';
-  movies: boolean = true;
-  placeholder: string = 'Search for New Show';
+  title: string;
+  movies: boolean;
+  placeholder: string;
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -25,6 +25,14 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.movies = this.apiService.getMovieOrShow();
+    if (this.movies) {
+      this.title = 'Popular Movie Collections to Randomize';
+      this.placeholder = 'Search for Movies';
+    } else {
+      this.title = 'Popular Shows to Randomize';
+      this.placeholder = 'Search for New Show';
+    }
     this.posterPath = this.apiService.posterPath;
     this.shows = this.apiService.getPresetShows();
     this.collections = this.movieService.returnCollections();
@@ -36,11 +44,13 @@ export class HomeComponent implements OnInit {
         this.apiService.getMovieIds(form.value.search).subscribe((res) => {
           // this.shows = res.results;
           this.apiService.setSearchResults(res.results);
-          this.router.navigate(['/search']);
+          this.router.navigate(['/search-results']);
         });
       } else {
-        this.movieService.searchCollections(search).subscribe((res) => {
+        this.movieService.searchMovies(search).subscribe((res) => {
           console.log(res);
+          this.movieService.setSearchResults(res.results);
+          this.router.navigate(['/search-results']);
         });
       }
     }
@@ -60,7 +70,7 @@ export class HomeComponent implements OnInit {
     }
   }
   toggleToMovie(): void {
-    this.movies = !this.movies;
+    this.movies = this.apiService.setMovieOrShow();
     if (this.movies) {
       this.title = 'Popular Movie Collections to Randomize';
       this.placeholder = 'Search for Movies';
