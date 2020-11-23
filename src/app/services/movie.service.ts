@@ -71,7 +71,6 @@ export class MovieService {
   }
   setMovieToView(movie: any): void {
     this.movieToView = movie;
-    console.log(this.movieToView);
   }
   getMovieToView(): any {
     return this.movieToView;

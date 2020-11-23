@@ -67,21 +67,22 @@ label {
 input {
   outline: none;
   border: 2px solid lightblue;
-  height: 25px;
+  height: 35px;
   font-size: 20px;
   color: grey;
   border-radius: 5px;
   margin-right: 5px;
 }
 button {
-  height: 29px;
+  height: 40px;
   color: grey;
   background: lightblue;
   font-size: 18px;
   outline: none;
   border: 2px solid lightblue;
   border-radius: 5px;
-  width: 70px;
+  width: 80px;
+  text-indent: 5px;
 }
 .noImageText {
   display: flex;

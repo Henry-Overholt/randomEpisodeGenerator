@@ -33,7 +33,6 @@ export class MovieDetailsComponent implements OnInit {
         this.setScore(this.movie.vote_average);
       });
       this.collection = this.movieService.getNewCollection();
-      console.log('collection', this.collection);
       this.searchCollection();
     } else {
       this.router.navigate(['/home']);

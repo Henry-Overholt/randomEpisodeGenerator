@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
         });
       } else {
         this.movieService.searchMovies(search).subscribe((res) => {
-          console.log(res);
           this.movieService.setSearchResults(res.results);
           this.router.navigate(['/search-results']);
         });
