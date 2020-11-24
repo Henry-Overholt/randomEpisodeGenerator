@@ -91,6 +91,7 @@ img {
 
 h3 {
   color: grey;
+  text-align: center;
 }
 @media screen and (min-width: 718px) {
   body {

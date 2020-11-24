@@ -11,10 +11,10 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { FormsModule } from '@angular/forms';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ShowViewComponent } from './show-view/show-view.component';
-import { RandomMovieComponent } from './random-movie/random-movie.component';
 import { CustomChoiceComponent } from './custom-choice/custom-choice.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { CollectionComponent } from './collection/collection.component';
+import { SearchCollectionsComponent } from './search-collections/search-collections.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +25,11 @@ import { CollectionComponent } from './collection/collection.component';
     RandomComponent,
     SearchResultsComponent,
     ShowViewComponent,
-    RandomMovieComponent,
 
     CustomChoiceComponent,
     MovieDetailsComponent,
     CollectionComponent,
+    SearchCollectionsComponent,
   ],
   imports: [
     BrowserModule,

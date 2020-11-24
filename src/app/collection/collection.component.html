@@ -1,8 +1,11 @@
 <main>
   <button (click)="randomizeMovies()">{{ buttonText }}</button>
-  <p *ngIf="collection">
-    Movies to Randomize <span>{{ movies.length }}</span>
-  </p>
+  <div class="controlsContainer">
+    <p *ngIf="collection">
+      Movies : <span>{{ total }}</span>
+    </p>
+    <button (click)="toggleFilters()">Filter</button>
+  </div>
   <div class="collectionContainer" *ngIf="collection">
     <div class="movies">
       <h2>{{ movie.title }}</h2>
@@ -15,6 +18,19 @@
       <div class="paragraphContainer">
         <p>{{ movie.overview }}</p>
       </div>
+    </div>
+  </div>
+  <div class="filterContainer" [ngClass]="seeFilters ? 'open' : 'close'">
+    <i class="fas fa-times-circle" (click)="toggleFilters()"></i>
+    <h2>Movies to Randomize</h2>
+    <div id="filters">
+      <div class="movie" *ngFor="let film of movies; index as i">
+        <div class="checkbox" (click)="checkMovie(i)">
+          <i *ngIf="film.isChecked" class="fas fa-check"></i>
+        </div>
+        <h4>{{ film.title }}</h4>
+      </div>
+      <button (click)="applyFilters()">Apply Filter</button>
     </div>
   </div>
 </main>

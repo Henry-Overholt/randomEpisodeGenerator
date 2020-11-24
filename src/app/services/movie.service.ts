@@ -41,6 +41,7 @@ export class MovieService {
   ];
   collectionCover: any;
   collectionToRandomize: any[];
+  originalCollection: any[];
   newCollection: any[] = [];
   constructor(private http: HttpClient) {}
   getNewCollection(): any[] {
@@ -66,6 +67,7 @@ export class MovieService {
   setSearchResults(searchResults: any): void {
     this.searchResults = searchResults;
   }
+
   getSearchResults(): any[] {
     return this.searchResults;
   }

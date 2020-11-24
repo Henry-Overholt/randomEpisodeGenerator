@@ -26,7 +26,14 @@ footer {
   flex-direction: column;
   align-items: center;
   font-family: "Raleway", sans-serif;
+  position: relative;
 }
 #disclaimer {
   font-size: 8px;
+}
+#version {
+  position: absolute;
+  font-size: 10px;
+  bottom: 3px;
+  right: 3px;
 }
