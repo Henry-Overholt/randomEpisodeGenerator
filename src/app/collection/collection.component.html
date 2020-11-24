@@ -14,7 +14,7 @@
         class="poster"
         alt="{{ movie.title }}"
       />
-      <h5>Overview</h5>
+      <h3>Overview</h3>
       <div class="paragraphContainer">
         <p>{{ movie.overview }}</p>
       </div>
@@ -30,7 +30,10 @@
         </div>
         <h4>{{ film.title }}</h4>
       </div>
-      <button (click)="applyFilters()">Apply Filter</button>
+      <div class="buttonContainer">
+        <button (click)="applyFilters()">Apply</button>
+        <button (click)="resetFilter()">Reset</button>
+      </div>
     </div>
   </div>
 </main>

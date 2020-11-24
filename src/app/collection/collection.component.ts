@@ -41,7 +41,7 @@ export class CollectionComponent implements OnInit {
 
       this.loadRandomizeMovies();
 
-      this.movies.forEach((movie) => (movie.isChecked = true));
+      this.resetFilter();
       this.getNumberOfMovies();
     } else {
       this.router.navigate(['/home']);
@@ -81,10 +81,13 @@ export class CollectionComponent implements OnInit {
   }
   applyFilters(): void {
     this.loadRandomizeMovies();
-    this.toggleFilters();
+    this.seeFilters = false;
   }
   checkMovie(i: number): void {
     this.movies[i].isChecked = !this.movies[i].isChecked;
     this.getNumberOfMovies();
+  }
+  resetFilter(): void {
+    this.movies.forEach((movie) => (movie.isChecked = true));
   }
 }
