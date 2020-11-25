@@ -126,6 +126,11 @@ export class ApiService {
       `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${this.apiKey}&language=en-US`
     );
   }
+  getPopularTV(): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/tv/popular?api_key=${this.apiKey}&language=en-US&page=1`
+    );
+  }
   setSearchResults(results) {
     this.searchResults = results;
   }

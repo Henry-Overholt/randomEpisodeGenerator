@@ -145,6 +145,11 @@ export class MovieService {
       `https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}&language=en-US`
     );
   }
+  getPopularMovie(): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}&language=en-US&page=1`
+    );
+  }
   //get a collection by an ID
   getCollection(id: number): Observable<any> {
     return this.http.get(
