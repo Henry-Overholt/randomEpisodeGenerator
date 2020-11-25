@@ -42,10 +42,22 @@
     <label for="searchCollection">Search Collections</label>
     <input
       type="text"
-      placeholder="Search Movie Collection"
+      placeholder="Search Movie Collections"
       name="searchCollection"
       ngModel
     />
     <button>Search Collections</button>
   </form>
+  <h3 *ngIf="!movies">Popular Shows</h3>
+  <h3 *ngIf="movies">Popular Movies</h3>
+  <div class="popularContainer" *ngIf="popularItems != undefined">
+    <div class="item" *ngFor="let item of popularItems; index as i">
+      <p>{{ i + 1 }}</p>
+      <img
+        src="{{ posterPath }}{{ item.poster_path }}"
+        (click)="seeDetails(i)"
+        alt=""
+      />
+    </div>
+  </div>
 </body>

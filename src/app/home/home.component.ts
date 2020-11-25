@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
   title: string;
   movies: boolean;
   placeholder: string;
+  popularItems: any[];
+  popularShows: any[];
+  popularMovies: any[];
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -36,6 +39,13 @@ export class HomeComponent implements OnInit {
     this.posterPath = this.apiService.posterPath;
     this.shows = this.apiService.getPresetShows();
     this.collections = this.movieService.returnCollections();
+    this.apiService.getPopularTV().subscribe((res) => {
+      this.popularShows = res.results;
+      this.popularItems = this.popularShows;
+    });
+    this.movieService.getPopularMovie().subscribe((res) => {
+      this.popularMovies = res.results;
+    });
   }
   handleSearch(form: NgForm) {
     let search = form.value.search;
@@ -73,15 +83,28 @@ export class HomeComponent implements OnInit {
     if (this.movies) {
       this.title = 'Popular Movie Collections to Randomize';
       this.placeholder = 'Search for Movies';
+      this.popularItems = this.popularMovies;
     } else {
       this.title = 'Popular Shows to Randomize';
       this.placeholder = 'Search for New Show';
+      this.popularItems = this.popularShows;
     }
   }
   searchCollection(form: NgForm): void {
     if (form.value.searchCollection != '') {
       this.movieService.setSearchKeyword(form.value.searchCollection);
       this.router.navigate(['/search-collections']);
+    }
+  }
+  seeDetails(i: number): void {
+    if (this.movies) {
+      console.log('This is a movie');
+      this.movieService.setMovieToView(this.popularItems[i]);
+      this.router.navigate(['/view_movie']);
+    } else {
+      console.log('This is a show');
+      this.apiService.setShowToView(this.popularItems[i]);
+      this.router.navigate(['/view_show']);
     }
   }
 }

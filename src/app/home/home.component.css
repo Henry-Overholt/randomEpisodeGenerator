@@ -111,6 +111,27 @@ h3 {
   margin: 0;
   border-color: lightblue;
 }
+.popularContainer {
+  width: 90%;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 30px 0px;
+}
+.item {
+  position: relative;
+}
+.item p {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: lightblue;
+  position: absolute;
+}
 @media screen and (min-width: 718px) {
   body {
     height: 90vh;
