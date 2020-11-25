@@ -6,6 +6,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { ShowViewComponent } from './show-view/show-view.component';
 import { CollectionComponent } from './collection/collection.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { SearchCollectionsComponent } from './search-collections/search-collections.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   },
   { path: 'random', component: RandomComponent },
   { path: 'search-results', component: SearchResultsComponent },
+  { path: 'search-collections', component: SearchCollectionsComponent },
   { path: 'view_show', component: ShowViewComponent },
   { path: 'view_movie', component: MovieDetailsComponent },
   { path: 'collections', component: CollectionComponent },

@@ -24,6 +24,16 @@ export class MovieService {
       poster_path: '/tqXiOD5rTyHgabO73Tpw9JDbd88.jpg',
     },
     {
+      title: 'Star Trek: The Original Series Collection',
+      id: 151,
+      poster_path: '/zcB8KxHA4EapOoZZPAvwgmE1iGK.jpg',
+    },
+    {
+      title: '007 Collection',
+      id: 645,
+      poster_path: '/HORpg5CSkmeQlAolx3bKMrKgfi.jpg',
+    },
+    {
       title: 'Harry Potter Collection',
       id: 1241,
       poster_path: '/eVPs2Y0LyvTLZn6AP5Z6O2rtiGB.jpg',
@@ -34,7 +44,33 @@ export class MovieService {
       poster_path: '/zQdytnqfsWKJlqazqfMBL2L7aql.jpg',
     },
     {
-      title: 'Twilight',
+      title: 'Shrek Collection',
+      id: 2150,
+      poster_path: '/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg',
+    },
+    {
+      title: 'Toy Story Collection',
+      id: 10194,
+      poster_path: '/7G9915LfUQ2lVfwMEEhDsn3kT4B.jpg',
+    },
+    {
+      title: 'Rocky Collection',
+      id: 1575,
+      poster_path: '/O66XFv0mU6JKfmrgkoTQLwbFDG.jpg',
+    },
+    {
+      title: 'Jurassic Park Collection',
+      id: 328,
+      poster_path: '/qIm2nHXLpBBdMxi8dvfrnDkBUDh.jpg',
+    },
+    {
+      title: 'Die Hard Collection',
+      id: 1570,
+      poster_path: '/xhnb5lVfwE7NHycdPNdIxHx7kZi.jpg',
+    },
+
+    {
+      title: 'Twilight Collection',
       id: 33514,
       poster_path: '/aKAX2HO5V94JYeSIkOMFNlRI71E.jpg',
     },
@@ -44,6 +80,12 @@ export class MovieService {
   originalCollection: any[];
   newCollection: any[] = [];
   constructor(private http: HttpClient) {}
+  setSearchKeyword(query: string): void {
+    this.searchKeyword = query;
+  }
+  getSearchKeyword(): string {
+    return this.searchKeyword;
+  }
   getNewCollection(): any[] {
     return this.newCollection;
   }

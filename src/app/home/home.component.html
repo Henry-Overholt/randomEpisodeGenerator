@@ -23,13 +23,6 @@
     </div>
   </div>
   <div class="showContainer" *ngIf="movies">
-    <!-- <img
-      class="showPoster"
-      title=""
-      src="{{ posterPath }}"
-      (click)="handleClick(i)"
-      alt=""
-    /> -->
     <div class="shows" *ngFor="let collection of collections; index as i">
       <img
         class="showPoster"
@@ -40,4 +33,19 @@
       />
     </div>
   </div>
+  <form
+    id="searchCollection"
+    #searchCollectionForm="ngForm"
+    *ngIf="movies"
+    (ngSubmit)="searchCollection(searchCollectionForm)"
+  >
+    <label for="searchCollection">Search Collections</label>
+    <input
+      type="text"
+      placeholder="Search Movie Collection"
+      name="searchCollection"
+      ngModel
+    />
+    <button>Search Collections</button>
+  </form>
 </body>

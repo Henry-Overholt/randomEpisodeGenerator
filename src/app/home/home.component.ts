@@ -78,4 +78,10 @@ export class HomeComponent implements OnInit {
       this.placeholder = 'Search for New Show';
     }
   }
+  searchCollection(form: NgForm): void {
+    if (form.value.searchCollection != '') {
+      this.movieService.setSearchKeyword(form.value.searchCollection);
+      this.router.navigate(['/search-collections']);
+    }
+  }
 }
