@@ -7,6 +7,7 @@ import { ShowViewComponent } from './show-view/show-view.component';
 import { CollectionComponent } from './collection/collection.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SearchCollectionsComponent } from './search-collections/search-collections.component';
+import { CustomChoiceComponent } from './custom-choice/custom-choice.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'view_show', component: ShowViewComponent },
   { path: 'view_movie', component: MovieDetailsComponent },
   { path: 'collections', component: CollectionComponent },
+  { path: 'custom', component: CustomChoiceComponent },
   { path: '**', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
