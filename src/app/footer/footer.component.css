@@ -1,5 +1,14 @@
+footer {
+  background: whitesmoke;
+  padding: 10px 0px;
+  margin-top: 20px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 img {
-  width: 20px;
+  width: 30px;
 }
 .henryO_logo {
   width: 10px;
@@ -7,18 +16,46 @@ img {
   padding: 2px;
 }
 .containers {
-  width: 70%;
+  width: 90%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   margin: 3px;
+}
+nav {
+  width: 100%;
+}
+ul {
+  width: 100%;
+  list-style: none;
+}
+a {
+  color: grey;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 20px;
+  cursor: pointer;
+}
+a:hover {
+  color: orange;
+}
+.logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 .logoContainer {
   width: 50%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   font-size: 12px;
+}
+.logoContainer p {
+  font-size: 15px;
 }
 footer {
   width: 100%;

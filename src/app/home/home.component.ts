@@ -98,11 +98,9 @@ export class HomeComponent implements OnInit {
   }
   seeDetails(i: number): void {
     if (this.movies) {
-      console.log('This is a movie');
       this.movieService.setMovieToView(this.popularItems[i]);
       this.router.navigate(['/view_movie']);
     } else {
-      console.log('This is a show');
       this.apiService.setShowToView(this.popularItems[i]);
       this.router.navigate(['/view_show']);
     }

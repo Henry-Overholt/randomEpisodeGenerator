@@ -75,7 +75,7 @@ export class ApiService {
     },
   ];
   showToRandomize: Shows;
-  showToView: any = this.shows[5];
+  showToView: any;
   search: string;
   movieOrShow: boolean = false;
 

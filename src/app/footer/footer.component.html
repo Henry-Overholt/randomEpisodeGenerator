@@ -1,21 +1,36 @@
 <footer>
   <div class="containers">
-    <div class="logoContainer">
-      <p>Powered by :</p>
-      <img
-        (click)="goToLink(0)"
-        src="./../../assets/blue_square_2.svg"
-        alt=""
-      />
-    </div>
-    <div class="logoContainer">
-      <p>Built by :</p>
-      <img
-        (click)="goToLink(1)"
-        class="henryO_logo"
-        src="./../../assets/henryO_logo.svg"
-        alt=""
-      />
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/home">Home</a>
+        </li>
+        <li>
+          <a routerLink="/search-results">Shows / Movies</a>
+        </li>
+        <li>
+          <a routerLink="/custom">Custom Choices</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="logos">
+      <div class="logoContainer">
+        <p>Powered by :</p>
+        <img
+          (click)="goToLink(0)"
+          src="./../../assets/blue_square_2.svg"
+          alt=""
+        />
+      </div>
+      <div class="logoContainer">
+        <p>Built by :</p>
+        <img
+          (click)="goToLink(1)"
+          class="henryO_logo"
+          src="./../../assets/henryO_logo.svg"
+          alt=""
+        />
+      </div>
     </div>
   </div>
 

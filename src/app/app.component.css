@@ -6,3 +6,25 @@ body {
   height: 100%;
   width: 100vw;
 }
+#routerOutlet {
+  flex: 1;
+}
+main {
+  position: relative;
+}
+#nav {
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  transition: ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+.open {
+  width: 60%;
+}
+.close {
+  width: 0;
+}

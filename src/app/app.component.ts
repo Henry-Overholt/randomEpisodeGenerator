@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'randomEpisodeGenerator';
+  nav: boolean = false;
+
+  openNav(): void {
+    this.nav = !this.nav;
+  }
 }
