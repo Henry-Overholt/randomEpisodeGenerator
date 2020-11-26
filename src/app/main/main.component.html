@@ -1,0 +1,10 @@
+<app-header [nav]="nav" (openNavValue)="openNav()"></app-header>
+<main>
+  <router-outlet id="routerOutlet"></router-outlet>
+  <app-nav
+    id="nav"
+    [ngClass]="nav ? 'open' : 'close'"
+    (closeNav)="openNav()"
+  ></app-nav>
+</main>
+<app-footer id="footer"></app-footer>

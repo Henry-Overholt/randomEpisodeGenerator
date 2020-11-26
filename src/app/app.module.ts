@@ -15,6 +15,8 @@ import { CustomChoiceComponent } from './custom-choice/custom-choice.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { CollectionComponent } from './collection/collection.component';
 import { SearchCollectionsComponent } from './search-collections/search-collections.component';
+import { NavComponent } from './nav/nav.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { SearchCollectionsComponent } from './search-collections/search-collecti
     MovieDetailsComponent,
     CollectionComponent,
     SearchCollectionsComponent,
+    NavComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,

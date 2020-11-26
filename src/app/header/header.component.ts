@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,10 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() nav: boolean;
+  @Output() openNavValue = new EventEmitter<void>();
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.nav);
+  }
   navigateToHome(): void {
     this.router.navigate(['/home']);
+  }
+  openNav(): void {
+    this.nav = !this.nav;
+    this.openNavValue.emit();
   }
 }

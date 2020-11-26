@@ -1,0 +1,25 @@
+nav {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, white 25%, lightblue);
+  font-family: "Raleway";
+}
+ul {
+  padding: 10px 0px;
+}
+li {
+  height: 30px;
+  border-bottom: 3px solid lightblue;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+.active {
+  background: lightblue;
+}
