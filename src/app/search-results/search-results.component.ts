@@ -16,6 +16,8 @@ export class SearchResultsComponent implements OnInit {
   searchKeyword: string;
   posterPath: string;
   movieOrShow: boolean;
+  trendingShows: any[];
+  trendingMovies: any[];
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -34,9 +36,21 @@ export class SearchResultsComponent implements OnInit {
       this.searchKeyword = this.movieService.searchKeyword;
       this.searchResults = this.movieService.getSearchResults();
     }
-    if (this.searchKeyword === undefined) {
-      this.search = 'No Results';
-    } else {
+    this.movieService.getPopularMovie().subscribe((res) => {
+      this.trendingMovies = res.results;
+      if (this.movieOrShow && this.searchKeyword === undefined) {
+        this.searchResults = this.trendingMovies;
+        this.search = 'Trending Movies';
+      }
+    });
+    this.apiService.getPopularTV().subscribe((res) => {
+      this.trendingShows = res.results;
+      if (!this.movieOrShow && this.searchKeyword === undefined) {
+        this.searchResults = this.trendingShows;
+        this.search = 'Trending Shows';
+      }
+    });
+    if (this.searchKeyword != undefined) {
       this.search = `Showing Results for "${this.searchKeyword}"`;
     }
   }
@@ -71,10 +85,12 @@ export class SearchResultsComponent implements OnInit {
     this.movieOrShow = this.apiService.setMovieOrShow();
     if (this.movieOrShow) {
       this.placeholder = 'Search for Movies';
+      this.searchResults = this.trendingMovies;
+      this.search = 'Trending Movies';
     } else {
       this.placeholder = 'Search for New Show';
+      this.searchResults = this.trendingShows;
+      this.search = 'Trending Shows';
     }
-    this.search = 'No Results Showing';
-    this.searchResults = [];
   }
 }
