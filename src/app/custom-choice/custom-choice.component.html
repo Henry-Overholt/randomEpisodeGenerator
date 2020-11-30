@@ -1,20 +1,27 @@
-<main>
-  <h1>Custom Choices</h1>
-  <div class="randomChoice">
-    <h3>{{ randomChoice }}</h3>
-  </div>
-  <button (click)="playRandom()">Randomize My Choices</button>
-  <form #addChoiceForm="ngForm" (ngSubmit)="addChoice(addChoiceForm)">
-    <label for="newChoice">Add New Choice</label>
-    <input type="text" name="newChoice" placeholder="Add New Choice" ngModel />
-    <button><i class="fas fa-plus-square"></i></button>
-  </form>
-  <ul class="choicesContainer">
-    <h3>Your Choices</h3>
-    <li class="choice" *ngFor="let choice of choices; index as i">
-      <div class="dot"></div>
-      <p>{{ choice }}</p>
-      <i class="fas fa-trash-alt" (click)="deleteChoice(i)"></i>
-    </li>
-  </ul>
-</main>
+<body>
+  <main>
+    <h1>Custom Choices</h1>
+    <div class="randomChoice">
+      <h3>{{ randomChoice }}</h3>
+    </div>
+    <button (click)="playRandom()">Randomize My Choices</button>
+    <form #addChoiceForm="ngForm" (ngSubmit)="addChoice(addChoiceForm)">
+      <label for="newChoice">Add New Choice</label>
+      <input
+        type="text"
+        name="newChoice"
+        placeholder="Add New Choice"
+        ngModel
+      />
+      <button><i class="fas fa-plus-square"></i></button>
+    </form>
+    <ul class="choicesContainer">
+      <h3>Your Choices</h3>
+      <li class="choice" *ngFor="let choice of choices; index as i">
+        <div class="dot"></div>
+        <p>{{ choice }}</p>
+        <i class="fas fa-trash-alt" (click)="deleteChoice(i)"></i>
+      </li>
+    </ul>
+  </main>
+</body>

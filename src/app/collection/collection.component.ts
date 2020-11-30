@@ -86,6 +86,7 @@ export class CollectionComponent implements OnInit {
   checkMovie(i: number): void {
     this.movies[i].isChecked = !this.movies[i].isChecked;
     this.getNumberOfMovies();
+    this.loadRandomizeMovies();
   }
   resetFilter(): void {
     this.movies.forEach((movie) => (movie.isChecked = true));

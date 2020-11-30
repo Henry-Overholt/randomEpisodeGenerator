@@ -95,10 +95,7 @@ h2 {
   .menuButton:hover {
     border-color: transparent;
   }
-  .fa-bars {
-    color: transparent;
-  }
-  .menuLabel {
-    color: transparent;
+  .menuButton {
+    visibility: hidden;
   }
 }
