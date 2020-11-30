@@ -16,6 +16,20 @@
       <p>{{ movie.overview }}</p>
     </div>
   </div>
+  <div class="videosContainer" *ngIf="showVideos">
+    <h3>{{ videoString }}</h3>
+    <div class="videoContainers">
+      <youtube-player
+        class="video"
+        *ngFor="let video of videos; index as i"
+        videoId="{{ video.key }}"
+        suggestedQuality="highres"
+        [height]="145"
+        [width]="290"
+      >
+      </youtube-player>
+    </div>
+  </div>
   <div class="listContainer" [ngClass]="seeCollection ? 'open' : 'close'">
     <i class="fas fa-times-circle" (click)="closeCollectionView()"></i>
     <button (click)="randomizeMovie()">Randomize Movie</button>

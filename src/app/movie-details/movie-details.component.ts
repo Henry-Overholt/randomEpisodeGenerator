@@ -49,6 +49,7 @@ export class MovieDetailsComponent implements OnInit {
       } else {
         this.videoString = `There are ${this.videos.length} possible videos to check out`;
       }
+      console.log(res.results);
     });
   }
   setScore(score: number): void {
