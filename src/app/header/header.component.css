@@ -30,15 +30,29 @@ h2 {
 }
 
 .fa-bars {
-  margin-right: 5px;
   color: orange;
   font-size: 30px;
 }
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  text-align: center;
+  border-radius: 3px;
+  margin-right: 5px;
+  border: 2px solid transparent;
+}
 .open {
-  animation: spin 0.5s linear;
+  border-color: orange;
+  /* animation: spin 0.5s linear; */
 }
 .close {
-  animation: spinBackwards 0.5s linear;
+  border-color: transparent;
+  /* animation: spinBackwards 0.5s linear; */
+}
+.menuLabel {
+  display: none;
 }
 @keyframes spin {
   to {
@@ -59,5 +73,15 @@ h2 {
   }
   .fa-random {
     font-size: 35px;
+  }
+  .menuLabel {
+    display: inline;
+    color: orange;
+    font-size: 20px;
+    padding: 5px 8px;
+    border-radius: 5px;
+  }
+  .menuButton:hover {
+    border-color: orange;
   }
 }

@@ -1,5 +1,12 @@
 <header>
   <i class="fas fa-random" (click)="navigateToHome()"></i>
   <h2>RANDOMLY</h2>
-  <i class="fas fa-bars" (click)="openNav()"></i>
+  <div
+    class="menuButton"
+    (click)="openNav()"
+    [ngClass]="nav ? 'open' : 'close'"
+  >
+    <p class="menuLabel">MENU</p>
+    <i class="fas fa-bars"></i>
+  </div>
 </header>
