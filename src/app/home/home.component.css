@@ -157,6 +157,12 @@ h3 {
   form button {
     width: 30%;
   }
+  form button:hover {
+    background: lightblue;
+    color: white;
+    border-color: lightblue;
+    transition: all 0.25s ease-in-out;
+  }
   .showContainer {
     border: 5px solid lightblue;
     border-radius: 20px;
@@ -170,7 +176,7 @@ h3 {
   }
   .sliderContainer {
     width: 400px;
-    height: 60px;
+    height: 45px;
     background: white;
     border-width: 3px;
   }
@@ -189,6 +195,12 @@ h3 {
   #searchCollection button {
     width: 30%;
     margin: 5px 3px;
+  }
+  #searchCollection button:hover {
+    background: orange;
+    color: lightblue;
+    border-color: orange;
+    transition: all 0.25s ease-in-out;
   }
   #searchCollection input {
     width: 70%;

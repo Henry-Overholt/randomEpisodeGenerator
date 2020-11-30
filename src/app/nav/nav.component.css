@@ -11,6 +11,7 @@ li {
   height: 30px;
   border-bottom: 3px solid lightblue;
   padding: 10px 5px;
+  margin: 0px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,4 +34,14 @@ a {
   justify-content: flex-start;
   align-items: center;
   color: grey;
+}
+@media screen and (min-width: 718px) {
+  li:hover {
+    border-color: orange;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fa-times {
+    display: none;
+  }
 }

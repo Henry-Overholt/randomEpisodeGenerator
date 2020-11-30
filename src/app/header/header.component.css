@@ -85,3 +85,20 @@ h2 {
     border-color: orange;
   }
 }
+@media screen and (min-width: 1200px) {
+  .open {
+    border-color: transparent;
+  }
+  .close {
+    border-color: transparent;
+  }
+  .menuButton:hover {
+    border-color: transparent;
+  }
+  .fa-bars {
+    color: transparent;
+  }
+  .menuLabel {
+    color: transparent;
+  }
+}

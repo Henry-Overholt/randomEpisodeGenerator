@@ -21,10 +21,27 @@ main {
   overflow: hidden;
   z-index: 1;
   transition: all 0.5s ease-in-out;
+  margin-bottom: 0;
 }
 .open {
   width: 60%;
 }
 .close {
   width: 0;
+}
+@media screen and (min-width: 718px) {
+  .open {
+    width: 40%;
+  }
+  .close {
+    width: 0%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .open {
+    width: 200px;
+  }
+  .close {
+    width: 200px;
+  }
 }

@@ -1,7 +1,7 @@
 footer {
   background: whitesmoke;
   padding: 10px 0px;
-  margin-top: 20px;
+
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -106,6 +106,7 @@ i {
   }
   img {
     width: 40px;
+    cursor: pointer;
   }
   .henryO_logo {
     width: 30px;
