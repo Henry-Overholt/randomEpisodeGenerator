@@ -134,7 +134,6 @@ h3 {
 }
 @media screen and (min-width: 718px) {
   body {
-    height: 90vh;
     background: linear-gradient(
       to bottom,
       orange 50%,
@@ -142,24 +141,68 @@ h3 {
       lightblue 52%,
       white 52%
     );
+    overflow: scroll;
   }
   form {
-    width: 400px;
+    width: 600px;
     border: 5px solid lightblue;
     padding: 10px;
     border-radius: 20px;
 
     background: white;
   }
+  form input {
+    width: 70%;
+  }
+  form button {
+    width: 30%;
+  }
   .showContainer {
     border: 5px solid lightblue;
     border-radius: 20px;
     width: 700px;
     background: white;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   h3 {
     font-size: 30px;
     margin: 10px 0px;
+  }
+  .sliderContainer {
+    width: 400px;
+    height: 60px;
+    background: white;
+    border-width: 3px;
+  }
+  .popularContainer {
+    width: 700px;
+    border: 5px solid lightblue;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 100px;
+  }
+  #searchCollection {
+    width: 600px;
+    border: none;
+    flex-direction: row;
+  }
+  #searchCollection button {
+    width: 30%;
+    margin: 5px 3px;
+  }
+  #searchCollection input {
+    width: 70%;
+  }
+  .shows:hover,
+  .item:hover {
+    animation: skew 0.5s ease-in-out forwards;
+  }
+  @keyframes skew {
+    from {
+      transform: scale(1.02) rotate(2deg);
+    }
+    to {
+      transform: scale(1.02);
+    }
   }
 }

@@ -11,9 +11,7 @@ export class HeaderComponent implements OnInit {
   @Output() openNavValue = new EventEmitter<void>();
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    console.log(this.nav);
-  }
+  ngOnInit(): void {}
   navigateToHome(): void {
     this.router.navigate(['/home']);
   }
