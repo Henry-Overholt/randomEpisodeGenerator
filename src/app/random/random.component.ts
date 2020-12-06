@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from './../services/api.service';
 
 @Component({
@@ -13,21 +13,29 @@ export class RandomComponent implements OnInit {
   startRandom: boolean = false;
   foundRandomEpisode: boolean = false;
   photoPath: string;
-  constructor(private apiService: ApiService, private router: Router) {}
+  id: any;
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private activatedRouter: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.show = this.apiService.showToRandomize;
+    this.id = this.activatedRouter.params.subscribe((params) => {
+      this.id = params.id;
+      this.apiService.getTVShow(this.id).subscribe((res) => {
+        this.show = res;
+        this.getRandomEpisode();
+      });
+    });
+    // console.log(this.id);
+
     this.photoPath = this.apiService.posterPath;
-    if (this.show != undefined) {
-      this.getRandomEpisode();
-    } else {
-      this.router.navigate(['/home']);
-    }
   }
   getRandomEpisode(): void {
     this.foundRandomEpisode = false;
     this.startRandom = true;
-    let season = this.randomInt(this.show.seasons);
+    let season = this.randomInt(this.show.number_of_seasons);
     let episode;
     this.apiService.getSeason(this.show.id, season).subscribe((res) => {
       episode = this.randomInt(res.episodes.length);

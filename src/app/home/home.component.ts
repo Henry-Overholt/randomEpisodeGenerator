@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
   handleClick(i: number): void {
     if (!this.movies) {
       this.apiService.setShow(i);
-      this.router.navigate(['/random']);
+      this.router.navigate([`/random/${this.shows[i].id}`]);
     } else {
       this.movieService
         .getCollection(this.collections[i].id)
@@ -99,10 +99,10 @@ export class HomeComponent implements OnInit {
   seeDetails(i: number): void {
     if (this.movies) {
       this.movieService.setMovieToView(this.popularItems[i]);
-      this.router.navigate(['/view_movie']);
+      this.router.navigate([`/view_movie/${this.popularItems[i].id}`]);
     } else {
       this.apiService.setShowToView(this.popularItems[i]);
-      this.router.navigate(['/view_show']);
+      this.router.navigate([`/view_show/${this.popularItems[i].id}`]);
     }
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../services/api.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Shows } from './../interfaces/shows';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
@@ -18,21 +18,35 @@ export class ShowViewComponent implements OnInit {
   color: string;
   showVideos: boolean = false;
   videos: any[];
+  id: number;
   videoString: string = 'Loading Possible Videos ...';
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.isShow = this.apiService.showToView;
     this.photoPath = this.apiService.posterPath;
-    if (this.isShow != undefined) {
-      this.apiService.getTVShow(this.isShow.id).subscribe((res) => {
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params.id;
+      console.log(this.id);
+      this.apiService.getTVShow(this.id).subscribe((res) => {
         this.show = res;
+        console.log(res);
         this.setScore(this.show.vote_average);
         this.getVideos(this.show.id);
       });
-    } else {
-      this.router.navigate(['/search']);
-    }
+    });
+    // if (this.isShow != undefined) {
+    // this.apiService.getTVShow(this.isShow.id).subscribe((res) => {
+    //   this.show = res;
+
+    // });
+    // } else {
+    //   this.router.navigate(['/search']);
+    // }
   }
   navigateToRandom(): void {
     this.randomEpisode = {
@@ -42,7 +56,7 @@ export class ShowViewComponent implements OnInit {
       seasons: this.show.number_of_seasons,
     };
     this.apiService.setNewShow(this.randomEpisode);
-    this.router.navigate(['/random']);
+    this.router.navigate([`/random/${this.show.id}`]);
   }
   setScore(score: number): void {
     let color: string = 'green';
