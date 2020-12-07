@@ -39,14 +39,6 @@ export class ShowViewComponent implements OnInit {
         this.getVideos(this.show.id);
       });
     });
-    // if (this.isShow != undefined) {
-    // this.apiService.getTVShow(this.isShow.id).subscribe((res) => {
-    //   this.show = res;
-
-    // });
-    // } else {
-    //   this.router.navigate(['/search']);
-    // }
   }
   navigateToRandom(): void {
     this.randomEpisode = {
@@ -55,7 +47,6 @@ export class ShowViewComponent implements OnInit {
       poster_path: this.show.poster_path,
       seasons: this.show.number_of_seasons,
     };
-    this.apiService.setNewShow(this.randomEpisode);
     this.router.navigate([`/random/${this.show.id}`]);
   }
   setScore(score: number): void {

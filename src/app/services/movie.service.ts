@@ -113,12 +113,12 @@ export class MovieService {
   getSearchResults(): any[] {
     return this.searchResults;
   }
-  setMovieToView(movie: any): void {
-    this.movieToView = movie;
-  }
-  getMovieToView(): any {
-    return this.movieToView;
-  }
+  // setMovieToView(movie: any): void {
+  //   this.movieToView = movie;
+  // }
+  // getMovieToView(): any {
+  //   return this.movieToView;
+  // }
   //get possible videos for movies
   getVideosForMovie(id: number): Observable<any> {
     return this.http.get(

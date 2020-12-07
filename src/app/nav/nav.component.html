@@ -1,18 +1,21 @@
-<nav>
-  <i class="fas fa-times" (click)="openNav()"></i>
-  <ul>
-    <li routerLinkActive="active" routerLink="/home" (click)="openNav()">
-      <a>HOME</a>
-    </li>
-    <li
-      routerLinkActive="active"
-      routerLink="/search-results"
-      (click)="openNav()"
-    >
-      <a>SHOWS/MOVIES</a>
-    </li>
-    <li routerLinkActive="active" routerLink="/custom" (click)="openNav()">
-      <a>CUSTOM CHOICES</a>
-    </li>
-  </ul>
-</nav>
+<body>
+  <nav>
+    <i class="fas fa-times" (click)="openNav()"></i>
+    <ul>
+      <li routerLinkActive="active" routerLink="/home" (click)="openNav()">
+        <a>HOME</a>
+      </li>
+      <li
+        routerLinkActive="active"
+        routerLink="/search-results"
+        (click)="openNav()"
+      >
+        <a>SHOWS/MOVIES</a>
+      </li>
+      <li routerLinkActive="active" routerLink="/custom" (click)="openNav()">
+        <a>CUSTOM CHOICES</a>
+      </li>
+    </ul>
+  </nav>
+  <main (click)="openNav()"></main>
+</body>

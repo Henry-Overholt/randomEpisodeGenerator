@@ -1,6 +1,5 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MovieService } from '../services/movie.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { MovieService } from '../services/movie.service';
   styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent implements OnInit {
-  movieToView: any;
   movie: any;
   posterPath: string;
   color: string;
@@ -21,22 +19,27 @@ export class MovieDetailsComponent implements OnInit {
   indexInCollection: number;
   videoString: string = 'Loading Possible Videos ...';
   seeCollection: boolean = false;
-  constructor(private movieService: MovieService, private router: Router) {}
+  id: any;
+  constructor(
+    private movieService: MovieService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.movieToView = this.movieService.getMovieToView();
     this.posterPath = this.movieService.posterPath;
-    if (this.movieToView != undefined) {
-      this.movieService.getMovie(this.movieToView.id).subscribe((res) => {
+    this.activatedRoute.params.subscribe((param) => {
+      this.id = param.id;
+      console.log(this.id);
+      this.movieService.getMovie(this.id).subscribe((res) => {
         this.movie = res;
         this.getVideos(this.movie.id);
         this.setScore(this.movie.vote_average);
       });
       this.collection = this.movieService.getNewCollection();
       this.searchCollection();
-    } else {
-      this.router.navigate(['/home']);
-    }
+    });
+    // this.movieToView = this.movieService.getMovieToView();
   }
   getVideos(id: number): void {
     this.movieService.getVideosForMovie(id).subscribe((res) => {
@@ -79,7 +82,7 @@ export class MovieDetailsComponent implements OnInit {
       this.isAdded = false;
     } else {
       let index = this.collection.findIndex((movie) => {
-        return movie.id === this.movieToView.id;
+        return movie.id === this.id;
       });
       if (index < 0) {
         this.isAdded = false;
@@ -105,7 +108,6 @@ export class MovieDetailsComponent implements OnInit {
     this.collection = this.movieService.deleteFromCollection(i);
   }
   resetMovieToView(i: number): void {
-    this.movieService.setMovieToView(this.collection[i]);
     this.ngOnInit();
     this.seeCollection = false;
   }

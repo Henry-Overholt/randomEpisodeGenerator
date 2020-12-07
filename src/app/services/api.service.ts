@@ -74,8 +74,6 @@ export class ApiService {
       seasons: 8,
     },
   ];
-  showToRandomize: Shows;
-  showToView: any;
   search: string;
   movieOrShow: boolean = false;
 
@@ -89,12 +87,6 @@ export class ApiService {
   }
   getPresetShows(): Shows[] {
     return this.shows;
-  }
-  setShow(i: number) {
-    this.showToRandomize = this.shows[i];
-  }
-  setNewShow(show: Shows) {
-    this.showToRandomize = show;
   }
   getMovieIds(query: string): Observable<any> {
     this.search = query;
@@ -133,8 +125,5 @@ export class ApiService {
   }
   setSearchResults(results) {
     this.searchResults = results;
-  }
-  setShowToView(movie) {
-    this.showToView = movie;
   }
 }

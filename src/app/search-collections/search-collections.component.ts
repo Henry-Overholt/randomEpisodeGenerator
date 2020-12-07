@@ -40,6 +40,7 @@ export class SearchCollectionsComponent implements OnInit {
       this.resultsString = `Showing Results for '${this.searchKeyword}'`;
       this.loading = false;
       this.searchResults = res.results;
+      form.reset();
     });
   }
   navigateToDetails(i: number): void {

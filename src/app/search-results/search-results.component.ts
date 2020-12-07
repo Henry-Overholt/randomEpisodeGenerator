@@ -74,11 +74,9 @@ export class SearchResultsComponent implements OnInit {
   }
   navigateToDetails(i: number): void {
     if (!this.movieOrShow) {
-      this.apiService.setShowToView(this.searchResults[i]);
-      this.router.navigate(['/view_show']);
+      this.router.navigate([`/show/${this.searchResults[i].id}`]);
     } else {
-      this.movieService.setMovieToView(this.searchResults[i]);
-      this.router.navigate(['/view_movie']);
+      this.router.navigate([`/movie/${this.searchResults[i].id}`]);
     }
   }
   toggleMovieShow(): void {

@@ -43,12 +43,18 @@ button {
 h4 {
   color: grey;
 }
-img {
+.results {
   width: 100px;
+  height: 150px;
+  border: 3px solid lightblue;
   margin: 10px;
-  border: 3px solid orange;
   border-radius: 20px;
+  overflow: hidden;
 }
+img {
+  height: 100%;
+}
+
 .resultsContainer {
   width: 350px;
   display: flex;
@@ -67,8 +73,59 @@ img {
   text-align: center;
   animation: loadingSpin 1s infinite linear;
 }
+.noImageText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: rgb(200, 200, 200);
+  text-align: center;
+}
 @keyframes loadingSpin {
   to {
     transform: rotate(360deg);
+  }
+}
+@media screen and (min-width: 718px) {
+  body {
+    background: linear-gradient(
+      to bottom,
+      orange 50%,
+      lightblue 50%,
+      lightblue 52%,
+      white 52%
+    );
+  }
+  form {
+    width: 600px;
+    background: orange;
+  }
+  input {
+    width: 70%;
+  }
+  button {
+    width: 30%;
+  }
+  h4 {
+    margin-bottom: 10px;
+  }
+  .resultsContainer {
+    border: 5px solid lightblue;
+    width: 700px;
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 100px;
+  }
+  .results:hover {
+    animation: skew 0.5s ease-in-out forwards;
+  }
+  @keyframes skew {
+    from {
+      transform: scale(1.02) rotate(2deg);
+    }
+    to {
+      transform: scale(1.02);
+    }
   }
 }

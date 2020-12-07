@@ -1,20 +1,33 @@
-<main>
-  <form #searchForm="ngForm" (ngSubmit)="searchCollections(searchForm)">
-    <label for="search">Search : </label>
-    <input type="text" name="search" placeholder="Search Collections" ngModel />
-    <button>Search</button>
-  </form>
-  <h4>{{ resultsString }}</h4>
-  <i class="fas fa-sync-alt" *ngIf="loading"></i>
-  <div class="spaceHolder" *ngIf="!searchResults"></div>
-  <div class="resultsContainer" *ngIf="searchResults">
-    <div class="results" *ngFor="let result of searchResults; index as i">
-      <img
-        src="{{ posterPath }}{{ result.poster_path }}"
-        title="{{ result.title }}"
-        alt=""
-        (click)="navigateToDetails(i)"
+<body>
+  <main>
+    <form #searchForm="ngForm" (ngSubmit)="searchCollections(searchForm)">
+      <label for="search">Search : </label>
+      <input
+        type="text"
+        name="search"
+        placeholder="Search Collections"
+        ngModel
       />
+      <button>Search</button>
+    </form>
+    <h4>{{ resultsString }}</h4>
+
+    <div class="spaceHolder" *ngIf="searchResults === undefined">
+      <i class="fas fa-sync-alt" *ngIf="loading"></i>
     </div>
-  </div>
-</main>
+    <div class="resultsContainer" *ngIf="searchResults">
+      <div class="results" *ngFor="let result of searchResults; index as i">
+        <img
+          src="{{ posterPath }}{{ result.poster_path }}"
+          title="{{ result.title }}"
+          alt=""
+          (click)="navigateToDetails(i)"
+          *ngIf="result.poster_path != null"
+        />
+        <p class="noImageText" *ngIf="result.poster_path === null">
+          {{ result.name }}
+        </p>
+      </div>
+    </div>
+  </main>
+</body>

@@ -28,7 +28,6 @@ export class RandomComponent implements OnInit {
         this.getRandomEpisode();
       });
     });
-    // console.log(this.id);
 
     this.photoPath = this.apiService.posterPath;
   }

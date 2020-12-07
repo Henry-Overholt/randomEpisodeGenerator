@@ -24,17 +24,17 @@ main {
   margin-bottom: 0;
 }
 .open {
-  width: 60%;
+  width: 100%;
 }
 .close {
   width: 0;
 }
 @media screen and (min-width: 718px) {
   .open {
-    width: 40%;
+    width: 100;
   }
   .close {
-    width: 0%;
+    width: 0;
   }
 }
 @media screen and (min-width: 1200px) {

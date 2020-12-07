@@ -145,22 +145,24 @@ h3 {
   }
   form {
     width: 600px;
-    border: 5px solid lightblue;
+    background: none;
     padding: 10px;
     border-radius: 20px;
-
-    background: white;
   }
   form input {
     width: 70%;
+    border-color: lightblue;
   }
   form button {
     width: 30%;
+    background: lightblue;
+    border-color: lightblue;
   }
   form button:hover {
     background: lightblue;
     color: white;
     border-color: lightblue;
+    transform: scale(1.02);
     transition: all 0.25s ease-in-out;
   }
   .showContainer {
