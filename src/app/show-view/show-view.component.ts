@@ -27,7 +27,6 @@ export class ShowViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isShow = this.apiService.showToView;
     this.photoPath = this.apiService.posterPath;
     this.activatedRoute.params.subscribe((params) => {
       this.id = params.id;

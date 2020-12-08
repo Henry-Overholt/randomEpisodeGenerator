@@ -1,0 +1,126 @@
+body {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+}
+main {
+  width: 100%;
+  height: 350px;
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  background: linear-gradient(
+    to right,
+    orange 50%,
+    whitesmoke 50%,
+    whitesmoke 52%,
+    lightblue 52%
+  );
+  animation: fadeInFadeOut 5s linear forwards;
+}
+.animation-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  height: 200px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0px 20px;
+  border: 1px solid grey;
+  border-radius: 50px;
+  animation: fadeIn 0.25s linear forwards;
+}
+.letterContainer {
+  height: 80px;
+  width: 70px;
+  border: 2px solid grey;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+h2 {
+  font-size: 60px;
+  color: orange;
+}
+.lettersToFlipContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: -800px;
+  animation: flipThruAnimation 1s ease-in forwards;
+}
+.first {
+  animation-delay: 2.25s;
+}
+.second {
+  animation-delay: 2.5s;
+}
+.third {
+  animation-delay: 1.75s;
+}
+.fourth {
+  animation-delay: 1.25s;
+}
+.fifth {
+  animation-delay: 1.95s;
+}
+.six {
+  animation-delay: 1.65s;
+}
+.seven {
+  animation-delay: 1.35s;
+}
+.eight {
+  animation-delay: 2.15s;
+}
+.nine {
+  animation-delay: 2.25s;
+}
+.ten {
+  animation-delay: 2.5s;
+}
+.eleven {
+  animation-delay: 2.25s;
+}
+.twelve {
+  animation-delay: 2s;
+}
+@keyframes flipThruAnimation {
+  to {
+    bottom: 5px;
+  }
+}
+@keyframes fadeInFadeOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

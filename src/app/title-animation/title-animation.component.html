@@ -1,0 +1,14 @@
+<body>
+  <main>
+    <div class="animation-wrapper">
+      <div class="letterContainer" *ngFor="let letter of title; index as i">
+        <div class="lettersToFlipContainer {{ letter.class }}">
+          <div *ngFor="let character of letter.characters">
+            <h2>{{ character }}</h2>
+          </div>
+          <h2>{{ letter.letter }}</h2>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

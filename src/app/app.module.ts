@@ -16,6 +16,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { CollectionComponent } from './collection/collection.component';
 import { SearchCollectionsComponent } from './search-collections/search-collections.component';
 import { NavComponent } from './nav/nav.component';
+import { TitleAnimationComponent } from './title-animation/title-animation.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NavComponent } from './nav/nav.component';
     CollectionComponent,
     SearchCollectionsComponent,
     NavComponent,
+    TitleAnimationComponent,
   ],
   imports: [
     BrowserModule,

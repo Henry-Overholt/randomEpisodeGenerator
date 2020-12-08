@@ -8,6 +8,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SearchCollectionsComponent } from './search-collections/search-collections.component';
 import { CustomChoiceComponent } from './custom-choice/custom-choice.component';
+import { TitleAnimationComponent } from './title-animation/title-animation.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,17 @@ const routes: Routes = [
   { path: 'movie/:id', component: MovieDetailsComponent },
   { path: 'collections', component: CollectionComponent },
   { path: 'custom', component: CustomChoiceComponent },
-  { path: '**', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'welcome', component: TitleAnimationComponent },
+  { path: '**', component: TitleAnimationComponent },
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

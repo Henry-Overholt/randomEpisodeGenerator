@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   popularItems: any[];
   popularShows: any[];
   popularMovies: any[];
+  animation: boolean = false;
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -64,6 +65,10 @@ export class HomeComponent implements OnInit {
       }
     }
     form.reset();
+  }
+  cancelAnimation(): void {
+    this.animation = false;
+    console.log('Hey look the animation is over');
   }
   handleClick(i: number): void {
     if (!this.movies) {
