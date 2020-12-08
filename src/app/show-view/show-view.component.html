@@ -1,5 +1,9 @@
 <body>
-  <button (click)="navigateToRandom()">Get Random Episode</button>
+  <app-button
+    class="buttonComponent"
+    [buttonTxt]="buttonTxt"
+    (buttonClicked)="navigateToRandom()"
+  ></app-button>
   <div class="showContainer" *ngIf="show != undefined">
     <div class="imgContainer">
       <img src="{{ photoPath }}{{ show.poster_path }}" alt="" />

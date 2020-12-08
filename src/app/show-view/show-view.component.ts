@@ -19,6 +19,7 @@ export class ShowViewComponent implements OnInit {
   showVideos: boolean = false;
   videos: any[];
   id: number;
+  buttonTxt: string = 'GET RANDOM EPISODE';
   videoString: string = 'Loading Possible Videos ...';
   constructor(
     private apiService: ApiService,

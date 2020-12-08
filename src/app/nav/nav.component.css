@@ -5,7 +5,7 @@ body {
   flex-direction: row-reverse;
   opacity: 0;
   filter: blur(10px);
-  animation: growFade 1s ease-in-out 1s forwards;
+  animation: growFade 1s ease-in-out forwards;
 }
 nav {
   width: 60%;
@@ -48,6 +48,7 @@ a {
   justify-content: flex-start;
   align-items: center;
   color: grey;
+  transition: all 0.25s ease-in;
 }
 @keyframes growFade {
   to {
@@ -65,6 +66,12 @@ a {
   }
   li:hover {
     border-color: orange;
+  }
+  .fa-times {
+    color: grey;
+  }
+  .fa-times:hover {
+    color: orange;
   }
 }
 @media screen and (min-width: 1200px) {

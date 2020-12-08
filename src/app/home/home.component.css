@@ -17,6 +17,7 @@ form {
 
   width: 90%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -24,6 +25,7 @@ label {
   text-indent: -1000px;
 }
 input {
+  width: 80%;
   outline: none;
   border: 2px solid orange;
   height: 35px;
@@ -68,12 +70,12 @@ input {
 button {
   height: 40px;
   color: grey;
-  /* background: orange; */
+  margin-top: 10px;
   font-size: 18px;
   outline: none;
-  /* border: 2px solid orange; */
+
   border-radius: 5px;
-  width: 80px;
+  width: 80%;
 }
 .showFill {
   background: lightblue;
@@ -82,6 +84,12 @@ button {
 .movieFill {
   background: orange;
   border: 2px solid orange;
+}
+.movieBorder {
+  border-color: orange;
+}
+.showBorder {
+  border-color: lightblue;
 }
 img {
   width: 100px;
@@ -181,6 +189,7 @@ h3 {
   body {
     transition: all 1s ease-in-out;
     overflow: scroll;
+    background-position: fixed;
   }
   .movieBackground {
     background: linear-gradient(
@@ -205,36 +214,42 @@ h3 {
     width: 600px;
     background: none;
     padding: 10px;
+    flex-direction: row;
+
     border-radius: 20px;
   }
   form input {
     width: 70%;
-    border-color: lightblue;
   }
   form button {
+    margin: 0;
     width: 30%;
-    background: lightblue;
-    border-color: lightblue;
   }
   form button:hover {
-    background: lightblue;
     color: white;
-    border-color: lightblue;
+
     transform: scale(1.02);
     transition: all 0.25s ease-in-out;
   }
   .showContainer {
-    border: 5px solid orange;
+    border: 5px solid transparent;
     border-radius: 20px;
     width: 700px;
     background: white;
     margin-bottom: 20px;
   }
-  .movieBorderColor {
+  .popularContainer {
+    width: 700px;
     border: 5px solid orange;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 100px;
+  }
+  .movieBorderColor {
+    border-color: orange;
   }
   .showBorderColor {
-    border: 3px solid lightblue;
+    border-color: lightblue;
   }
 
   h3 {
@@ -247,13 +262,7 @@ h3 {
     background: white;
     border-width: 3px;
   }
-  .popularContainer {
-    width: 700px;
-    border: 5px solid lightblue;
-    padding: 10px;
-    border-radius: 20px;
-    margin-bottom: 100px;
-  }
+
   #searchCollection {
     width: 600px;
     border: none;
@@ -262,6 +271,8 @@ h3 {
   #searchCollection button {
     width: 30%;
     margin: 5px 3px;
+    box-shadow: 0px;
+    outline: none;
   }
   #searchCollection button:hover {
     background: orange;

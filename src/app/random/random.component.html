@@ -1,6 +1,10 @@
 <body>
   <!-- <i class="fas fa-backward" (click)="navigateToHome()"></i> -->
-  <button (click)="getRandomEpisode()">Get Random Episode</button>
+  <app-button
+    class="buttonComponent"
+    [buttonTxt]="buttonTxt"
+    (buttonClicked)="getRandomEpisode()"
+  ></app-button>
   <div class="episodeContainer" *ngIf="startRandom">
     <i class="fas fa-sync-alt" *ngIf="!foundRandomEpisode"></i>
     <div class="show" *ngIf="foundRandomEpisode">
@@ -14,7 +18,7 @@
       <img src="{{ photoPath }}{{ randomEpisode.still_path }}" alt="" />
 
       <h3>
-        Orginally Aired:
+        Originally Aired:
         <span class="date">{{ randomEpisode.air_date | date }}</span>
       </h3>
       <h3>Description</h3>

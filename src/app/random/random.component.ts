@@ -14,6 +14,7 @@ export class RandomComponent implements OnInit {
   foundRandomEpisode: boolean = false;
   photoPath: string;
   id: any;
+  buttonTxt: string = 'GET RANDOM EPISODE';
   constructor(
     private apiService: ApiService,
     private router: Router,

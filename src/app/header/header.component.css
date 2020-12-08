@@ -18,6 +18,9 @@ header {
 h2 {
   font-size: 17px;
   color: black;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .fa-random {
   margin-left: 5px;
