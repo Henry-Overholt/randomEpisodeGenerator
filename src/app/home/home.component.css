@@ -1,12 +1,13 @@
 body {
   width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Raleway", sans-serif;
   position: relative;
   transition: all 1.75s ease-in-out;
-  animation: fadeIn 2.5s ease-in-out forwards;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 form {
   margin: 20px 0px;
@@ -63,15 +64,24 @@ input {
   /* padding: 0px 20px; */
   z-index: 1;
 }
+
 button {
   height: 40px;
   color: grey;
-  background: orange;
+  /* background: orange; */
   font-size: 18px;
   outline: none;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   border-radius: 5px;
   width: 80px;
+}
+.showFill {
+  background: lightblue;
+  border: 2px solid lightblue;
+}
+.movieFill {
+  background: orange;
+  border: 2px solid orange;
 }
 img {
   width: 100px;
@@ -79,9 +89,9 @@ img {
   border: 3px solid orange;
   border-radius: 20px;
 }
+
 .showContainer {
   width: 350px;
-
   background: white;
   padding: 3px;
   border-radius: 20px;
@@ -169,16 +179,28 @@ h3 {
 }
 @media screen and (min-width: 718px) {
   body {
-    background: linear-gradient(
-      to bottom,
-      orange 50%,
-      lightblue 50%,
-      lightblue 52%,
-      white 52%
-    );
     transition: all 1s ease-in-out;
     overflow: scroll;
   }
+  .movieBackground {
+    background: linear-gradient(
+      to bottom,
+      lightblue 450px,
+      orange 450px,
+      orange 480px,
+      white 480px
+    );
+  }
+  .showBackground {
+    background: linear-gradient(
+      to bottom,
+      orange 450px,
+      lightblue 450px,
+      lightblue 480px,
+      white 480px
+    );
+  }
+
   form {
     width: 600px;
     background: none;
@@ -202,12 +224,19 @@ h3 {
     transition: all 0.25s ease-in-out;
   }
   .showContainer {
-    border: 5px solid lightblue;
+    border: 5px solid orange;
     border-radius: 20px;
     width: 700px;
     background: white;
     margin-bottom: 20px;
   }
+  .movieBorderColor {
+    border: 5px solid orange;
+  }
+  .showBorderColor {
+    border: 3px solid lightblue;
+  }
+
   h3 {
     font-size: 30px;
     margin: 10px 0px;

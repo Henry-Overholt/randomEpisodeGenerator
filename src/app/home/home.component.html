@@ -1,4 +1,4 @@
-<body>
+<body [ngClass]="movies ? 'movieBackground' : 'showBackground'">
   <div class="sliderContainer" (click)="toggleToMovie()">
     <h3>SHOWS</h3>
     <h3>MOVIES</h3>
@@ -7,11 +7,15 @@
   <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
     <label for="search"> Search: </label>
     <input type="text" name="search" [placeholder]="placeholder" ngModel />
-    <button>Search</button>
+    <button [ngClass]="movies ? 'movieFill' : 'showFill'">Search</button>
   </form>
 
   <h3>{{ title }}</h3>
-  <div class="showContainer" *ngIf="!movies">
+  <div
+    [ngClass]="movies ? 'movieBorderColor' : 'showBorderColor'"
+    class="showContainer"
+    *ngIf="!movies"
+  >
     <div class="shows" *ngFor="let show of shows; index as i">
       <img
         class="showPoster"

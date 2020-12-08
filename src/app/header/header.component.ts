@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   @Input() nav: boolean;
   @Output() openNavValue = new EventEmitter<void>();
+  @Output() routingToWelcome = new EventEmitter<void>();
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
   navigateToHome(): void {
     this.router.navigate(['/home']);
+  }
+  routeToWelcome() {
+    this.router.navigate(['/welcome']);
+    this.routingToWelcome.emit();
   }
   openNav(): void {
     this.nav = !this.nav;

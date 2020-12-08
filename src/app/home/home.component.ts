@@ -42,10 +42,15 @@ export class HomeComponent implements OnInit {
     this.collections = this.movieService.returnCollections();
     this.apiService.getPopularTV().subscribe((res) => {
       this.popularShows = res.results;
-      this.popularItems = this.popularShows;
+      if (!this.movies) {
+        this.popularItems = this.popularShows;
+      }
     });
     this.movieService.getPopularMovie().subscribe((res) => {
       this.popularMovies = res.results;
+      if (this.movies) {
+        this.popularItems = this.popularMovies;
+      }
     });
   }
   handleSearch(form: NgForm) {

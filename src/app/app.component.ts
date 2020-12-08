@@ -8,8 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'randomEpisodeGenerator';
   nav: boolean = false;
+  welcome: boolean = false;
 
   openNav(): void {
     this.nav = !this.nav;
+  }
+  handleWelcomeRoute() {
+    this.welcome = true;
+    setTimeout(() => {
+      this.welcome = false;
+      console.log('turned off welcome');
+    }, 6000);
   }
 }
