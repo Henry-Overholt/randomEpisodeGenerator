@@ -47,8 +47,8 @@ export class TitleAnimationComponent implements OnInit {
     'Z',
   ];
   title: any[] = [
-    { letter: '1', characters: [], class: 'first' },
-    { letter: '0', characters: [], class: 'second' },
+    { letter: '', characters: [], class: 'first' },
+    { letter: '', characters: [], class: 'second' },
     { letter: 'R', characters: [], class: 'third' },
     { letter: 'A', characters: [], class: 'fourth' },
     { letter: 'N', characters: [], class: 'fifth' },
@@ -57,8 +57,8 @@ export class TitleAnimationComponent implements OnInit {
     { letter: 'M', characters: [], class: 'eight' },
     { letter: 'L', characters: [], class: 'nine' },
     { letter: 'Y', characters: [], class: 'ten' },
-    { letter: '2', characters: [], class: 'eleven' },
-    { letter: '0', characters: [], class: 'twelve' },
+    { letter: '', characters: [], class: 'eleven' },
+    { letter: '', characters: [], class: 'twelve' },
   ];
   constructor(private router: Router) {}
 
@@ -76,7 +76,7 @@ export class TitleAnimationComponent implements OnInit {
         obj.letter = stringify(Math.floor(Math.random() * 10));
       }
       for (let i = 0; i < 10; i++) {
-        obj.characters.push(this.getRandomCharacter());
+        obj.characters.push(Math.floor(Math.random() * 10));
       }
     });
   }

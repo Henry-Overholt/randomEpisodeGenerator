@@ -15,12 +15,38 @@ header {
   font-family: "Raleway", sans-serif;
   position: relative;
 }
-h2 {
-  font-size: 17px;
-  color: black;
+.animation-wrapper {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-100px);
+
+  width: 240px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.letterContainer {
+  height: 100%;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.lettersToFlipContainer {
+  width: 100%;
+  bottom: 5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleLetters {
+  margin: 5px 0px;
 }
 .fa-random {
   margin-left: 5px;
@@ -30,6 +56,10 @@ h2 {
   border-radius: 10px;
   font-size: 20px;
   background: linear-gradient(to left top, lightblue, orange);
+  transition: all 0.25s ease-in-out;
+}
+.fa-random:hover {
+  transform: scale(1.02);
 }
 
 .fa-bars {
@@ -57,6 +87,14 @@ h2 {
 .menuLabel {
   display: none;
 }
+/* .lettersToFlipContainer {
+ 
+} */
+@keyframes flipLetters {
+  to {
+    bottom: -400px;
+  }
+}
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -67,6 +105,7 @@ h2 {
     transform: rotate(-360deg);
   }
 }
+
 @media screen and (min-width: 718px) {
   header {
     height: 60px;
@@ -86,6 +125,36 @@ h2 {
   }
   .menuButton:hover {
     border-color: orange;
+  }
+  .titleLetters {
+    margin: 10px 0px;
+  }
+  .animation-wrapper:hover .lettersToFlipContainer {
+    animation: flipLetters 1s linear forwards;
+  }
+  .animation-wrapper:hover .first {
+    animation-delay: 0.5s;
+  }
+  .animation-wrapper:hover .second {
+    animation-delay: 0.25s;
+  }
+  .animation-wrapper:hover .third {
+    animation-delay: 0.35s;
+  }
+  .animation-wrapper:hover .fourth {
+    animation-delay: 0.15s;
+  }
+  .animation-wrapper:hover .fifth {
+    animation-delay: 0.45s;
+  }
+  .animation-wrapper:hover .six {
+    animation-delay: 0.25s;
+  }
+  .animation-wrapper:hover .seven {
+    animation-delay: 0.05s;
+  }
+  .animation-wrapper:hover .eight {
+    animation-delay: 0.6s;
   }
 }
 @media screen and (min-width: 1200px) {

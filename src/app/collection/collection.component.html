@@ -1,5 +1,10 @@
 <main>
-  <button (click)="randomizeMovies()">{{ buttonText }}</button>
+  <app-button
+    class="buttonComponent"
+    [buttonTxt]="buttonText"
+    (buttonClicked)="randomizeMovies()"
+  ></app-button>
+  <!-- <button (click)="randomizeMovies()">{{ buttonText }}</button> -->
   <div class="controlsContainer">
     <p *ngIf="collection">
       Movies : <span>{{ total }}</span>

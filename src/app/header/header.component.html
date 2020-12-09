@@ -1,6 +1,16 @@
 <header>
   <i class="fas fa-random" (click)="navigateToHome()"></i>
-  <h2 (click)="routeToWelcome()">RANDOMLY</h2>
+  <div class="animation-wrapper" (click)="routeToWelcome()">
+    <div class="letterContainer" *ngFor="let letter of title; index as i">
+      <div class="lettersToFlipContainer {{ letter.class }}">
+        <h2 class="titleLetters">{{ letter.letter }}</h2>
+        <div *ngFor="let character of letter.characters">
+          <h2>{{ character }}</h2>
+        </div>
+        <h2 class="titleLetters">{{ letter.letter }}</h2>
+      </div>
+    </div>
+  </div>
   <div
     class="menuButton"
     (click)="openNav()"

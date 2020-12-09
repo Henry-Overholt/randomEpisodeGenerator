@@ -14,12 +14,7 @@ export class NavComponent implements OnInit {
     this.route = this.router.url;
   }
 
-  ngOnInit(): void {
-    console.log(this.route);
-    // setTimeout(() => {
-    //   document.getElementById('body').style.animationDelay = '1.5s';
-    // }, 6000);
-  }
+  ngOnInit(): void {}
   openNav(): void {
     this.closeNav.emit();
   }
