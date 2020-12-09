@@ -4,10 +4,14 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-
+  min-height: 100vh;
   font-family: "Raleway", sans-serif;
   margin-bottom: 20px;
   position: relative;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px);
+  animation: fadeIn 1s ease-in forwards;
 }
 button {
   margin: 30px 0px;
@@ -107,6 +111,23 @@ span {
   justify-content: space-between;
   align-items: center;
   margin: 10px 0px;
+  padding: 5px;
+  border: 2px solid orange;
+  opacity: 0;
+  filter: blur(10px);
+  border-radius: 10px;
+  animation: createNew 1s ease-in-out 0.25s forwards;
+}
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 5px;
+  width: 90%;
+  border: 2px solid whitesmoke;
+  margin: 10px 0px;
+  border-radius: 10px;
 }
 .movies h5 {
   flex: 1;
@@ -117,7 +138,7 @@ span {
   height: 100px;
 }
 .open {
-  width: 300px;
+  width: 310px;
   border-color: orange;
 }
 .close {
@@ -126,6 +147,12 @@ span {
 }
 .fa-trash-alt {
   font-size: 25px;
+  color: lightblue;
+}
+.fa-trash-alt:hover {
+  color: orange;
+}
+.fa-times-circle:hover {
   color: lightblue;
 }
 .fa-times-circle {
@@ -147,6 +174,24 @@ span {
   font-size: 30px;
   color: lightblue;
 }
+.fa-plus:hover {
+  color: orange;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes createNew {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    border-color: transparent;
+  }
+}
 @media screen and (min-width: 718px) {
   body {
     background: linear-gradient(
@@ -167,10 +212,10 @@ span {
 }
 @media screen and (min-width: 1200px) {
   .open {
-    width: 300px;
+    width: 320px;
   }
   .close {
-    width: 300px;
+    width: 320px;
   }
   .fa-times-circle {
     visibility: hidden;

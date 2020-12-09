@@ -6,6 +6,10 @@ main {
   align-items: center;
   justify-content: center;
   font-family: "Raleway", sans-serif;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px);
+  animation: fadeIn 1s ease-in forwards;
 }
 .buttonComponent {
   width: 100%;
@@ -149,6 +153,13 @@ span {
 }
 .fa-check {
   color: orange;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 @media screen and (min-width: 718px) {
   main {

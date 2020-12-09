@@ -7,6 +7,10 @@ body {
   font-family: "Raleway", sans-serif;
   margin-bottom: 20px;
   position: relative;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px);
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .buttonComponent {
@@ -78,7 +82,13 @@ span {
 .videosContainer {
   display: none;
 }
-
+@keyframes fadeIn {
+  to {
+    filter: blur(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 718px) {
   body {
     height: 90vh;

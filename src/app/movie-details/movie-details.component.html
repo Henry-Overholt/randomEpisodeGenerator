@@ -32,8 +32,16 @@
   </div>
   <div class="listContainer" [ngClass]="seeCollection ? 'open' : 'close'">
     <i class="fas fa-times-circle" (click)="closeCollectionView()"></i>
-    <button (click)="randomizeMovie()">Randomize Movie</button>
+    <app-button
+      class="buttonComponent"
+      [buttonTxt]="buttonTxt"
+      (buttonClicked)="randomizeMovie()"
+    ></app-button>
+    <!-- <button (click)=>Randomize Movie</button> -->
     <h3>Current List to Randomize</h3>
+    <div class="placeholder" *ngIf="collection.length === 0">
+      <p>No Items on the List</p>
+    </div>
     <div class="movies" *ngFor="let item of collection; index as i">
       <img
         (click)="resetMovieToView(i)"

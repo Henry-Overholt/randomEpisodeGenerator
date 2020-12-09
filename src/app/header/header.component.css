@@ -1,13 +1,7 @@
 header {
   width: 100%;
   height: 45px;
-  background: linear-gradient(
-    to left,
-    lightblue,
-    transparent,
-    transparent,
-    orange
-  );
+  background: linear-gradient(to left, lightblue, white, white, orange);
   color: lightblue;
   display: flex;
   align-items: center;

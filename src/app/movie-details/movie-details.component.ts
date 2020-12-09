@@ -20,6 +20,7 @@ export class MovieDetailsComponent implements OnInit {
   videoString: string = 'Loading Possible Videos ...';
   seeCollection: boolean = false;
   id: any;
+  buttonTxt: string = 'RANDOMIZE MOVIES';
   constructor(
     private movieService: MovieService,
     private router: Router,
