@@ -11,11 +11,20 @@ export class CustomChoiceComponent implements OnInit {
   randomInt: number = Math.floor(Math.random() * this.examples.length);
   placeholder: string = this.examples[this.randomInt];
   choices: string[] = [];
-  shuffleChoices: string[];
+  shuffleChoices: string[] = [
+    'Your random Choice is ...',
+    'Pizze',
+    'Pasta',
+    'Potato',
+  ];
+  yourChoice: string = 'Your random Choice is ...';
+  buttonTxt: string = 'RANDOMIZE';
   randomChoice: string = 'Your random choice is ...';
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.loadShuffleChoices();
+  }
   addChoice(form: NgForm): void {
     this.choices.unshift(form.value.newChoice);
     console.log(this.choices);
@@ -31,6 +40,7 @@ export class CustomChoiceComponent implements OnInit {
       let random = Math.floor(Math.random() * this.choices.length);
       this.shuffleChoices.push(this.choices[random]);
     }
+    console.log(this.shuffleChoices);
   }
   playRandom() {
     let n = 300;

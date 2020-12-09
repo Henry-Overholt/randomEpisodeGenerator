@@ -42,7 +42,6 @@ export class RandomComponent implements OnInit {
       this.apiService
         .getRandomEpisode(this.show.id, season, episode)
         .subscribe((res) => {
-          console.log(res);
           this.randomEpisode = res;
           this.foundRandomEpisode = true;
         });

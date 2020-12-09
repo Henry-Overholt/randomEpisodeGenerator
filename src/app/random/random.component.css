@@ -78,13 +78,17 @@ i {
 }
 .linksContainer {
   display: flex;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
   width: 90%;
+  height: 60px;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
 }
 .fa-info-circle {
   animation: none;
-  margin: 10px;
+
   font-size: 40px;
 }
 .fa-info-circle:hover {
@@ -142,6 +146,9 @@ i {
       lightblue 420px,
       white 420px
     );
+  }
+  .linksContainer {
+    width: 50%;
   }
   button {
     border: 5px solid lightblue;

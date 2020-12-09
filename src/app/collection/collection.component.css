@@ -6,9 +6,6 @@ main {
   align-items: center;
   justify-content: center;
   font-family: "Raleway", sans-serif;
-  opacity: 0;
-  filter: blur(10px);
-  transform: translateY(10px);
   animation: fadeIn 1s ease-in forwards;
 }
 .buttonComponent {
@@ -155,6 +152,11 @@ span {
   color: orange;
 }
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(10px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);

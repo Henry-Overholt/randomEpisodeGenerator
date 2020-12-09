@@ -17,8 +17,8 @@ import { CollectionComponent } from './collection/collection.component';
 import { SearchCollectionsComponent } from './search-collections/search-collections.component';
 import { NavComponent } from './nav/nav.component';
 import { TitleAnimationComponent } from './title-animation/title-animation.component';
-import { ButtonComponent } from './button/button.component';
-import { PeopleCarouselComponent } from './people-carousel/people-carousel.component';
+import { ButtonComponent } from './components/button/button.component';
+import { PeopleCarouselComponent } from './components/people-carousel/people-carousel.component';
 
 @NgModule({
   declarations: [

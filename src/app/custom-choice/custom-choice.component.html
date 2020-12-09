@@ -4,7 +4,12 @@
     <div class="randomChoice">
       <h3>{{ randomChoice }}</h3>
     </div>
-    <button (click)="playRandom()">Randomize My Choices</button>
+    <app-button
+      class="buttonComponent"
+      [buttonTxt]="buttonTxt"
+      (buttonClicked)="playRandom()"
+    ></app-button>
+    <!-- <button (click)="playRandom()">Randomize My Choices</button> -->
     <form #addChoiceForm="ngForm" (ngSubmit)="addChoice(addChoiceForm)">
       <label for="newChoice">Add New Choice</label>
       <input
