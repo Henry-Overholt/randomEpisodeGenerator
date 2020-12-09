@@ -9,6 +9,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SearchCollectionsComponent } from './search-collections/search-collections.component';
 import { CustomChoiceComponent } from './custom-choice/custom-choice.component';
 import { TitleAnimationComponent } from './title-animation/title-animation.component';
+import { VersionComponent } from './version/version.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'collections', component: CollectionComponent },
   { path: 'custom', component: CustomChoiceComponent },
   { path: 'welcome', component: TitleAnimationComponent },
+  { path: 'version', component: VersionComponent },
   { path: '**', component: TitleAnimationComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
 ];

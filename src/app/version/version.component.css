@@ -1,0 +1,64 @@
+body {
+  min-height: 100vh;
+  font-family: "Raleway";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: grey;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+h1 {
+  margin: 50px 20px;
+  color: orange;
+}
+.versionContainer {
+  width: 80%;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: white;
+  box-shadow: 2px 4px 4px rgb(180, 180, 180);
+  margin: 10px 0px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.versionContainer:hover {
+  transform: scale(1.01);
+  background: orange;
+}
+.heading {
+  margin-bottom: 5px;
+}
+h3 {
+  color: lightblue;
+  font-size: 20px;
+}
+ul {
+  align-self: flex-end;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+li {
+  width: 100%;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@media screen and (min-width: 718px) {
+  .versionContainer {
+    width: 50%;
+  }
+}

@@ -19,6 +19,7 @@ import { NavComponent } from './nav/nav.component';
 import { TitleAnimationComponent } from './title-animation/title-animation.component';
 import { ButtonComponent } from './components/button/button.component';
 import { PeopleCarouselComponent } from './components/people-carousel/people-carousel.component';
+import { VersionComponent } from './version/version.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { PeopleCarouselComponent } from './components/people-carousel/people-car
     TitleAnimationComponent,
     ButtonComponent,
     PeopleCarouselComponent,
+    VersionComponent,
   ],
   imports: [
     BrowserModule,

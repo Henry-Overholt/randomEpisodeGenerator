@@ -83,6 +83,7 @@ footer {
   font-size: 10px;
   bottom: 3px;
   right: 3px;
+  outline: none;
 }
 i {
   position: absolute;
