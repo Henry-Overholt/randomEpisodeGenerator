@@ -31,16 +31,26 @@ ul {
   width: 100%;
   list-style: none;
 }
+li {
+  width: 200px;
+  height: 20px;
+}
+li:hover {
+  color: orange;
+}
 a {
   color: grey;
   text-decoration: none;
   font-size: 15px;
-  padding: 20px;
+
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
-a:hover {
-  color: orange;
-}
+
 .logos {
   display: flex;
   justify-content: space-around;

@@ -11,7 +11,7 @@ body {
 nav {
   width: 60%;
   height: 100%;
-  background: linear-gradient(to bottom, white 25%, lightblue);
+  background: linear-gradient(to bottom, whitesmoke 25%, lightblue);
   font-family: "Raleway";
 }
 main {
@@ -23,7 +23,7 @@ ul {
 }
 li {
   height: 30px;
-  border-bottom: 3px solid lightblue;
+  border-bottom: 3px solid white;
   padding: 10px 5px;
   margin: 0px 10px;
   display: flex;
