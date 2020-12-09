@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +12,16 @@ export class NavComponent implements OnInit {
   show: boolean = true;
   route: string;
   constructor(private router: Router, private activedRouter: ActivatedRoute) {
-    this.route = this.router.url;
+    router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        console.log(event);
+        if (event.url === '/welcome') {
+          this.show = false;
+        } else {
+          this.show = true;
+        }
+      });
   }
 
   ngOnInit(): void {}

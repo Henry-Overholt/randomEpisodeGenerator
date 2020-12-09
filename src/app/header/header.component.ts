@@ -58,7 +58,7 @@ export class HeaderComponent implements OnInit {
   ];
   @Input() nav: boolean;
   @Output() openNavValue = new EventEmitter<void>();
-  @Output() routingToWelcome = new EventEmitter<void>();
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -69,7 +69,6 @@ export class HeaderComponent implements OnInit {
   }
   routeToWelcome() {
     this.router.navigate(['/welcome']);
-    this.routingToWelcome.emit();
   }
   setRandomCharacters() {
     this.title.forEach((obj) => {

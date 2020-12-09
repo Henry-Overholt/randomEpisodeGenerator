@@ -1,14 +1,9 @@
 <body>
-  <app-header
-    [nav]="nav"
-    (openNavValue)="openNav()"
-    (routingToWelcome)="handleWelcomeRoute()"
-  ></app-header>
+  <app-header [nav]="nav" (openNavValue)="openNav()"></app-header>
   <main>
     <router-outlet id="routerOutlet"></router-outlet>
     <app-nav
       id="nav"
-      *ngIf="!welcome"
       [ngClass]="nav ? 'open' : 'close'"
       (closeNav)="openNav()"
     ></app-nav>
