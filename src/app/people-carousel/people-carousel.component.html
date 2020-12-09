@@ -1,0 +1,16 @@
+<body>
+  <div class="peopleContainer" *ngIf="people.length > 0">
+    <div class="people" *ngFor="let person of people; index as i">
+      <img
+        src="{{ posterPath }}{{ person.profile_path }}"
+        *ngIf="person.profile_path != null"
+        alt=""
+      />
+
+      <p *ngIf="person.profile_path === null">{{ person.name }}</p>
+      <div class="titleCard" *ngIf="person.profile_path != null">
+        <p>{{ person.name }}</p>
+      </div>
+    </div>
+  </div>
+</body>

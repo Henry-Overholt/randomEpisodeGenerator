@@ -31,7 +31,7 @@ export class ShowViewComponent implements OnInit {
     this.photoPath = this.apiService.posterPath;
     this.activatedRoute.params.subscribe((params) => {
       this.id = params.id;
-      console.log(this.id);
+
       this.apiService.getTVShow(this.id).subscribe((res) => {
         this.show = res;
         console.log(res);

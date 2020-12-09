@@ -42,6 +42,7 @@ export class RandomComponent implements OnInit {
       this.apiService
         .getRandomEpisode(this.show.id, season, episode)
         .subscribe((res) => {
+          console.log(res);
           this.randomEpisode = res;
           this.foundRandomEpisode = true;
         });
@@ -52,5 +53,8 @@ export class RandomComponent implements OnInit {
   }
   navigateToHome() {
     this.router.navigate(['/home']);
+  }
+  navigateToDetails() {
+    this.router.navigate([`/show/${this.show.id}`]);
   }
 }

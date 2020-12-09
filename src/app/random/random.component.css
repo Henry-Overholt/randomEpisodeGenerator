@@ -14,17 +14,7 @@ body {
   width: 100%;
   margin: 20px 0px;
 }
-button {
-  margin: 30px 0px;
-  height: 40px;
-  width: 80%;
-  outline: none;
-  background: white;
-  border: 3px solid orange;
-  border-radius: 10px;
-  font-size: 18px;
-  color: orange;
-}
+
 .episodeContainer {
   background: white;
   border-radius: 20px;
@@ -34,6 +24,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .show {
   display: flex;
@@ -74,17 +65,30 @@ i {
   font-size: 100px;
   animation: spin 1s linear infinite;
 }
-.guestStarContainer {
+.placeholder {
   display: flex;
-  flex-flow: wrap row;
-  width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
+  width: 200px;
+  height: 100px;
+  border: 2px solid whitesmoke;
+  justify-content: center;
+  border-radius: 20px;
+  align-items: center;
   margin-bottom: 10px;
+  color: grey;
 }
-.guestStarContainer p {
-  width: 50%;
-  overflow: scroll;
+.linksContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+.fa-info-circle {
+  animation: none;
+  margin: 10px;
+  font-size: 40px;
+}
+.fa-info-circle:hover {
+  color: orange;
 }
 .crew {
   text-align: center;
@@ -99,6 +103,9 @@ i {
   top: 4px;
   font-size: 25px;
   animation: none;
+}
+.people-carousel {
+  width: 100%;
 }
 @keyframes spin {
   to {
@@ -150,6 +157,9 @@ i {
     border-radius: 20px;
     background: white;
     border: 5px solid lightblue;
+  }
+  .people-carousel {
+    width: 70%;
   }
   .guestStarContainer {
     width: 60%;

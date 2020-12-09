@@ -20,6 +20,7 @@ form {
   width: 90%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 label {
@@ -30,12 +31,14 @@ input {
   border: 2px solid lightblue;
   height: 35px;
   font-size: 20px;
+  width: 80%;
   color: grey;
   border-radius: 5px;
-  margin-right: 5px;
+  margin-bottom: 5px;
   text-indent: 5px;
 }
 button {
+  width: 80%;
   height: 40px;
   color: grey;
   background: lightblue;
@@ -43,7 +46,6 @@ button {
   outline: none;
   border: 2px solid lightblue;
   border-radius: 5px;
-  width: 80px;
 }
 h4 {
   color: grey;
@@ -111,10 +113,12 @@ img {
   }
   form {
     width: 600px;
+    flex-direction: row;
     background: orange;
   }
   input {
     width: 70%;
+    margin: 0px 5px;
   }
   button {
     width: 30%;

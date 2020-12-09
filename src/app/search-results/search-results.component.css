@@ -60,8 +60,9 @@ img {
 
 form {
   margin: 20px 0px;
-  width: 95%;
+  width: 90%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -74,8 +75,8 @@ input {
   height: 35px;
   font-size: 20px;
   color: grey;
+  width: 80%;
   border-radius: 5px;
-  margin-right: 5px;
 }
 button {
   height: 40px;
@@ -85,7 +86,8 @@ button {
   outline: none;
   border: 2px solid lightblue;
   border-radius: 5px;
-  width: 80px;
+  margin-top: 5px;
+  width: 80%;
   text-indent: 5px;
 }
 .noImageText {
@@ -120,19 +122,26 @@ button {
     );
   }
   form {
-    width: 400px;
-    border: 5px solid lightblue;
+    width: 600px;
+    flex-direction: row;
     padding: 10px;
     border-radius: 20px;
-
-    background: white;
   }
   input {
-    border-color: orange;
+    width: 70%;
+    text-indent: 5px;
+    border-color: lightblue;
   }
   button {
-    border-color: orange;
-    background: orange;
+    margin: 0px 5px;
+    width: 30%;
+    border-color: lightblue;
+    background: lightblue;
+  }
+  button:hover {
+    color: white;
+    transform: scale(1.02);
+    transition: all 0.25s ease-in-out;
   }
   .sliderContainer {
     width: 400px;

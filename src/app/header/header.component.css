@@ -12,9 +12,9 @@ header {
 .animation-wrapper {
   position: absolute;
   left: 50%;
+  width: 200px;
   transform: translateX(-100px);
 
-  width: 240px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -109,6 +109,9 @@ header {
   }
   .fa-random {
     font-size: 35px;
+  }
+  .animation-wrapper {
+    width: 240px;
   }
   .menuLabel {
     display: inline;

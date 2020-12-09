@@ -31,7 +31,6 @@ export class MovieDetailsComponent implements OnInit {
     this.posterPath = this.movieService.posterPath;
     this.activatedRoute.params.subscribe((param) => {
       this.id = param.id;
-      console.log(this.id);
       this.movieService.getMovie(this.id).subscribe((res) => {
         this.movie = res;
         this.getVideos(this.movie.id);

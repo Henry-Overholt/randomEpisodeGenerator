@@ -15,7 +15,6 @@ export class NavComponent implements OnInit {
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
-        console.log(event);
         if (event.url === '/welcome') {
           this.show = false;
         } else {

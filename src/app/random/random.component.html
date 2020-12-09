@@ -23,13 +23,27 @@
       <h3>Description</h3>
       <p class="description">{{ randomEpisode.overview }}</p>
       <h3>Guest Stars</h3>
-      <div class="guestStarContainer">
-        <p *ngFor="let star of randomEpisode.guest_stars">{{ star.name }}</p>
+      <people-carousel
+        class="people-carousel"
+        *ngIf="randomEpisode.guest_stars.length > 0"
+        [arrayOfPeople]="randomEpisode.guest_stars"
+      ></people-carousel>
+
+      <div class="placeholder" *ngIf="randomEpisode.guest_stars.length === 0">
+        <p>No Guest Stars</p>
       </div>
       <h3>Crew</h3>
+
       <p *ngFor="let crew of randomEpisode.crew" class="crew">
         <span>{{ crew.job }}</span> - {{ crew.name }}
       </p>
+      <div class="linksContainer">
+        <i
+          class="fas fa-info-circle"
+          (click)="navigateToDetails()"
+          title="Show Details"
+        ></i>
+      </div>
     </div>
   </div>
 </body>

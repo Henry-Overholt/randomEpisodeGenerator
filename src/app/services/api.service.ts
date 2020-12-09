@@ -123,6 +123,11 @@ export class ApiService {
       `https://api.themoviedb.org/3/tv/popular?api_key=${this.apiKey}&language=en-US&page=1`
     );
   }
+  getPeople(id: number): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${this.apiKey}&language=en-US`
+    );
+  }
   setSearchResults(results) {
     this.searchResults = results;
   }

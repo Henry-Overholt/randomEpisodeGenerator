@@ -18,6 +18,7 @@ import { SearchCollectionsComponent } from './search-collections/search-collecti
 import { NavComponent } from './nav/nav.component';
 import { TitleAnimationComponent } from './title-animation/title-animation.component';
 import { ButtonComponent } from './button/button.component';
+import { PeopleCarouselComponent } from './people-carousel/people-carousel.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ButtonComponent } from './button/button.component';
     NavComponent,
     TitleAnimationComponent,
     ButtonComponent,
+    PeopleCarouselComponent,
   ],
   imports: [
     BrowserModule,

@@ -64,7 +64,7 @@ export class TitleAnimationComponent implements OnInit {
 
   ngOnInit(): void {
     this.setRandomCharacters();
-    console.log(this.title);
+
     setTimeout(() => {
       this.router.navigate(['/home']);
     }, 6000);
