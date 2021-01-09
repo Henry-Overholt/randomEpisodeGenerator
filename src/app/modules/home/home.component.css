@@ -98,19 +98,6 @@ img {
   border-color: lightblue;
 }
 
-.showContainer {
-  width: 350px;
-  background: white;
-  padding: 3px;
-  border-radius: 20px;
-
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
 h3 {
   color: grey;
   text-align: center;

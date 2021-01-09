@@ -20,7 +20,7 @@ import { TitleAnimationComponent } from './modules/title-animation/title-animati
 import { ButtonComponent } from './shared/components/button/button.component';
 import { PeopleCarouselComponent } from './shared/components/people-carousel/people-carousel.component';
 import { VersionComponent } from './modules/version/version.component';
-import { TitleContainerComponent } from './shared/components/title-container/title-container.component';
+import { PosterContainerComponent } from './shared/components/poster-container/poster-container.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { TitleContainerComponent } from './shared/components/title-container/tit
     ButtonComponent,
     PeopleCarouselComponent,
     VersionComponent,
-    TitleContainerComponent,
+    PosterContainerComponent,
   ],
   imports: [
     BrowserModule,

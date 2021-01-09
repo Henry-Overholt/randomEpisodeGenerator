@@ -3,15 +3,15 @@ import { ApiService } from '../../services/api.service';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
-  selector: 'randomly-title-container',
-  templateUrl: './title-container.component.html',
-  styleUrls: ['./title-container.component.css'],
+  selector: 'randomly-poster-container',
+  templateUrl: './poster-container.component.html',
+  styleUrls: ['./poster-container.component.css'],
 })
-export class TitleContainerComponent implements OnInit {
+export class PosterContainerComponent implements OnInit {
   @Input() titles: any[];
   @Input() movieOrShow: boolean;
   @Input() borderColor: string;
-  @Output() titleClicked = new EventEmitter<number>();
+  @Output() titleClicked = new EventEmitter<any>();
   posterPath: string = 'https://image.tmdb.org/t/p/w154';
   constructor(
     private apiService: ApiService,
@@ -36,6 +36,7 @@ export class TitleContainerComponent implements OnInit {
     }
   }
   handleClick(i: number): void {
+    console.log(i);
     this.titleClicked.emit(i);
   }
 }

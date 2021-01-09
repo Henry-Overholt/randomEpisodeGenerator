@@ -11,32 +11,20 @@
   </form>
 
   <h3>{{ title }}</h3>
-  <randomly-title-container
+
+  <randomly-poster-container
+    *ngIf="!movies"
     [titles]="shows"
     [movieOrShow]="movies"
-  ></randomly-title-container>
-  <div class="showContainer" *ngIf="!movies">
-    <div class="shows" *ngFor="let show of shows; index as i">
-      <img
-        class="showPoster movieBorder"
-        title="{{ show.title }}"
-        src="{{ posterPath }}{{ show.poster_path }}"
-        (click)="handleClick(i)"
-        alt="Image Not Available"
-      />
-    </div>
-  </div>
-  <div class="showContainer" *ngIf="movies">
-    <div class="shows" *ngFor="let collection of collections; index as i">
-      <img
-        class="showPoster showBorder"
-        title="{{ collection.title }}"
-        src="{{ posterPath }}{{ collection.poster_path }}"
-        (click)="handleClick(i)"
-        alt=""
-      />
-    </div>
-  </div>
+    (titleClicked)="handleClick($event)"
+  ></randomly-poster-container>
+  <randomly-poster-container
+    *ngIf="movies"
+    [titles]="collections"
+    [movieOrShow]="movies"
+    (titleClicked)="handleClick($event)"
+  ></randomly-poster-container>
+
   <form
     id="searchCollection"
     #searchCollectionForm="ngForm"
