@@ -11,6 +11,10 @@
   </form>
 
   <h3>{{ title }}</h3>
+  <randomly-title-container
+    [titles]="shows"
+    [movieOrShow]="movies"
+  ></randomly-title-container>
   <div class="showContainer" *ngIf="!movies">
     <div class="shows" *ngFor="let show of shows; index as i">
       <img
