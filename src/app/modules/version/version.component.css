@@ -58,7 +58,7 @@ li {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: url("./../../assets/bwFull.jpeg");
+  background: url("./../../../assets/bwFull.jpeg");
   background-position: center;
   background-size: cover;
 }
