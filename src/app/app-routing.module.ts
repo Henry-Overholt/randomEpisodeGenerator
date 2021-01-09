@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { RandomComponent } from './random/random.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
-import { ShowViewComponent } from './show-view/show-view.component';
-import { CollectionComponent } from './collection/collection.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { SearchCollectionsComponent } from './search-collections/search-collections.component';
-import { CustomChoiceComponent } from './custom-choice/custom-choice.component';
-import { TitleAnimationComponent } from './title-animation/title-animation.component';
-import { VersionComponent } from './version/version.component';
+import { HomeComponent } from './modules/home/home.component';
+import { RandomComponent } from './modules/random/random.component';
+import { SearchResultsComponent } from './modules/search-results/search-results.component';
+import { ShowViewComponent } from './modules/show-view/show-view.component';
+import { CollectionComponent } from './modules/collection/collection.component';
+import { MovieDetailsComponent } from './modules/movie-details/movie-details.component';
+import { SearchCollectionsComponent } from './modules/search-collections/search-collections.component';
+import { CustomChoiceComponent } from './modules/custom-choice/custom-choice.component';
+import { TitleAnimationComponent } from './modules/title-animation/title-animation.component';
+import { VersionComponent } from './modules/version/version.component';
 
 const routes: Routes = [
   {

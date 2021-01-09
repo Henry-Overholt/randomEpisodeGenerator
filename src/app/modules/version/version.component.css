@@ -45,6 +45,23 @@ ul {
 li {
   width: 100%;
 }
+.image-container-border {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, lightblue, orange);
+}
+.image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: url("./../../assets/bwFull.jpeg");
+  background-position: center;
+  background-size: cover;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;

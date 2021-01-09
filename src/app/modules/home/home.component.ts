@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './../services/api.service';
-import { MovieService } from './../services/movie.service';
-import { Shows } from '../shared/interfaces/shows';
+import { ApiService } from '../../shared/services/api.service';
+import { MovieService } from '../../shared/services/movie.service';
+import { Shows } from '../../shared/interfaces/shows';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 

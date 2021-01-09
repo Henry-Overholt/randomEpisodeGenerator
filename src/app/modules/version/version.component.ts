@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class VersionComponent implements OnInit {
   versions: any[] = [
     {
+      title: 'V 2.1.1',
+      release: 'December 2020',
+      items: ['Fixed Bugs from 2.1', 'Added Developer Info to version history'],
+    },
+    {
       title: 'V 2.1',
       release: 'December 2020',
       items: [

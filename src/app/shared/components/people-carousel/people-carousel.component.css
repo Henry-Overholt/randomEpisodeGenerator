@@ -1,0 +1,55 @@
+body {
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  position: relative;
+}
+.peopleContainer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+}
+.people {
+  height: 120px;
+  width: 80px;
+  border: 2px solid lightblue;
+  background: whitesmoke;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.people p {
+  text-align: center;
+}
+img {
+  height: 100%;
+}
+.titleCard {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  background: transparent;
+  height: 0%;
+  width: 100%;
+  color: transparent;
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+.people:hover .titleCard {
+  height: 100%;
+  width: 100%;
+  color: orange;
+  background: rgba(100, 100, 100, 0.555);
+}
