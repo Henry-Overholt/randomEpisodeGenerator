@@ -15,19 +15,11 @@
     <div class="spaceHolder" *ngIf="searchResults === undefined">
       <i class="fas fa-sync-alt" *ngIf="loading"></i>
     </div>
-    <div class="resultsContainer" *ngIf="searchResults">
-      <div class="results" *ngFor="let result of searchResults; index as i">
-        <img
-          src="{{ posterPath }}{{ result.poster_path }}"
-          title="{{ result.title }}"
-          alt=""
-          (click)="navigateToDetails(i)"
-          *ngIf="result.poster_path != null"
-        />
-        <p class="noImageText" *ngIf="result.poster_path === null">
-          {{ result.name }}
-        </p>
-      </div>
-    </div>
+    <randomly-poster-container
+      *ngIf="searchResults"
+      [titles]="searchResults"
+      [movieOrShow]="movieOrShow"
+      (titleClicked)="navigateToDetails($event)"
+    ></randomly-poster-container>
   </main>
 </body>

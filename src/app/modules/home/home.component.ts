@@ -75,9 +75,8 @@ export class HomeComponent implements OnInit {
     this.animation = false;
     console.log('Hey look the animation is over');
   }
-  handleClick(i: number): void {
+  handleClick(i): void {
     if (!this.movies) {
-      // this.apiService.setShow(i);
       this.router.navigate([`/random/${this.shows[i].id}`]);
     } else {
       this.movieService

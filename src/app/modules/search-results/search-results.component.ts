@@ -38,6 +38,7 @@ export class SearchResultsComponent implements OnInit {
     }
     this.movieService.getPopularMovie().subscribe((res) => {
       this.trendingMovies = res.results;
+      console.log('Movies', res.results);
       if (this.movieOrShow && this.searchKeyword === undefined) {
         this.searchResults = this.trendingMovies;
         this.search = 'Trending Movies';
@@ -45,6 +46,7 @@ export class SearchResultsComponent implements OnInit {
     });
     this.apiService.getPopularTV().subscribe((res) => {
       this.trendingShows = res.results;
+      console.log('Shows', res.results);
       if (!this.movieOrShow && this.searchKeyword === undefined) {
         this.searchResults = this.trendingShows;
         this.search = 'Trending Shows';

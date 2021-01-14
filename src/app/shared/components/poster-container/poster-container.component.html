@@ -1,0 +1,20 @@
+<div class="showContainer">
+  <div
+    class="title"
+    *ngFor="let title of titles; index as i"
+    [ngClass]="movies ? 'movieBorder' : 'showBorder'"
+  >
+    <img
+      *ngIf="title.poster_path"
+      class="poster"
+      [title]="title.title"
+      src="{{ posterPath }}{{ title.poster_path }}"
+      (click)="handleClick(i)"
+      alt="Image Not Available"
+    />
+    <div class="noImageText" *ngIf="title.poster_path === null">
+      <p *ngIf="movieOrShow">{{ title.title }}</p>
+      <p *ngIf="!movieOrShow">{{ title.name }}</p>
+    </div>
+  </div>
+</div>
