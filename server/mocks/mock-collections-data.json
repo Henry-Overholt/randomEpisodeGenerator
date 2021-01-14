@@ -1,0 +1,27 @@
+[
+    {
+        "collection-name" : "Test Collection 1",
+        "collection-ID" : 0,
+        "collection-type": "Admin",
+        "collection-tags" : ["Drama", "Comedy", "Action"],
+        "author-name" : "Henry Overholt",
+        "author-id" : 0,
+        "movies" : [
+            {
+                "title" : "Ironman",
+                "id" : 1,
+                "poster_path": ""
+            }
+        ],
+        "collection-likes" : 0,
+        "collection-comments" : [
+            {
+                "comment-author" : "John",
+                "comment-author-ID": 1,
+                "comment" : "All the Marvel Movies in One COllection how crazy!",
+                "timeStamp" : 16010588405,
+                "comment-ID" : "0-1-0"
+            }
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "userID": 0,
+        "username": "henryO",
+        "user-email":"henry@test.com",
+        "user-password":"thisIsTest",
+        "user-first-name": "Henry",
+        "user-last-name":"Overholt",
+        "user-type" :"Admin",
+        "user-favorite-shows" : [],
+        "user-favorite-collections" : []
+    }
+]
