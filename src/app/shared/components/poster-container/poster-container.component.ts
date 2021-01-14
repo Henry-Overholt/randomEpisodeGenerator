@@ -36,7 +36,6 @@ export class PosterContainerComponent implements OnInit {
     }
   }
   handleClick(i: number): void {
-    console.log(i);
     this.titleClicked.emit(i);
   }
 }

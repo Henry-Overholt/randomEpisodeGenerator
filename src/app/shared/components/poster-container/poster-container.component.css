@@ -9,17 +9,33 @@
   align-items: center;
   justify-content: center;
 }
-img {
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100px;
+  height: 150px;
+  overflow: hidden;
   margin: 10px;
   border: 3px solid transparent;
   border-radius: 20px;
+}
+img {
+  height: 100%;
 }
 .movieBorder {
   border-color: lightblue;
 }
 .showBorder {
   border-color: orange;
+}
+.noImageText {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.noImageText p {
+  text-align: center;
 }
 
 @media screen and (min-width: 718px) {
