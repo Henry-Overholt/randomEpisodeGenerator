@@ -1,0 +1,14 @@
+<main>
+  <div class="profile-container">
+    <randomly-image-container
+      *ngIf="person"
+      [url]="person.profile_path"
+      className="medium"
+      [name]="person.name"
+    ></randomly-image-container>
+    <div class="info-container" *ngIf="person">
+      <h1>{{ person.name }}</h1>
+      <p>{{ person.biography }}</p>
+    </div>
+  </div>
+</main>

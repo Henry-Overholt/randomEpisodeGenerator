@@ -2,10 +2,12 @@
   <i class="fas fa-chevron-circle-left" (click)="navigateToSearch()"></i>
   <div class="movieContainer" *ngIf="movie != undefined">
     <div class="imgContainer">
-      <img
-        src="{{ posterPath }}{{ movie.poster_path }}"
-        alt="{{ movie.title }}"
-      />
+      <randomly-image-container
+        *ngIf="movie"
+        [url]="movie.poster_path"
+        className="large"
+        [name]="movie.name"
+      ></randomly-image-container>
       <div id="score" [style.background]="color">
         <p title="{{ movie.vote_count }} votes">{{ movie.vote_average }}</p>
       </div>

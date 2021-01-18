@@ -10,6 +10,8 @@ import { SearchCollectionsComponent } from './modules/search-collections/search-
 import { CustomChoiceComponent } from './modules/custom-choice/custom-choice.component';
 import { TitleAnimationComponent } from './modules/title-animation/title-animation.component';
 import { VersionComponent } from './modules/version/version.component';
+import { StatsPageComponent } from './modules/stats-page/stats-page.component';
+import { PeopleComponent } from './modules/people/people.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: 'random/:id', component: RandomComponent },
+  { path: 'people/:id', component: PeopleComponent },
   { path: 'search-results', component: SearchResultsComponent },
   { path: 'search-collections', component: SearchCollectionsComponent },
   { path: 'show/:id', component: ShowViewComponent },
@@ -25,6 +28,7 @@ const routes: Routes = [
   { path: 'custom', component: CustomChoiceComponent },
   { path: 'welcome', component: TitleAnimationComponent },
   { path: 'version', component: VersionComponent },
+  { path: 'statistics', component: StatsPageComponent },
   { path: '**', component: TitleAnimationComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
 ];
