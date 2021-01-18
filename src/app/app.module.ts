@@ -22,6 +22,8 @@ import { PeopleCarouselComponent } from './shared/components/people-carousel/peo
 import { VersionComponent } from './modules/version/version.component';
 import { PosterContainerComponent } from './shared/components/poster-container/poster-container.component';
 import { StatsPageComponent } from './modules/stats-page/stats-page.component';
+import { PeopleComponent } from './modules/people/people.component';
+import { ImageContainerComponent } from './shared/components/image-container/image-container.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { StatsPageComponent } from './modules/stats-page/stats-page.component';
     VersionComponent,
     PosterContainerComponent,
     StatsPageComponent,
+    PeopleComponent,
+    ImageContainerComponent,
   ],
   imports: [
     BrowserModule,

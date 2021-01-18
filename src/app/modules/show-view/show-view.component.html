@@ -6,7 +6,12 @@
   ></app-button>
   <div class="showContainer" *ngIf="show != undefined">
     <div class="imgContainer">
-      <img src="{{ photoPath }}{{ show.poster_path }}" alt="" />
+      <randomly-image-container
+        *ngIf="show"
+        [url]="show.poster_path"
+        className="large"
+        [name]="show.name"
+      ></randomly-image-container>
       <div id="score" [style.background]="color">
         <p title="{{ show.vote_count }} votes">{{ show.vote_average }}</p>
       </div>

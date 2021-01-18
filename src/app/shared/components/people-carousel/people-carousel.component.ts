@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ApiService } from './../../services/api.service';
+import { PeopleService } from '../../services/people/people.service';
 
 @Component({
   selector: 'people-carousel',
@@ -11,17 +12,20 @@ export class PeopleCarouselComponent implements OnInit {
   @Input() arrayOfPeople: any[];
   posterPath: string;
   people: any[] = [];
-  constructor(private apiService: ApiService) {}
+  constructor(private peopleService: PeopleService, private router: Router) {}
 
   ngOnInit(): void {
-    this.posterPath = this.apiService.posterPath;
+    this.posterPath = this.peopleService.posterPath;
     this.getPeople();
   }
   getPeople() {
     this.arrayOfPeople.forEach((person) => {
-      this.apiService.getPeople(person.id).subscribe((res) => {
+      this.peopleService.getPeople(person.id).subscribe((res) => {
         this.people.push(res);
       });
     });
+  }
+  navigateToPerson(id: any) {
+    this.router.navigate([`people/${id}`]);
   }
 }

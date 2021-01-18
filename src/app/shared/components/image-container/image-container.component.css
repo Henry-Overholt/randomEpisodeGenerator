@@ -1,0 +1,24 @@
+#image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid lightblue;
+  border-radius: 10px;
+  overflow: hidden;
+  background: whitesmoke;
+}
+.small {
+  width: 100px;
+  height: 150px;
+}
+.medium {
+  width: 150px;
+  height: 225px;
+}
+.large {
+  width: 180px;
+  height: 275px;
+}
+img {
+  height: 100%;
+}

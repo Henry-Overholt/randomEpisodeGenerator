@@ -1,16 +1,17 @@
 <body>
   <div class="peopleContainer" *ngIf="people.length > 0">
-    <div class="people" *ngFor="let person of people; index as i">
-      <img
-        src="{{ posterPath }}{{ person.profile_path }}"
-        *ngIf="person.profile_path != null"
-        alt=""
-      />
-
-      <p *ngIf="person.profile_path === null">{{ person.name }}</p>
-      <div class="titleCard" *ngIf="person.profile_path != null">
-        <p>{{ person.name }}</p>
-      </div>
+    <div
+      class="people"
+      *ngFor="let person of people; index as i"
+      (click)="navigateToPerson(person.id)"
+    >
+      <randomly-image-container
+        *ngIf="person"
+        [url]="person.profile_path"
+        className="small"
+        [name]="person.name"
+      ></randomly-image-container>
+      <p *ngIf="person.profile_path != null">{{ person.name }}</p>
     </div>
   </div>
 </body>

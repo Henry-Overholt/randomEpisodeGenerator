@@ -1,0 +1,9 @@
+<div id="image-container" [class]="className">
+  <img
+    src="{{ posterPath }}{{ url }}"
+    [alt]="name"
+    [title]="name"
+    *ngIf="url != null"
+  />
+  <p *ngIf="url === null">{{ name }}</p>
+</div>
