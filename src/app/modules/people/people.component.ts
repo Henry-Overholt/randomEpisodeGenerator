@@ -10,7 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class PeopleComponent implements OnInit {
   id: any;
   person: any;
-  posterPath: string;
+  tvShows: any[];
+  movies: any[];
   constructor(
     private peopleService: PeopleService,
     private router: Router,
@@ -25,6 +26,6 @@ export class PeopleComponent implements OnInit {
         this.person = res;
       });
     });
-    this.posterPath = this.peopleService.posterPath;
   }
+  getAllInformation(): void {}
 }

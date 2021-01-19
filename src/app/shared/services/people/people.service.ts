@@ -15,4 +15,24 @@ export class PeopleService {
       `https://api.themoviedb.org/3/person/${id}?api_key=${this.apiKey}&language=en-US`
     );
   }
+  getTvCredits(id: string): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/person/${id}/tv_credits?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+  getMovieCredits(id: string): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+  getPeopleOfShow(id: string): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${this.apiKey}&language=en-US`
+    );
+  }
+  getPeopleOfFilm(id: string): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${this.apiKey}&language=en-US`
+    );
+  }
 }

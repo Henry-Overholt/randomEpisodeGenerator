@@ -1,4 +1,5 @@
-<body>
+<h3>{{ title }}</h3>
+<main>
   <div class="peopleContainer" *ngIf="people.length > 0">
     <div
       class="people"
@@ -14,4 +15,4 @@
       <p *ngIf="person.profile_path != null">{{ person.name }}</p>
     </div>
   </div>
-</body>
+</main>

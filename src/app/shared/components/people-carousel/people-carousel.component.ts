@@ -10,6 +10,7 @@ import { PeopleService } from '../../services/people/people.service';
 })
 export class PeopleCarouselComponent implements OnInit {
   @Input() arrayOfPeople: any[];
+  @Input() title: string;
   posterPath: string;
   people: any[] = [];
   constructor(private peopleService: PeopleService, private router: Router) {}

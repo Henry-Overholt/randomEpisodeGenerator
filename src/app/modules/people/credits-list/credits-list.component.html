@@ -1,0 +1,28 @@
+<main>
+  <app-button
+    *ngIf="typeOfCredits != 'tv'"
+    class="buttonComponent"
+    buttonTxt="Randomize all Movies"
+    (buttonClicked)="navigateToCollection()"
+  ></app-button>
+  <div class="credit" *ngFor="let credit of credits; index as i">
+    <randomly-image-container
+      [url]="credit.poster_path"
+      className="small"
+      [name]="credit.name"
+      (click)="navigateToDetails(credit.id)"
+    ></randomly-image-container>
+    <div class="info-container">
+      <h3>{{ credit.name }}</h3>
+      <p *ngIf="credit.character">
+        <span>Character : </span>{{ credit.character }}
+      </p>
+      <app-button
+        *ngIf="typeOfCredits === 'tv'"
+        class="buttonComponent"
+        buttonTxt="Random Episode"
+        (buttonClicked)="navigateToRandom(credit.id)"
+      ></app-button>
+    </div>
+  </div>
+</main>

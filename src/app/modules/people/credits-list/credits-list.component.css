@@ -1,0 +1,35 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+.credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  border-bottom: 2px solid whitesmoke;
+  padding: 3px;
+  margin-top: 15px;
+}
+.buttonComponent {
+  width: 90%;
+}
+.info-container {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+}
+h3 {
+  text-align: center;
+  color: orange;
+  padding-bottom: 5px;
+}
+p {
+  padding-bottom: 5px;
+}

@@ -1,14 +1,40 @@
 <main>
-  <div class="profile-container">
+  <div class="profile-container flex-column">
     <randomly-image-container
       *ngIf="person"
       [url]="person.profile_path"
       className="medium"
       [name]="person.name"
     ></randomly-image-container>
-    <div class="info-container" *ngIf="person">
+    <div class="info-container flex-column" *ngIf="person">
       <h1>{{ person.name }}</h1>
-      <p>{{ person.biography }}</p>
+      <p *ngIf="person.birthday">
+        <span>Birthday : </span>{{ person.birthday | date: "mediumDate" }}
+      </p>
+      <p *ngIf="person.deathday">
+        <span>Died : </span>{{ person.deathday | date: "mediumDate" }}
+      </p>
+      <p *ngIf="person.place_of_birth">
+        <span>Born In : </span>{{ person.place_of_birth }}
+      </p>
+      <div class="bio-container">
+        <p><span>Biography : </span>{{ person.biography }}</p>
+      </div>
     </div>
+  </div>
+
+  <div class="tv-credits" *ngIf="person">
+    <h2>TV Credits</h2>
+    <randomly-credits-list
+      typeOfCredits="tv"
+      [idOfActor]="person.id"
+    ></randomly-credits-list>
+  </div>
+  <div class="movie-credits" *ngIf="person">
+    <h2>Movie Credits</h2>
+    <randomly-credits-list
+      typeOfCredits="movie"
+      [idOfActor]="person.id"
+    ></randomly-credits-list>
   </div>
 </main>

@@ -1,0 +1,43 @@
+main {
+  font-family: "Raleway", sans-serif;
+}
+.profile-container {
+  margin-top: 20px;
+  width: 95%;
+}
+h1 {
+  color: orange;
+}
+h2 {
+  color: lightblue;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-container {
+  width: 90%;
+}
+.info-container p {
+  text-indent: 20px;
+}
+.bio-container {
+  max-height: 300px;
+  padding: 5px;
+  overflow: scroll;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+}
+.info-stat-container {
+  margin: 20px;
+  font-size: 17px;
+}
+.info-stat-container p {
+  text-align: center;
+}
+span {
+  color: lightblue;
+  font-weight: bolder;
+  padding-right: 10px;
+}

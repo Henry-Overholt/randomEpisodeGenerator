@@ -22,8 +22,8 @@
       </h3>
       <h3>Description</h3>
       <p class="description">{{ randomEpisode.overview }}</p>
-      <h3>Guest Stars</h3>
       <people-carousel
+        title="Guest Stars"
         class="people-carousel"
         *ngIf="randomEpisode.guest_stars.length > 0"
         [arrayOfPeople]="randomEpisode.guest_stars"
