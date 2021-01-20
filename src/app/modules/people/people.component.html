@@ -1,4 +1,4 @@
-<main>
+<main class="flex-column">
   <div class="profile-container flex-column">
     <randomly-image-container
       *ngIf="person"
@@ -22,15 +22,19 @@
       </div>
     </div>
   </div>
-
-  <div class="tv-credits" *ngIf="person">
+  <randomly-slider
+    leftChoice="TV Credits"
+    rightChoice="Movie Credits"
+    (onSlide)="toggleCredits()"
+  ></randomly-slider>
+  <div class="tv-credits flex-column" *ngIf="person && showOrMovie">
     <h2>TV Credits</h2>
     <randomly-credits-list
       typeOfCredits="tv"
       [idOfActor]="person.id"
     ></randomly-credits-list>
   </div>
-  <div class="movie-credits" *ngIf="person">
+  <div class="movie-credits flex-column" *ngIf="person && !showOrMovie">
     <h2>Movie Credits</h2>
     <randomly-credits-list
       typeOfCredits="movie"

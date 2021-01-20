@@ -12,6 +12,7 @@ export class PeopleComponent implements OnInit {
   person: any;
   tvShows: any[];
   movies: any[];
+  showOrMovie: boolean = true;
   constructor(
     private peopleService: PeopleService,
     private router: Router,
@@ -26,6 +27,9 @@ export class PeopleComponent implements OnInit {
         this.person = res;
       });
     });
+  }
+  toggleCredits(): void {
+    this.showOrMovie = !this.showOrMovie;
   }
   getAllInformation(): void {}
 }

@@ -1,5 +1,6 @@
 main {
   font-family: "Raleway", sans-serif;
+  animation: fadeIn 0.5s ease-in forwards;
 }
 .profile-container {
   margin-top: 20px;
@@ -40,4 +41,42 @@ span {
   color: lightblue;
   font-weight: bolder;
   padding-right: 10px;
+}
+.tv-credits {
+  position: relative;
+  animation: slideInLeft 0.25s linear forwards;
+}
+.movie-credits {
+  position: relative;
+  animation: slideInRight 0.25s linear forwards;
+}
+@keyframes slideInRight {
+  from {
+    filter: blur(10px);
+    transform: translateX(-100px);
+  }
+  to {
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    filter: blur(10px);
+    transform: translateX(100px);
+  }
+  to {
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    filter: blur(10px);
+    transform: translateY(10px);
+  }
+  to {
+    filter: blur(0);
+    transform: translateY(0);
+  }
 }

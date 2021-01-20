@@ -1,9 +1,11 @@
 <body>
-  <div class="sliderContainer" (click)="toggleToMovie()">
-    <h3>SHOWS</h3>
-    <h3>MOVIES</h3>
-    <div class="slider" [ngClass]="movies ? 'movie' : 'show'"></div>
-  </div>
+  <randomly-slider
+    leftChoice="SHOWS"
+    rightChoice="MOVIES"
+    [isFirst]="!movies"
+    (onSlide)="toggleToMovie()"
+  ></randomly-slider>
+
   <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
     <label for="search"> Search: </label>
     <input type="text" name="search" [placeholder]="placeholder" ngModel />
