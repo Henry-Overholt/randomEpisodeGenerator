@@ -25,11 +25,13 @@ main {
   align-items: center;
   margin-left: 10px;
 }
+
 h3 {
   text-align: center;
   color: orange;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 p {
   padding-bottom: 5px;
+  color: lightblue;
 }

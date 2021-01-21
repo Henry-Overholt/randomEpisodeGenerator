@@ -22,19 +22,15 @@ export class CreditsListComponent implements OnInit {
     //gets a persons TV credits
     if (this.typeOfCredits === 'tv') {
       this.peopleService.getTvCredits(this.idOfActor).subscribe((res) => {
-        console.log(res);
         this.credits = res.cast;
       });
     } else if (this.typeOfCredits === 'movie') {
       this.peopleService.getMovieCredits(this.idOfActor).subscribe((res) => {
-        console.log(res);
         this.credits = res.cast;
         this.credits.forEach((obj) => {
           obj.name = obj.title;
         });
       });
-    } else if (this.typeOfCredits === 'show') {
-    } else if (this.typeOfCredits === 'film') {
     }
   }
   navigateToCollection(): void {}

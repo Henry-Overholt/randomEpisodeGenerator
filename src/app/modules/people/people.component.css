@@ -23,12 +23,17 @@ h2 {
 .info-container p {
   text-indent: 20px;
 }
+p {
+  text-align: center;
+}
 .bio-container {
   max-height: 300px;
   padding: 5px;
   overflow: scroll;
-  border: 2px solid whitesmoke;
   border-radius: 10px;
+}
+.bio-container p {
+  text-align: initial;
 }
 .info-stat-container {
   margin: 20px;
@@ -50,6 +55,7 @@ span {
   position: relative;
   animation: slideInRight 0.25s linear forwards;
 }
+
 @keyframes slideInRight {
   from {
     filter: blur(10px);
