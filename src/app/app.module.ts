@@ -24,6 +24,8 @@ import { PosterContainerComponent } from './shared/components/poster-container/p
 import { StatsPageComponent } from './modules/stats-page/stats-page.component';
 import { PeopleComponent } from './modules/people/people.component';
 import { ImageContainerComponent } from './shared/components/image-container/image-container.component';
+import { CreditsListComponent } from './modules/people/credits-list/credits-list.component';
+import { SliderComponent } from './shared/components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { ImageContainerComponent } from './shared/components/image-container/ima
     StatsPageComponent,
     PeopleComponent,
     ImageContainerComponent,
+    CreditsListComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,

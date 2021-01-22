@@ -1,0 +1,5 @@
+<div class="sliderContainer" (click)="handleClick()">
+  <h3>{{ leftChoice }}</h3>
+  <h3>{{ rightChoice }}</h3>
+  <div class="slider" [ngClass]="isFirst ? 'left' : 'right'"></div>
+</div>
