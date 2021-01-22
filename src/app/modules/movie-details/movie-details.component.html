@@ -18,6 +18,8 @@
       <p>{{ movie.overview }}</p>
     </div>
   </div>
+  <people-carousel typeOfId="Movie" title="Cast" [id]="id"></people-carousel>
+  <people-carousel typeOfId="Movie" title="Crew" [id]="id"></people-carousel>
   <div class="videosContainer" *ngIf="showVideos">
     <h3>{{ videoString }}</h3>
     <div class="videoContainers">

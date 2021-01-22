@@ -33,6 +33,10 @@ button {
 .imgContainer {
   position: relative;
 }
+people-carousel {
+  margin-top: 20px;
+  width: 95%;
+}
 img {
   border: 3px solid lightblue;
   border-radius: 20px;
