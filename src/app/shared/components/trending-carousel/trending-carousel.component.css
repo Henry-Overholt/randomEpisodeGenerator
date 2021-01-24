@@ -42,6 +42,6 @@ h2 {
   main {
     width: 700px;
     border-radius: 20px;
-    border: 5px solid lightblue;
+    border: 5px solid rgba(255, 254, 254, 0.253);
   }
 }

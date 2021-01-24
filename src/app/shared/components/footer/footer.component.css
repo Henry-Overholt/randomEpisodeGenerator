@@ -1,7 +1,6 @@
 footer {
   background: linear-gradient(to bottom right, #29489e, #9c28b0);
   padding: 10px 0px;
-
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,9 @@ footer {
 }
 img {
   width: 30px;
+}
+nav {
+  width: 100%;
 }
 .henryO_logo {
   width: 20px;
@@ -24,22 +26,18 @@ img {
   align-items: center;
   margin: 3px;
 }
-nav {
-  width: 100%;
-}
+
 ul {
-  width: 100%;
   list-style: none;
 }
 li {
   width: 200px;
   height: 20px;
-}
-li:hover {
-  color: orange;
-}
-a {
   color: lightblue;
+}
+
+a {
+  color: rgba(255, 254, 254, 0.253);
   text-decoration: none;
   font-size: 15px;
 
@@ -49,6 +47,9 @@ a {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+a:hover {
+  color: #44cf6c;
 }
 
 .logos {
@@ -110,8 +111,14 @@ p {
   .logos {
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  nav {
     width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .logoContainer {
     justify-content: space-between;
@@ -130,8 +137,5 @@ p {
   }
   a {
     margin: 2.5px 0px;
-  }
-  a:hover {
-    color: #44cf6c;
   }
 }

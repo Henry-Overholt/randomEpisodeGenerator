@@ -7,97 +7,10 @@ body {
   font-family: "Raleway", sans-serif;
   animation: loading 1.5s ease-in-out forwards;
 }
-.searchResultsContainer {
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-.sliderContainer {
-  width: 80%;
-  height: 40px;
-  border: 1px solid grey;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 15px 0px;
-}
-.slider {
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  background: orange;
-  transition: all 0.3s ease-in-out;
-}
-.show {
-  background: orange;
-  left: 0;
-}
-.movie {
-  left: 50%;
-  background: lightblue;
-}
-.sliderContainer h3 {
-  /* padding: 0px 20px; */
-  z-index: 1;
-}
-img {
-  height: 100%;
-}
-.searchResult {
-  width: 100px;
-  height: 150px;
-  border: 3px solid lightblue;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 10px;
+h3 {
+  color: #44cf6c;
 }
 
-form {
-  margin: 20px 0px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-label {
-  text-indent: -1000px;
-}
-input {
-  outline: none;
-  border: 2px solid lightblue;
-  height: 35px;
-  font-size: 20px;
-  color: grey;
-  width: 80%;
-  border-radius: 5px;
-}
-button {
-  height: 40px;
-  color: grey;
-  background: lightblue;
-  font-size: 18px;
-  outline: none;
-  border: 2px solid lightblue;
-  border-radius: 5px;
-  margin-top: 5px;
-  width: 80%;
-  text-indent: 5px;
-}
-.noImageText {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background: rgb(200, 200, 200);
-  text-align: center;
-}
 @keyframes loading {
   form {
     opacity: 0;
@@ -111,58 +24,8 @@ button {
   }
 }
 @media screen and (min-width: 718px) {
-  body {
-    background: none;
-  }
-  form {
-    width: 600px;
-    flex-direction: row;
-    padding: 10px;
-    border-radius: 20px;
-  }
-  input {
-    width: 70%;
-    text-indent: 5px;
-    border-color: lightblue;
-  }
-  button {
-    margin: 0px 5px;
-    width: 30%;
-    border-color: lightblue;
-    background: lightblue;
-  }
-  button:hover {
-    color: white;
-    transform: scale(1.02);
-    transition: all 0.25s ease-in-out;
-  }
-  .sliderContainer {
-    width: 400px;
-    height: 45px;
-    background: white;
-    border-width: 3px;
-  }
-  .searchResultsContainer {
-    border: 5px solid lightblue;
-    border-radius: 20px;
-    width: 700px;
-    background: white;
-    margin-bottom: 40px;
-  }
   h3 {
     font-size: 30px;
-    color: grey;
     margin: 10px 0px;
-  }
-  .searchResult:hover {
-    animation: skew 0.5s ease-in-out forwards;
-  }
-  @keyframes skew {
-    from {
-      transform: scale(1.02) rotate(2deg);
-    }
-    to {
-      transform: scale(1.02);
-    }
   }
 }

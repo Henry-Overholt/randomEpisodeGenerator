@@ -49,6 +49,9 @@ export class SearchResultsComponent implements OnInit {
       console.log('Shows', res.results);
       if (!this.movieOrShow && this.searchKeyword === undefined) {
         this.searchResults = this.trendingShows;
+        this.searchResults.forEach((result) => {
+          result.title = result.name;
+        });
         this.search = 'Trending Shows';
       }
     });
@@ -62,6 +65,9 @@ export class SearchResultsComponent implements OnInit {
       if (!this.movieOrShow) {
         this.apiService.getMovieIds(search).subscribe((res) => {
           this.searchResults = res.results;
+          this.searchResults.forEach((result) => {
+            result.title = result.name;
+          });
           this.apiService.setSearchResults(res.results);
         });
       } else {

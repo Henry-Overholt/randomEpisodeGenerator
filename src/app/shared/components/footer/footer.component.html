@@ -1,7 +1,8 @@
 <footer>
   <div class="containers">
     <nav>
-      <ul>
+      <ul id="site-nav">
+        <li>Site Navigation</li>
         <li>
           <a routerLink="/home">Home</a>
         </li>
@@ -11,21 +12,28 @@
         <li>
           <a routerLink="/custom">Custom Choices</a>
         </li>
+      </ul>
+      <ul id="about-nav">
+        <li>About</li>
         <li><a routerLink="/version">Development</a></li>
+        <li>
+          <a href="https://www.themoviedb.org/?language=en-US" target="_blank"
+            >TMdB</a
+          >
+        </li>
       </ul>
     </nav>
-    <div class="logos">
-      <div class="logoContainer">
-        <p>Powered by :</p>
-        <img
-          (click)="goToLink(0)"
-          src="./../../assets/blue_square_2.svg"
-          alt=""
-        />
-      </div>
+  </div>
+  <div class="logos">
+    <div class="logoContainer">
+      <p>Powered by :</p>
+      <img
+        (click)="goToLink(0)"
+        src="./../../assets/blue_square_2.svg"
+        alt=""
+      />
     </div>
   </div>
-
   <p id="disclaimer">
     This product uses the TMDb API but is not endorsed or certified by TMDb
   </p>

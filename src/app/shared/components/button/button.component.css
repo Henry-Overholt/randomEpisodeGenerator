@@ -1,32 +1,57 @@
 button {
   width: 100%;
   height: 50px;
-  background: white;
-  border: 3px solid orange;
+  background: transparent;
   border-radius: 50px;
-  border: 4px solid lightblue;
+  border: 4px solid #44cf6c;
   outline: none;
   animation: pulse 2s ease-in-out infinite;
 }
 p {
   background-image: linear-gradient(
     to right,
-    lightblue,
-    orange,
-    grey,
-    lightblue,
-    orange
+    #44cf6c,
+    #44cf6c,
+    #44cf6c,
+    #44cf6c,
+    #9c28b0,
+    #44cf6c,
+    #44cf6c,
+    #29489e,
+    #44cf6c,
+    #44cf6c,
+    #9c28b0,
+    #44cf6c,
+    #44cf6c,
+    #29489e,
+    #44cf6c,
+    #44cf6c,
+    #44cf6c,
+    #44cf6c
   );
   color: transparent;
   background-clip: text;
   background-size: 400%;
   background-position: left;
   font-size: 20px;
-  animation: animate-grad 4s ease-in-out alternate infinite;
+  animation: animate-grad 6s ease-in-out alternate infinite;
 }
 button:hover {
-  animation: none;
   transform: scale(1.02);
+  background-image: linear-gradient(
+    to right,
+    #44cf6c,
+    #9c28b0,
+    #29489e,
+    #44cf6c
+  );
+  background-size: 500%;
+  background-position: left;
+  animation: animate-grad 4s ease-in-out alternate infinite;
+}
+button:hover > p {
+  background-image: none;
+  color: rgba(255, 254, 254, 0.253);
 }
 @keyframes pulse {
   0% {
@@ -45,5 +70,10 @@ button:hover {
   }
   100% {
     background-position: right;
+  }
+}
+@media screen and (min-width: 718px) {
+  button {
+    width: 400px;
   }
 }

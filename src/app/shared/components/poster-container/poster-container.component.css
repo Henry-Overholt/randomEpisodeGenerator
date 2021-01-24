@@ -20,27 +20,10 @@
   border: 3px solid #44cf6c;
   border-radius: 20px;
 }
-img {
-  height: 100%;
-}
-.movieBorder {
-  border-color: lightblue;
-}
-.showBorder {
-  border-color: orange;
-}
-.noImageText {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.noImageText p {
-  text-align: center;
-}
 
 @media screen and (min-width: 718px) {
   .showContainer {
-    border: 5px solid lightblue;
+    border: 5px solid rgba(255, 254, 254, 0.253);
     border-radius: 20px;
     width: 700px;
     background: none;

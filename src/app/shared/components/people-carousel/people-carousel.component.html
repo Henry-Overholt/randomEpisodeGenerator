@@ -13,8 +13,12 @@
         borderColor="lightblue"
         [name]="person.name"
       ></randomly-image-container>
-      <p *ngIf="person.profile_path != null">{{ person.name }}</p>
-      <p *ngIf="title.toLowerCase() === 'crew'">{{ person.job }}</p>
+      <p *ngIf="person.profile_path != null" id="personName">
+        {{ person.name }}
+      </p>
+      <p *ngIf="title.toLowerCase() === 'crew'" id="personJob">
+        {{ person.job }}
+      </p>
     </div>
   </div>
 </main>

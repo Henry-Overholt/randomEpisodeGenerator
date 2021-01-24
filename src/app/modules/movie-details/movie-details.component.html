@@ -1,11 +1,11 @@
 <body>
-  <i class="fas fa-chevron-circle-left" (click)="navigateToSearch()"></i>
   <div class="movieContainer" *ngIf="movie != undefined">
     <div class="imgContainer">
       <randomly-image-container
         *ngIf="movie"
         [url]="movie.poster_path"
         className="large"
+        borderColor="#44cf6c"
         [name]="movie.name"
       ></randomly-image-container>
       <div id="score" [style.background]="color">
@@ -16,11 +16,26 @@
       <h2>{{ movie.title }}</h2>
       <button (click)="addToCollection()">{{ buttonText }}</button>
       <p>{{ movie.overview }}</p>
+      <p>
+        Runtime : <span>{{ movie.runtime }}</span> Minutes
+      </p>
     </div>
   </div>
-  <people-carousel typeOfId="Movie" title="Cast" [id]="id"></people-carousel>
-  <people-carousel typeOfId="Movie" title="Crew" [id]="id"></people-carousel>
-  <div class="videosContainer" *ngIf="showVideos">
+  <div class="peopleContainer">
+    <people-carousel
+      class="peopleCarousel"
+      typeOfId="Movie"
+      title="Cast"
+      [id]="id"
+    ></people-carousel>
+    <people-carousel
+      class="peopleCarousel"
+      typeOfId="Movie"
+      title="Crew"
+      [id]="id"
+    ></people-carousel>
+  </div>
+  <!-- <div class="videosContainer" *ngIf="showVideos">
     <h3>{{ videoString }}</h3>
     <div class="videoContainers">
       <youtube-player
@@ -33,7 +48,7 @@
       >
       </youtube-player>
     </div>
-  </div>
+  </div> -->
   <div class="listContainer" [ngClass]="seeCollection ? 'open' : 'close'">
     <i class="fas fa-times-circle" (click)="closeCollectionView()"></i>
     <app-button

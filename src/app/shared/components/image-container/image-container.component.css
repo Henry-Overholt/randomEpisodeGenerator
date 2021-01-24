@@ -5,7 +5,7 @@
   border-style: solid;
   border-radius: 10px;
   overflow: hidden;
-  background: none;
+  background: rgba(255, 254, 254, 0.253);
 }
 .small {
   width: 100px;
@@ -27,5 +27,5 @@ img {
 }
 p {
   text-align: center;
-  color: #29489e;
+  color: #44cf6c;
 }

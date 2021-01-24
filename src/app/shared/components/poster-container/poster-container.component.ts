@@ -19,7 +19,7 @@ export class PosterContainerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.titles);
+    console.log('poster container', this.titles);
     this.setDefaultValues();
   }
   setDefaultValues(): void {

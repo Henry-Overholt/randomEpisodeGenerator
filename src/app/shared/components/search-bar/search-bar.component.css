@@ -23,13 +23,12 @@ input {
 }
 button {
   height: 40px;
-  color: grey;
+  color: whitesmoke;
   margin-top: 10px;
   font-size: 18px;
   outline: none;
   background: #29489e;
-  border: 2px solid #29489e;
-  color: whitesmoke;
+  border: 2px solid rgba(255, 254, 254, 0.253);
   border-radius: 5px;
   width: 100%;
 }
@@ -47,6 +46,7 @@ button:hover {
   }
   button {
     margin: 0;
+    color: rgba(255, 254, 254, 0.253);
     width: 40%;
   }
   input {

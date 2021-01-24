@@ -51,7 +51,7 @@ img {
   margin-top: 10px;
 }
 span {
-  color: orange;
+  color: #44cf6c;
 }
 .description {
   text-indent: 10px;
@@ -78,6 +78,12 @@ span {
   width: 50px;
   border: none;
 }
+.buttonComponent {
+  width: 90%;
+}
+.peopleContainer {
+  width: 90%;
+}
 people-carousel {
   margin-top: 20px;
   width: 95%;
@@ -100,13 +106,16 @@ people-carousel {
 @media screen and (min-width: 718px) {
   body {
     height: 90vh;
-    background: linear-gradient(
-      to bottom,
-      orange 50%,
-      lightblue 50%,
-      lightblue 52%,
-      white 52%
-    );
+  }
+  .buttonComponent {
+    width: 400px;
+  }
+  .peopleContainer {
+    margin-top: 20px;
+    width: 600px;
+    background: rgba(255, 254, 254, 0.253);
+    padding: 10px;
+    border-radius: 20px;
   }
   button {
     border: 5px solid lightblue;
@@ -114,13 +123,13 @@ people-carousel {
     font-size: 25px;
   }
   .showContainer {
-    margin-top: 50px;
+    margin-top: 30px;
     flex-direction: row;
     justify-content: space-evenly;
     width: 600px;
-    border: 5px solid lightblue;
+    border: 5px solid#44cf6c;
     border-radius: 20px;
-    background: white;
+    background: rgba(255, 254, 254, 0.253);
     padding: 10px;
   }
   .showInfo {
@@ -133,10 +142,13 @@ people-carousel {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: white;
-    border: 5px solid lightblue;
+    background: rgba(255, 254, 254, 0.253);
+
     padding: 10px;
     border-radius: 20px;
+  }
+  .videosContainer h3 {
+    color: #44cf6c;
   }
 
   .videoContainers {

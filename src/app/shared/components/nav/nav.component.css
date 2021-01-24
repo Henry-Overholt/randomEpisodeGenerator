@@ -11,7 +11,7 @@ body {
 nav {
   width: 60%;
   height: 100%;
-  background: linear-gradient(to bottom, whitesmoke 25%, lightblue);
+  background: linear-gradient(to top left, #9c28b0, #29489e);
   font-family: "Raleway";
 }
 main {
@@ -23,7 +23,7 @@ ul {
 }
 li {
   height: 30px;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid rgba(255, 254, 254, 0.253);
   padding: 10px 5px;
   margin: 0px 10px;
   display: flex;
@@ -33,12 +33,15 @@ li {
 }
 
 a {
-  color: black;
+  color: rgba(255, 254, 254, 0.253);
   text-decoration: none;
   text-align: center;
 }
 .active {
-  background: lightblue;
+  border-color: #44cf6c;
+}
+.active > a {
+  color: #44cf6c;
 }
 .fa-times {
   width: 100%;
@@ -49,7 +52,7 @@ a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: grey;
+  color: rgba(255, 254, 254, 0.253);
   transition: all 0.25s ease-in;
 }
 @keyframes growFade {
@@ -67,10 +70,13 @@ a {
     width: 70%;
   }
   li:hover {
-    border-color: orange;
+    border-color: #44cf6c;
+  }
+  li:hover > a {
+    color: #44cf6c;
   }
   .fa-times {
-    color: grey;
+    color: rgba(255, 254, 254, 0.253);
   }
   .fa-times:hover {
     color: orange;

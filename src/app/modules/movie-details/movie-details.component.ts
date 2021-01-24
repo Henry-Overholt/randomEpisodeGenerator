@@ -33,6 +33,7 @@ export class MovieDetailsComponent implements OnInit {
       this.id = param.id;
       this.movieService.getMovie(this.id).subscribe((res) => {
         this.movie = res;
+        console.log(this.movie);
         this.getVideos(this.movie.id);
         this.setScore(this.movie.vote_average);
       });

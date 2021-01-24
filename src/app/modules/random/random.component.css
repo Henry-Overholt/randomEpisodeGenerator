@@ -11,12 +11,12 @@ body {
   animation: fadeIn 0.5s ease-in-out forwards;
 }
 .buttonComponent {
-  width: 100%;
+  width: 90%;
   margin: 20px 0px;
 }
 
 .episodeContainer {
-  background: white;
+  background: none;
   border-radius: 20px;
   min-height: 600px;
   padding: 3px;
@@ -47,6 +47,7 @@ img {
   height: 150px;
   border-radius: 10px;
   margin: 10px 0px;
+  box-shadow: 0px 0px 20px 5px rgba(255, 254, 254, 0.253);
 }
 h2 {
   text-align: center;
@@ -61,7 +62,7 @@ h3 {
 }
 i {
   text-align: center;
-  color: lightblue;
+  color: rgba(255, 254, 254, 0.253);
   font-size: 100px;
   animation: spin 1s linear infinite;
 }
@@ -83,7 +84,7 @@ i {
   justify-content: center;
   width: 90%;
   height: 60px;
-  border: 2px solid whitesmoke;
+  border: 2px solid rgba(255, 254, 254, 0.253);
   border-radius: 20px;
 }
 .fa-info-circle {
@@ -92,7 +93,7 @@ i {
   font-size: 40px;
 }
 .fa-info-circle:hover {
-  color: orange;
+  color: #44cf6c;
 }
 .crew {
   text-align: center;
@@ -139,22 +140,12 @@ i {
 @media screen and (min-width: 718px) {
   body {
     min-height: 90vh;
-    background: linear-gradient(
-      to bottom,
-      orange 400px,
-      lightblue 400px,
-      lightblue 420px,
-      white 420px
-    );
   }
   .linksContainer {
     width: 50%;
   }
-  button {
-    border: 5px solid lightblue;
-    width: 600px;
-    font-size: 25px;
-    height: 50px;
+  .buttonComponent {
+    width: 400px;
   }
   .episodeContainer {
     display: flex;
@@ -162,8 +153,8 @@ i {
     width: 600px;
     border-width: 5px;
     border-radius: 20px;
-    background: white;
-    border: 5px solid lightblue;
+    background: rgba(255, 254, 254, 0.253);
+    border: 5px solid #44cf6c;
   }
   .people-carousel {
     width: 70%;
@@ -176,6 +167,7 @@ i {
   }
   img {
     height: 200px;
+    box-shadow: 0px 0px 20px 5px rgba(255, 254, 254, 0.253);
   }
   i {
     width: 100%;
