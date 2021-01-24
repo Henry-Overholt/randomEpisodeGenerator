@@ -26,6 +26,12 @@ import { PeopleComponent } from './modules/people/people.component';
 import { ImageContainerComponent } from './shared/components/image-container/image-container.component';
 import { CreditsListComponent } from './modules/people/credits-list/credits-list.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
+import { BorderCardComponent } from './shared/components/border-card/border-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
+import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
+import { TrendingCarouselComponent } from './shared/components/trending-carousel/trending-carousel.component';
+import { CustomCollectionContainerComponent } from './modules/movie-details/custom-collection-container/custom-collection-container.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +58,10 @@ import { SliderComponent } from './shared/components/slider/slider.component';
     ImageContainerComponent,
     CreditsListComponent,
     SliderComponent,
+    BorderCardComponent,
+    SearchBarComponent,
+    TrendingCarouselComponent,
+    CustomCollectionContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +69,8 @@ import { SliderComponent } from './shared/components/slider/slider.component';
     HttpClientModule,
     FormsModule,
     YouTubePlayerModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

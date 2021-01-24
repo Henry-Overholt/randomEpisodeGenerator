@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin: 20px 0px;
+  background: white;
+}
+@media screen and (min-width: 718px) {
+  body {
+    border-radius: 20px;
+    width: 700px;
+    border: 5px solid lightblue;
+  }
+}

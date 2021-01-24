@@ -6,11 +6,11 @@
     (onSlide)="toggleToMovie()"
   ></randomly-slider>
 
-  <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
-    <label for="search"> Search: </label>
-    <input type="text" name="search" [placeholder]="placeholder" ngModel />
-    <button>Search</button>
-  </form>
+  <randomly-search-bar
+    [placeholder]="placeholder"
+    buttonTxt="Search"
+    (search)="handleSearch($event)"
+  ></randomly-search-bar>
 
   <h3>{{ title }}</h3>
 
@@ -20,6 +20,7 @@
     [movieOrShow]="movies"
     (titleClicked)="handleClick($event)"
   ></randomly-poster-container>
+
   <randomly-poster-container
     *ngIf="movies"
     [titles]="collections"
@@ -27,32 +28,29 @@
     (titleClicked)="handleClick($event)"
   ></randomly-poster-container>
 
-  <form
-    id="searchCollection"
-    #searchCollectionForm="ngForm"
+  <randomly-search-bar
+    placeholder="Search Movie Collections"
+    buttonTxt="Search Collections"
+    (search)="searchCollection($event)"
+  ></randomly-search-bar>
+
+  <randomly-trending-carousel
+    *ngIf="!movies"
+    type="show"
+    title="Shows"
+    color="lightblue"
+  ></randomly-trending-carousel>
+
+  <randomly-trending-carousel
     *ngIf="movies"
-    (ngSubmit)="searchCollection(searchCollectionForm)"
-  >
-    <label for="searchCollection">Search Collections</label>
-    <input
-      type="text"
-      placeholder="Search Movie Collections"
-      name="searchCollection"
-      ngModel
-    />
-    <button>Search Collections</button>
-  </form>
-  <h3 *ngIf="!movies">Trending Shows</h3>
-  <h3 *ngIf="movies">Trending Movies</h3>
-  <div class="popularContainer" *ngIf="popularItems != undefined">
-    <div class="item" *ngFor="let item of popularItems; index as i">
-      <p>{{ i + 1 }}</p>
-      <img
-        [ngClass]="movies ? 'showBorder' : 'movieBorder'"
-        src="{{ posterPath }}{{ item.poster_path }}"
-        (click)="seeDetails(i)"
-        alt=""
-      />
-    </div>
-  </div>
+    type="movie"
+    title="Movies"
+    color="lightblue"
+  ></randomly-trending-carousel>
+
+  <randomly-trending-carousel
+    type="people"
+    title="People"
+    color="lightblue"
+  ></randomly-trending-carousel>
 </body>

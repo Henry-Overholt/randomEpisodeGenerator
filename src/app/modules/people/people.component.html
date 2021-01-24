@@ -3,7 +3,8 @@
     <randomly-image-container
       *ngIf="person"
       [url]="person.profile_path"
-      className="medium"
+      className="large"
+      borderColor="#44cf6c"
       [name]="person.name"
     ></randomly-image-container>
     <div class="info-container flex-column" *ngIf="person">
@@ -22,23 +23,23 @@
       </div>
     </div>
   </div>
-  <randomly-slider
-    leftChoice="TV Credits"
-    rightChoice="Movie Credits"
-    (onSlide)="toggleCredits()"
-  ></randomly-slider>
-  <div class="tv-credits flex-column" *ngIf="person && showOrMovie">
-    <h2>TV Credits</h2>
-    <randomly-credits-list
-      typeOfCredits="tv"
-      [idOfActor]="person.id"
-    ></randomly-credits-list>
-  </div>
-  <div class="movie-credits flex-column" *ngIf="person && !showOrMovie">
-    <h2>Movie Credits</h2>
-    <randomly-credits-list
-      typeOfCredits="movie"
-      [idOfActor]="person.id"
-    ></randomly-credits-list>
-  </div>
+
+  <mat-tab-group *ngIf="person" mat-align-tabs="center" dynamicHeight>
+    <mat-tab>
+      <ng-template mat-tab-label><h2>TV Credits</h2></ng-template>
+      <randomly-credits-list
+        typeOfCredits="tv"
+        borderColor="orange"
+        [idOfActor]="person.id"
+      ></randomly-credits-list>
+    </mat-tab>
+    <mat-tab label="Movie Credits">
+      <ng-template mat-tab-label><h2>Movie Credits</h2></ng-template>
+      <randomly-credits-list
+        typeOfCredits="movie"
+        borderColor="lightblue"
+        [idOfActor]="person.id"
+      ></randomly-credits-list>
+    </mat-tab>
+  </mat-tab-group>
 </main>

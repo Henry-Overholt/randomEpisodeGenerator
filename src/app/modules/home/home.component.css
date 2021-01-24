@@ -9,138 +9,12 @@ body {
   transition: all 1.75s ease-in-out;
   animation: fadeIn 1.5s ease-in-out forwards;
 }
-form {
-  margin: 20px 0px;
-  padding: 5px;
-  background: white;
-  border-radius: 15px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-label {
-  text-indent: -1000px;
-}
-input {
-  width: 80%;
-  outline: none;
-  border: 2px solid lightblue;
-  height: 35px;
-  font-size: 20px;
-  color: grey;
-  border-radius: 5px;
-  margin-right: 5px;
-  text-indent: 5px;
-}
-.sliderContainer {
-  width: 80%;
-  height: 40px;
-  border: 1px solid grey;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 15px 0px;
-}
-.slider {
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  background: orange;
-  transition: all 0.3s ease-in-out;
-}
-.show {
-  background: orange;
-  left: 0;
-}
-.movie {
-  left: 50%;
-  background: lightblue;
-}
-.sliderContainer h3 {
-  /* padding: 0px 20px; */
-  z-index: 1;
-}
-
-button {
-  height: 40px;
-  color: grey;
-  margin-top: 10px;
-  font-size: 18px;
-  outline: none;
-  background: lightblue;
-  border: 2px solid lightblue;
-  border-radius: 5px;
-  width: 80%;
-}
-.showFill {
-  background: lightblue;
-  border: 2px solid lightblue;
-}
-.movieFill {
-  background: orange;
-  border: 2px solid orange;
-}
-img {
-  width: 100px;
-  margin: 10px;
-  border: 3px solid transparent;
-  border-radius: 20px;
-}
-.movieBorder {
-  border-color: orange;
-}
-.showBorder {
-  border-color: lightblue;
-}
 
 h3 {
-  color: grey;
+  color: #44cf6c;
   text-align: center;
 }
-#searchCollection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-}
-#searchCollection button {
-  width: 92.5%;
-  background: lightblue;
-  border-color: lightblue;
-  margin: 5px 0px;
-}
-#searchCollection input {
-  width: 90%;
-  margin: 0;
-  border-color: lightblue;
-}
-.popularContainer {
-  width: 90%;
-  overflow: scroll;
-  display: flex;
-  align-items: center;
-  margin: 10px 0px 30px 0px;
-}
-.item {
-  position: relative;
-}
-.item p {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  background: lightblue;
-  position: absolute;
-}
+
 #title-animation {
   z-index: 1;
   opacity: 1;
@@ -148,6 +22,9 @@ h3 {
   height: 100%;
   position: absolute;
   animation: fadeOut 5s linear forwards;
+}
+randomly-trending-carousel {
+  margin-bottom: 20px;
 }
 @keyframes fadeIn {
   from {
@@ -175,106 +52,14 @@ h3 {
 }
 @media screen and (min-width: 718px) {
   body {
-    transition: all 1s ease-in-out;
-    overflow: scroll;
-    background-position: fixed;
-    background: linear-gradient(
-      to bottom,
-      orange 450px,
-      lightblue 450px,
-      lightblue 480px,
-      white 480px
-    );
-  }
-  .movieBackground {
-    background: linear-gradient(
-      to bottom,
-      lightblue 450px,
-      orange 450px,
-      orange 480px,
-      white 480px
-    );
-  }
-  .showBackground {
-  }
-
-  form {
-    width: 600px;
     background: none;
-    padding: 10px;
-    flex-direction: row;
-
-    border-radius: 20px;
-  }
-  form input {
-    width: 70%;
-  }
-  form button {
-    margin: 0;
-    width: 30%;
-  }
-  form button:hover {
-    color: white;
-
-    transform: scale(1.02);
-    transition: all 0.25s ease-in-out;
-  }
-  .showContainer {
-    border: 5px solid lightblue;
-    border-radius: 20px;
-    width: 700px;
-    background: white;
-    margin-bottom: 20px;
-  }
-  .popularContainer {
-    width: 700px;
-    border: 5px solid lightblue;
-    padding: 10px;
-    border-radius: 20px;
-    margin-bottom: 100px;
-  }
-  .movieBorderColor {
-    border-color: orange;
-  }
-  .showBorderColor {
-    border-color: lightblue;
   }
 
   h3 {
     font-size: 30px;
     margin: 10px 0px;
   }
-  .sliderContainer {
-    width: 400px;
-    height: 45px;
-    background: white;
-    border-width: 3px;
-  }
 
-  #searchCollection {
-    width: 600px;
-    border: none;
-    flex-direction: row;
-  }
-  #searchCollection button {
-    width: 30%;
-    margin: 5px 3px;
-    box-shadow: 0px;
-    outline: none;
-  }
-  #searchCollection button:hover {
-    background: orange;
-    color: lightblue;
-    border-color: orange;
-    transition: all 0.25s ease-in-out;
-  }
-  #searchCollection input {
-    width: 70%;
-  }
-  .shows:hover,
-  .item:hover {
-    animation: skew 0.5s ease-in-out forwards;
-  }
   @keyframes skew {
     from {
       transform: scale(1.02) rotate(2deg);

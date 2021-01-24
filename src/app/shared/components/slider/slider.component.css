@@ -1,7 +1,7 @@
 .sliderContainer {
   width: 300px;
   height: 45px;
-  border: 1px solid grey;
+  border: 2px solid #44cf6c;
   position: relative;
   display: flex;
   align-items: center;
@@ -9,25 +9,32 @@
   border-radius: 15px;
   overflow: hidden;
   margin: 15px 0px;
-  background: white;
+  background: rgba(255, 254, 254, 0.253);
 }
 .slider {
   position: absolute;
   height: 100%;
   width: 50%;
-  background: orange;
+  background: #44cf6c;
   transition: all 0.3s ease-in-out;
+}
+h3 {
+  background-image: linear-gradient(to right, #9c28b0, #29489e);
+  background-position: center;
+  background-size: cover;
+  color: transparent;
+  background-clip: text;
 }
 .sliderContainer h3 {
   /* padding: 0px 15px; */
   z-index: 1;
-  color: grey;
 }
 .left {
-  background: orange;
+  /* background: #e15554; */
   left: 0;
 }
 .right {
   left: 50%;
-  background: lightblue;
+
+  /* background: #9dacff; */
 }

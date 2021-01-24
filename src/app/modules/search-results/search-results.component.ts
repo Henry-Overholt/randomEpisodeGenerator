@@ -49,6 +49,9 @@ export class SearchResultsComponent implements OnInit {
       console.log('Shows', res.results);
       if (!this.movieOrShow && this.searchKeyword === undefined) {
         this.searchResults = this.trendingShows;
+        this.searchResults.forEach((result) => {
+          result.title = result.name;
+        });
         this.search = 'Trending Shows';
       }
     });
@@ -56,23 +59,25 @@ export class SearchResultsComponent implements OnInit {
       this.search = `Showing Results for "${this.searchKeyword}"`;
     }
   }
-  handleSearch(form: NgForm) {
-    if (form.value.search != '') {
-      this.searchKeyword = form.value.search;
+  handleSearch(search: string) {
+    if (search != '') {
+      this.searchKeyword = search;
       if (!this.movieOrShow) {
-        this.apiService.getMovieIds(form.value.search).subscribe((res) => {
+        this.apiService.getMovieIds(search).subscribe((res) => {
           this.searchResults = res.results;
+          this.searchResults.forEach((result) => {
+            result.title = result.name;
+          });
           this.apiService.setSearchResults(res.results);
         });
       } else {
-        this.movieService.searchMovies(form.value.search).subscribe((res) => {
+        this.movieService.searchMovies(search).subscribe((res) => {
           this.searchResults = res.results;
           this.movieService.setSearchResults(res.results);
         });
       }
       this.search = `Showing Results for "${this.searchKeyword}"`;
     }
-    form.reset();
   }
   navigateToDetails(i: number): void {
     if (!this.movieOrShow) {

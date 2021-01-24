@@ -1,15 +1,22 @@
+body {
+  width: 100%;
+  overflow: hidden;
+}
 main {
   width: 100%;
-  min-height: 250px;
+  min-height: 230px;
   display: flex;
   justify-content: center;
   overflow: scroll;
   position: relative;
+  font-family: "Raleway", sans-serif;
 }
 
 h3 {
   text-align: center;
   margin-bottom: 5px;
+  color: #44cf6c;
+  font-family: "Raleway", sans-serif;
 }
 .peopleContainer {
   display: flex;
@@ -20,7 +27,7 @@ h3 {
 .people {
   height: 150px;
   width: 100px;
-  background: whitesmoke;
+
   margin: 0px 10px;
   display: flex;
   align-items: center;
@@ -30,4 +37,22 @@ h3 {
 }
 .people p {
   text-align: center;
+}
+#personName {
+  margin-top: 3px;
+  color: #44cf6c;
+}
+#personJob {
+  margin-top: 3px;
+  color: rgba(255, 254, 254, 0.253);
+}
+@media screen and (min-width: 718px) {
+  body {
+    width: 700px;
+    border: 5px solid rgba(255, 254, 254, 0.253);
+    border-radius: 20px;
+  }
+  main {
+    width: 100%;
+  }
 }

@@ -9,15 +9,15 @@ main {
   align-items: center;
   justify-content: center;
   width: 90%;
-  border-bottom: 2px solid whitesmoke;
-  padding: 3px;
+  border-bottom: 2px solid rgba(255, 254, 254, 0.253);
+  padding: 10px;
   margin-top: 15px;
 }
 .buttonComponent {
   width: 90%;
 }
 .info-container {
-  width: 60%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -34,4 +34,24 @@ h3 {
 p {
   padding-bottom: 5px;
   color: lightblue;
+}
+
+@media screen and (min-width: 718px) {
+  randomly-image-container:hover {
+    animation: skew 0.5s ease-in-out forwards;
+  }
+  #randomMovieButton {
+    width: 300px;
+  }
+  #buttonComponent {
+    width: 100px;
+  }
+  @keyframes skew {
+    from {
+      transform: scale(1.02) rotate(2deg);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
 }

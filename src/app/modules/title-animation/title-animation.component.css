@@ -7,6 +7,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   font-family: "Raleway", sans-serif;
+  background: linear-gradient(to right, #9c28b0, #29489e);
 }
 
 main {
@@ -19,14 +20,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: red;
-  background: linear-gradient(
-    to right,
-    orange 48%,
-    whitesmoke 48%,
-    whitesmoke 52%,
-    lightblue 52%
-  );
   animation: fadeInFadeOut 5s linear forwards;
 }
 h1 {
@@ -40,13 +33,13 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: #29489e;
   width: 90%;
   height: 100px;
   opacity: 0;
   overflow: hidden;
   padding: 0px 20px;
-  border: 1px solid grey;
+  border: 1px solid lightblue;
   margin: 0px 2px;
   border-radius: 50px;
   animation: fadeIn 0.25s linear forwards;
@@ -54,7 +47,7 @@ h1 {
 .letterContainer {
   height: 40px;
   width: 30px;
-  border: 1px solid grey;
+  border: 1px solid #44cf6c;
   margin: 1px;
   border-radius: 10px;
   display: flex;
@@ -66,7 +59,7 @@ h1 {
 h2 {
   font-size: 25px;
   margin-top: 3px;
-  color: orange;
+  color: #44cf6c;
 }
 
 .lettersToFlipContainer {

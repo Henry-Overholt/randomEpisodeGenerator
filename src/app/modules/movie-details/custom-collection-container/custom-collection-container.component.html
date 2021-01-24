@@ -1,0 +1,35 @@
+<body>
+  <div class="listContainer">
+    <i class="fas fa-times" (click)="closeCollectionView()"></i>
+    <app-button
+      class="buttonComponent"
+      [buttonTxt]="buttonTxt"
+      (buttonClicked)="randomizeMovie()"
+    ></app-button>
+    <h3>Current List to Randomize</h3>
+    <div class="placeholder" *ngIf="collection.length === 0">
+      <p>No Items on the List</p>
+    </div>
+    <div class="movies" *ngFor="let item of collection; index as i">
+      <randomly-image-container
+        [url]="item.poster_path"
+        className="small"
+        borderColor="#44cf6c"
+        [name]="item.title"
+        (click)="navigateToDetails(item.id)"
+      ></randomly-image-container>
+      <div class="movieInfo">
+        <h5>{{ item.title }}</h5>
+        <i class="fas fa-trash-alt" (click)="removeFromCollection(i)"></i>
+      </div>
+    </div>
+    <i class="fas fa-plus" (click)="navigateToSearch()"></i>
+    <app-button
+      *ngIf="collection.length > 4"
+      class="buttonComponent"
+      [buttonTxt]="buttonTxt"
+      (buttonClicked)="randomizeMovie()"
+    ></app-button>
+  </div>
+  <div class="background-container" (click)="closeCollectionView()"></div>
+</body>

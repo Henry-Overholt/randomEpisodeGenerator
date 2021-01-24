@@ -4,6 +4,7 @@ import { MovieService } from '../../shared/services/movie.service';
 import { Shows } from '../../shared/interfaces/shows';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { PeopleService } from 'src/app/shared/services/people/people.service';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private movieService: MovieService
+    private movieService: MovieService,
+    private peopleService: PeopleService
   ) {}
 
   ngOnInit(): void {
@@ -40,24 +42,11 @@ export class HomeComponent implements OnInit {
     this.posterPath = this.apiService.posterPath;
     this.shows = this.apiService.getPresetShows();
     this.collections = this.movieService.returnCollections();
-    this.apiService.getPopularTV().subscribe((res) => {
-      this.popularShows = res.results;
-      if (!this.movies) {
-        this.popularItems = this.popularShows;
-      }
-    });
-    this.movieService.getPopularMovie().subscribe((res) => {
-      this.popularMovies = res.results;
-      if (this.movies) {
-        this.popularItems = this.popularMovies;
-      }
-    });
   }
-  handleSearch(form: NgForm) {
-    let search = form.value.search;
+  handleSearch(search: string) {
     if (search != '') {
       if (!this.movies) {
-        this.apiService.getMovieIds(form.value.search).subscribe((res) => {
+        this.apiService.getMovieIds(search).subscribe((res) => {
           // this.shows = res.results;
           this.apiService.setSearchResults(res.results);
           this.router.navigate(['/search-results']);
@@ -69,12 +58,8 @@ export class HomeComponent implements OnInit {
         });
       }
     }
-    form.reset();
   }
-  cancelAnimation(): void {
-    this.animation = false;
-    console.log('Hey look the animation is over');
-  }
+
   handleClick(i): void {
     if (!this.movies) {
       this.router.navigate([`/random/${this.shows[i].id}`]);
@@ -99,12 +84,13 @@ export class HomeComponent implements OnInit {
       this.popularItems = this.popularShows;
     }
   }
-  searchCollection(form: NgForm): void {
-    if (form.value.searchCollection != '') {
-      this.movieService.setSearchKeyword(form.value.searchCollection);
+  searchCollection(search): void {
+    if (search != '') {
+      this.movieService.setSearchKeyword(search);
       this.router.navigate(['/search-collections']);
     }
   }
+  searchPeople(search): void {}
   seeDetails(i: number): void {
     if (this.movies) {
       this.router.navigate([`/movie/${this.popularItems[i].id}`]);

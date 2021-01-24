@@ -2,26 +2,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid lightblue;
+  border-style: solid;
   border-radius: 10px;
   overflow: hidden;
-  background: whitesmoke;
+  background: rgba(255, 254, 254, 0.253);
 }
 .small {
   width: 100px;
   height: 150px;
+  border-width: 2px;
 }
 .medium {
   width: 150px;
   height: 225px;
+  border-width: 4px;
 }
 .large {
   width: 180px;
   height: 275px;
+  border-width: 6px;
 }
 img {
   height: 100%;
 }
 p {
   text-align: center;
+  color: #44cf6c;
 }
