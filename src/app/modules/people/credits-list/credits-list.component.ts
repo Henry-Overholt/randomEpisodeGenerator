@@ -11,6 +11,7 @@ import { PeopleService } from 'src/app/shared/services/people/people.service';
 export class CreditsListComponent implements OnInit {
   @Input() typeOfCredits: string;
   @Input() idOfActor: string;
+  @Input() borderColor: string;
   credits: any[];
   constructor(
     private peopleService: PeopleService,

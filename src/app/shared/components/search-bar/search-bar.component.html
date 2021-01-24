@@ -1,0 +1,7 @@
+<form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
+  <label for="search"> Search: </label>
+  <input type="text" name="search" [placeholder]="placeholder" ngModel />
+  <button>
+    {{ buttonTxt }}
+  </button>
+</form>

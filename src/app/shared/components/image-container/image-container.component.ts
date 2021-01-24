@@ -10,6 +10,7 @@ export class ImageContainerComponent implements OnInit {
   @Input() className: string;
   @Input() url: string;
   @Input() name: string;
+  @Input() borderColor: string;
   constructor() {}
 
   ngOnInit(): void {}

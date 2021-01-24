@@ -1,5 +1,5 @@
 footer {
-  background: whitesmoke;
+  background: linear-gradient(to bottom right, #29489e, #9c28b0);
   padding: 10px 0px;
 
   height: 200px;
@@ -39,7 +39,7 @@ li:hover {
   color: orange;
 }
 a {
-  color: grey;
+  color: lightblue;
   text-decoration: none;
   font-size: 15px;
 
@@ -87,15 +87,19 @@ footer {
 }
 i {
   position: absolute;
-  color: white;
+  color: #e15554;
+  background: transparent;
   right: 60px;
   top: 40px;
   padding: 5px;
-  border: 2px solid white;
+  border: 2px solid #e15554;
   border-radius: 10px;
   font-size: 60px;
   transform: rotate(-25deg);
   z-index: 0;
+}
+p {
+  color: lightblue;
 }
 @media screen and (min-width: 718px) {
   .containers {
@@ -128,6 +132,6 @@ i {
     margin: 2.5px 0px;
   }
   a:hover {
-    color: orange;
+    color: #44cf6c;
   }
 }

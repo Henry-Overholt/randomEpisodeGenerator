@@ -1,4 +1,8 @@
-<div id="image-container" [class]="className">
+<div
+  id="image-container"
+  [class]="className"
+  [ngStyle]="{ 'border-color': borderColor }"
+>
   <img
     src="{{ posterPath }}{{ url }}"
     [alt]="name"

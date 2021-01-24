@@ -13,6 +13,9 @@ body {
 }
 main {
   position: relative;
+  background: none;
+  background: linear-gradient(to top right, #9c28b0, #29489e);
+  width: 100%;
 }
 #nav {
   height: 100%;
@@ -32,6 +35,17 @@ main {
   width: 0;
 }
 @media screen and (min-width: 718px) {
+  main {
+    background-position: fixed;
+    /* background: #24272b; */
+    /* background: linear-gradient(
+      to bottom,
+      orange 450px,
+      lightblue 450px,
+      lightblue 480px,
+      white 480px
+    ); */
+  }
   .open {
     width: 100;
   }

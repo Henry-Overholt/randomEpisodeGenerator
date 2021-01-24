@@ -35,3 +35,20 @@ p {
   padding-bottom: 5px;
   color: lightblue;
 }
+
+@media screen and (min-width: 718px) {
+  randomly-image-container:hover {
+    animation: skew 0.5s ease-in-out forwards;
+  }
+  #randomMovieButton {
+    width: 300px;
+  }
+  @keyframes skew {
+    from {
+      transform: scale(1.02) rotate(2deg);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+}

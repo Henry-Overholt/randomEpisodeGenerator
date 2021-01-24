@@ -10,6 +10,7 @@
         *ngIf="person"
         [url]="person.profile_path"
         className="small"
+        borderColor="lightblue"
         [name]="person.name"
       ></randomly-image-container>
       <p *ngIf="person.profile_path != null">{{ person.name }}</p>

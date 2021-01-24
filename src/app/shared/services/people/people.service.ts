@@ -35,4 +35,9 @@ export class PeopleService {
       `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${this.apiKey}&language=en-US`
     );
   }
+  getPopular(): Observable<any> {
+    return this.http.get(
+      `https://api.themoviedb.org/3/person/popular?api_key=${this.apiKey}&language=en-US&page=1`
+    );
+  }
 }

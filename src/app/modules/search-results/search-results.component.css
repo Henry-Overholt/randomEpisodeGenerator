@@ -112,13 +112,7 @@ button {
 }
 @media screen and (min-width: 718px) {
   body {
-    background: linear-gradient(
-      to bottom,
-      orange 50%,
-      lightblue 50%,
-      lightblue 52%,
-      white 52%
-    );
+    background: none;
   }
   form {
     width: 600px;

@@ -1,8 +1,8 @@
 header {
   width: 100%;
   height: 45px;
-  background: linear-gradient(to left, lightblue, white, white, orange);
-  color: lightblue;
+  background: linear-gradient(to left, #9c28b0, #2948a0);
+  color: #44cf6c;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,11 +45,11 @@ header {
 .fa-random {
   margin-left: 5px;
   padding: 5px;
-  color: white;
-  border: 2px solid white;
+  color: #44cf6c;
+  border: 2px solid #44cf6c;
   border-radius: 10px;
   font-size: 20px;
-  background: linear-gradient(to left top, lightblue, orange);
+  background: linear-gradient(to left top, #9c28b0, #2948a0);
   transition: all 0.25s ease-in-out;
 }
 .fa-random:hover {
@@ -57,7 +57,7 @@ header {
 }
 
 .fa-bars {
-  color: orange;
+  color: #44cf6c;
   font-size: 30px;
 }
 
@@ -71,7 +71,7 @@ header {
   border: 2px solid transparent;
 }
 .open {
-  border-color: orange;
+  border-color: #44cf6c;
   /* animation: spin 0.5s linear; */
 }
 .close {
@@ -115,13 +115,13 @@ header {
   }
   .menuLabel {
     display: inline;
-    color: orange;
+    color: #44cf6c;
     font-size: 20px;
     padding: 5px 8px;
     border-radius: 5px;
   }
   .menuButton:hover {
-    border-color: orange;
+    border-color: #44cf6c;
   }
   .titleLetters {
     margin: 10px 0px;
