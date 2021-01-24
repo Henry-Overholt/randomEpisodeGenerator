@@ -1,47 +1,45 @@
 <main class="flex-column">
-  <randomly-border-card>
-    <div class="profile-container flex-column">
-      <randomly-image-container
-        *ngIf="person"
-        [url]="person.profile_path"
-        className="medium"
-        borderColor="lightblue"
-        [name]="person.name"
-      ></randomly-image-container>
-      <div class="info-container flex-column" *ngIf="person">
-        <h1>{{ person.name }}</h1>
-        <p *ngIf="person.birthday">
-          <span>Birthday : </span>{{ person.birthday | date: "mediumDate" }}
-        </p>
-        <p *ngIf="person.deathday">
-          <span>Died : </span>{{ person.deathday | date: "mediumDate" }}
-        </p>
-        <p *ngIf="person.place_of_birth">
-          <span>Born In : </span>{{ person.place_of_birth }}
-        </p>
-        <div class="bio-container">
-          <p><span>Biography : </span>{{ person.biography }}</p>
-        </div>
+  <div class="profile-container flex-column">
+    <randomly-image-container
+      *ngIf="person"
+      [url]="person.profile_path"
+      className="large"
+      borderColor="#44cf6c"
+      [name]="person.name"
+    ></randomly-image-container>
+    <div class="info-container flex-column" *ngIf="person">
+      <h1>{{ person.name }}</h1>
+      <p *ngIf="person.birthday">
+        <span>Birthday : </span>{{ person.birthday | date: "mediumDate" }}
+      </p>
+      <p *ngIf="person.deathday">
+        <span>Died : </span>{{ person.deathday | date: "mediumDate" }}
+      </p>
+      <p *ngIf="person.place_of_birth">
+        <span>Born In : </span>{{ person.place_of_birth }}
+      </p>
+      <div class="bio-container">
+        <p><span>Biography : </span>{{ person.biography }}</p>
       </div>
     </div>
-  </randomly-border-card>
-  <randomly-border-card>
-    <mat-tab-group *ngIf="person" mat-align-tabs="center" dynamicHeight>
-      <mat-tab label="TV Credits">
-        <!-- <ng-template mat-tab-label><i class="fas fa-film"></i></ng-template> -->
-        <randomly-credits-list
-          typeOfCredits="tv"
-          borderColor="orange"
-          [idOfActor]="person.id"
-        ></randomly-credits-list>
-      </mat-tab>
-      <mat-tab label="Movie Credits">
-        <randomly-credits-list
-          typeOfCredits="movie"
-          borderColor="lightblue"
-          [idOfActor]="person.id"
-        ></randomly-credits-list>
-      </mat-tab>
-    </mat-tab-group>
-  </randomly-border-card>
+  </div>
+
+  <mat-tab-group *ngIf="person" mat-align-tabs="center" dynamicHeight>
+    <mat-tab>
+      <ng-template mat-tab-label><h2>TV Credits</h2></ng-template>
+      <randomly-credits-list
+        typeOfCredits="tv"
+        borderColor="orange"
+        [idOfActor]="person.id"
+      ></randomly-credits-list>
+    </mat-tab>
+    <mat-tab label="Movie Credits">
+      <ng-template mat-tab-label><h2>Movie Credits</h2></ng-template>
+      <randomly-credits-list
+        typeOfCredits="movie"
+        borderColor="lightblue"
+        [idOfActor]="person.id"
+      ></randomly-credits-list>
+    </mat-tab>
+  </mat-tab-group>
 </main>

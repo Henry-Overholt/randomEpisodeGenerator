@@ -1,5 +1,6 @@
 body {
   animation: fadeIn 1s ease-in forwards;
+  min-height: 90vh;
 }
 main {
   width: 100%;
@@ -9,43 +10,9 @@ main {
   align-items: center;
   font-family: "Raleway", sans-serif;
 }
-form {
-  margin: 20px 0px;
-  padding: 5px;
-  background: white;
-  border-radius: 15px;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-label {
-  text-indent: -1000px;
-}
-input {
-  outline: none;
-  border: 2px solid lightblue;
-  height: 35px;
-  font-size: 20px;
-  width: 80%;
-  color: grey;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  text-indent: 5px;
-}
-button {
-  width: 80%;
-  height: 40px;
-  color: grey;
-  background: lightblue;
-  font-size: 18px;
-  outline: none;
-  border: 2px solid lightblue;
-  border-radius: 5px;
-}
+
 h4 {
-  color: grey;
+  color: #44cf6c;
 }
 .results {
   width: 100px;

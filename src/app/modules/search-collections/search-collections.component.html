@@ -1,15 +1,10 @@
 <body>
   <main>
-    <form #searchForm="ngForm" (ngSubmit)="searchCollections(searchForm)">
-      <label for="search">Search : </label>
-      <input
-        type="text"
-        name="search"
-        placeholder="Search Collections"
-        ngModel
-      />
-      <button>Search</button>
-    </form>
+    <randomly-search-bar
+      placeholder="Search Collections"
+      buttonTxt="Search"
+      (search)="searchCollections($event)"
+    ></randomly-search-bar>
     <h4>{{ resultsString }}</h4>
 
     <div class="spaceHolder" *ngIf="searchResults === undefined">

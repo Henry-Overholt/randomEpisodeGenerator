@@ -31,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { TrendingCarouselComponent } from './shared/components/trending-carousel/trending-carousel.component';
+import { CustomCollectionContainerComponent } from './modules/movie-details/custom-collection-container/custom-collection-container.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { TrendingCarouselComponent } from './shared/components/trending-carousel
     BorderCardComponent,
     SearchBarComponent,
     TrendingCarouselComponent,
+    CustomCollectionContainerComponent,
   ],
   imports: [
     BrowserModule,

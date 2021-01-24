@@ -33,14 +33,13 @@ export class SearchCollectionsComponent implements OnInit {
       this.resultsString = 'No Search Results';
     }
   }
-  searchCollections(form: NgForm): void {
+  searchCollections(search): void {
     this.loading = true;
-    this.searchKeyword = form.value.search;
-    this.movieService.searchCollections(form.value.search).subscribe((res) => {
+    this.searchKeyword = search;
+    this.movieService.searchCollections(search).subscribe((res) => {
       this.resultsString = `Showing Results for '${this.searchKeyword}'`;
       this.loading = false;
       this.searchResults = res.results;
-      form.reset();
     });
   }
   navigateToDetails(i: number): void {

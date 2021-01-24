@@ -9,10 +9,10 @@ main {
   width: 100%;
 }
 h1 {
-  color: orange;
+  color: #44cf6c;
 }
 h2 {
-  color: lightblue;
+  color: #44cf6c;
 }
 .flex-column {
   display: flex;
@@ -50,6 +50,10 @@ span {
   font-weight: bolder;
   padding-right: 10px;
 }
+mat-tab-group {
+  width: 90%;
+  margin-top: 15px;
+}
 
 @keyframes slideInRight {
   from {
@@ -84,6 +88,17 @@ span {
 @media screen and (min-width: 718px) {
   .profile-container {
     flex-direction: row;
+    width: 600px;
+    padding: 10px;
+    background: rgba(255, 254, 254, 0.253);
+    border-radius: 20px;
+    border: 5px solid #44cf6c;
+  }
+  .bio-container {
+    margin: 10px 0px;
+  }
+  mat-tab-group {
+    width: 600px;
   }
   randomly-image-container {
     margin: 0px 20px;

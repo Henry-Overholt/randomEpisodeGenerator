@@ -11,7 +11,7 @@
       [url]="credit.poster_path"
       className="small"
       [name]="credit.name"
-      [borderColor]="borderColor"
+      borderColor="#44cf6c"
       (click)="navigateToDetails(credit.id)"
     ></randomly-image-container>
     <div class="info-container">
@@ -19,12 +19,6 @@
       <p *ngIf="credit.character">
         {{ credit.character }}
       </p>
-      <app-button
-        *ngIf="typeOfCredits === 'tv'"
-        class="buttonComponent"
-        buttonTxt="Random Episode"
-        (buttonClicked)="navigateToRandom(credit.id)"
-      ></app-button>
     </div>
   </div>
 </main>
