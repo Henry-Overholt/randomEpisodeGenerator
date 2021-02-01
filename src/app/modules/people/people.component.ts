@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from './../../shared/services/people/people.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatTabsModule } from '@angular/material/tabs';
+// import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-people',
@@ -32,5 +32,6 @@ export class PeopleComponent implements OnInit {
   toggleCredits(): void {
     this.showOrMovie = !this.showOrMovie;
   }
+
   getAllInformation(): void {}
 }

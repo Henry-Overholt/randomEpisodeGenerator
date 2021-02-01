@@ -21,20 +21,27 @@
       <div class="bio-container">
         <p><span>Biography : </span>{{ person.biography }}</p>
       </div>
+      <div class="icon-container">
+        <a
+          class="fab fa-imdb"
+          href="https://www.imdb.com/name/{{ person.imdb_id }}/"
+          target="_blank"
+        ></a>
+      </div>
     </div>
   </div>
 
   <mat-tab-group *ngIf="person" mat-align-tabs="center" dynamicHeight>
     <mat-tab>
-      <ng-template mat-tab-label><h2>TV Credits</h2></ng-template>
+      <ng-template mat-tab-label><h2>TV Credits</h2> </ng-template>
       <randomly-credits-list
         typeOfCredits="tv"
         borderColor="orange"
         [idOfActor]="person.id"
       ></randomly-credits-list>
     </mat-tab>
-    <mat-tab label="Movie Credits">
-      <ng-template mat-tab-label><h2>Movie Credits</h2></ng-template>
+    <mat-tab>
+      <ng-template mat-tab-label><h2>Movie Credits</h2> </ng-template>
       <randomly-credits-list
         typeOfCredits="movie"
         borderColor="lightblue"

@@ -4,41 +4,32 @@
     [buttonTxt]="buttonText"
     (buttonClicked)="randomizeMovies()"
   ></app-button>
-  <!-- <button (click)="randomizeMovies()">{{ buttonText }}</button> -->
-  <div class="controlsContainer">
-    <p *ngIf="collection">
-      Movies : <span>{{ total }}</span>
-    </p>
-    <button (click)="toggleFilters()">Filter</button>
-  </div>
   <div class="collectionContainer" *ngIf="collection">
     <div class="movies">
       <h2>{{ movie.title }}</h2>
-      <img
-        src="{{ posterPath }}{{ movie.poster_path }}"
-        class="poster"
-        alt="{{ movie.title }}"
-      />
+      <div class="controlsContainer">
+        <p *ngIf="collection">
+          Movies : <span>{{ total }}</span>
+        </p>
+        <i class="fas fa-sliders-h" (click)="toggleFilters()"></i>
+        <!-- <button (click)="toggleFilters()">Filter</button> -->
+      </div>
+      <randomly-image-container
+        [url]="movie.poster_path"
+        className="large"
+        borderColor="#44cf6c"
+        [name]="movie.title"
+      ></randomly-image-container>
       <h3>Overview</h3>
       <div class="paragraphContainer">
         <p>{{ movie.overview }}</p>
       </div>
     </div>
   </div>
-  <div class="filterContainer" [ngClass]="seeFilters ? 'open' : 'close'">
-    <i class="fas fa-times-circle" (click)="toggleFilters()"></i>
-    <h2>Movies to Randomize</h2>
-    <div id="filters">
-      <div class="movie" *ngFor="let film of movies; index as i">
-        <div class="checkbox" (click)="checkMovie(i)">
-          <i *ngIf="film.isChecked" class="fas fa-check"></i>
-        </div>
-        <h4>{{ film.title }}</h4>
-      </div>
-      <div class="buttonContainer">
-        <button (click)="applyFilters()" id="applyButton">Apply</button>
-        <button (click)="resetFilter()">Reset</button>
-      </div>
-    </div>
-  </div>
+  <randomly-collection-filter
+    [ngClass]="seeFilters ? 'open' : 'close'"
+    [movies]="movies"
+    (closeClicked)="toggleFilters()"
+    (updateFilters)="handleUpdate($event)"
+  ></randomly-collection-filter>
 </main>

@@ -1,0 +1,32 @@
+<main>
+  <div class="background" (click)="closeFilters()"></div>
+  <div class="filterContainer">
+    <i class="fas fa-times" (click)="closeFilters()"></i>
+    <h2>Movies to Randomize</h2>
+    <div id="filters">
+      <div class="movie" *ngFor="let film of movies; index as i">
+        <h4 [ngClass]="film.isChecked ? 'lightblue' : 'grey'">
+          {{ film.title }}
+        </h4>
+        <div class="slider" (click)="checkMovie(i)">
+          <div class="slider-bar">
+            <div
+              class="slider-ball"
+              [ngClass]="film.isChecked ? 'on' : 'off'"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonContainer">
+      <button
+        (click)="applyFilters()"
+        id="applyButton"
+        [disabled]="applyButton"
+      >
+        APPLY
+      </button>
+      <button (click)="resetFilters()" [disabled]="resetButton">RESET</button>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,149 @@
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+.background {
+  background: rgba(255, 254, 254, 0.253);
+  width: 100%;
+  height: 100%;
+}
+.filterContainer {
+  position: absolute;
+  width: 90%;
+  background: linear-gradient(to top right, #9c28b0, #29489e);
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fa-times {
+  position: absolute;
+  color: rgba(255, 254, 254, 0.253);
+  left: 20px;
+  font-size: 20px;
+  top: 15px;
+}
+h2 {
+  color: #44cf6c;
+}
+#filters {
+  width: 100%;
+  height: 450px;
+  overflow: scroll;
+}
+.movie {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  margin: 2px 0px;
+}
+.movie h4 {
+  width: 80%;
+  text-align: initial;
+  white-space: nowrap;
+  overflow: scroll;
+}
+.slider {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.slider-bar {
+  width: 40px;
+  height: 10px;
+  border-radius: 20px;
+  background: rgba(255, 254, 254, 0.253);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #29489e;
+  position: absolute;
+  transition: all 0.25s ease-in-out;
+}
+.off {
+  right: 0px;
+  background: #9c28b0;
+}
+.on {
+  left: 0px;
+  background: #44cf6c;
+}
+.lightblue {
+  color: lightblue;
+}
+.grey {
+  color: rgba(255, 254, 254, 0.253);
+}
+.buttonContainer {
+  width: 50%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonContainer button {
+  width: 50%;
+  height: 100%;
+  margin: 0 2px;
+  color: rgb(95, 95, 95);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #44cf6c;
+}
+.buttonContainer button + button {
+  background: red;
+}
+button:disabled {
+  background: black;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 718px) {
+  .filterContainer {
+    width: 500px;
+  }
+  main {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    width: 400px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .filterContainer {
+    width: 400px;
+    height: 500px;
+    left: 0;
+    top: 70px;
+  }
+  .fa-times {
+    display: none;
+  }
+  .background {
+    display: none;
+  }
+}

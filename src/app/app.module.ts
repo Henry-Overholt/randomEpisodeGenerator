@@ -32,6 +32,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { TrendingCarouselComponent } from './shared/components/trending-carousel/trending-carousel.component';
 import { CustomCollectionContainerComponent } from './modules/movie-details/custom-collection-container/custom-collection-container.component';
+import { CollectionFilterComponent } from './modules/collection/collection-filter/collection-filter.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { CustomCollectionContainerComponent } from './modules/movie-details/cust
     SearchBarComponent,
     TrendingCarouselComponent,
     CustomCollectionContainerComponent,
+    CollectionFilterComponent,
   ],
   imports: [
     BrowserModule,
