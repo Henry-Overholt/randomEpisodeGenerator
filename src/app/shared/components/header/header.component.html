@@ -1,5 +1,5 @@
 <header>
-  <i class="fas fa-random" (click)="routeToWelcome()"></i>
+  <i class="fas fa-random" (click)="routeToWelcome()" matRipple></i>
   <div class="animation-wrapper" (click)="navigateToHome()">
     <div class="letterContainer" *ngFor="let letter of title; index as i">
       <div class="lettersToFlipContainer {{ letter.class }}">
@@ -15,6 +15,7 @@
     class="menuButton"
     (click)="openNav()"
     [ngClass]="nav ? 'open' : 'close'"
+    matRipple
   >
     <p class="menuLabel">MENU</p>
     <i class="fas fa-bars"></i>

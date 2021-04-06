@@ -25,7 +25,6 @@ export class CollectionComponent implements OnInit {
   ngOnInit(): void {
     this.collection = this.movieService.returnCollectionRandomize();
     if (this.collection) {
-      this.posterPath = this.movieService.posterPath;
       if (this.collection.parts) {
         this.movies = this.collection.parts;
         this.movie = {
@@ -90,5 +89,12 @@ export class CollectionComponent implements OnInit {
   }
   resetFilter(): void {
     this.movies.forEach((movie) => (movie.isChecked = true));
+  }
+  handleUpdate(updateMovies: any[]): void {
+    console.log(updateMovies);
+    this.movies = updateMovies;
+    this.getNumberOfMovies();
+    this.loadRandomizeMovies();
+    this.seeFilters = false;
   }
 }

@@ -76,7 +76,7 @@ export class MovieService {
     },
   ];
   collectionCover: any;
-  collectionToRandomize: any[];
+  collectionToRandomize: any[] = this.collections;
   originalCollection: any[];
   newCollection: any[] = [];
   constructor(private http: HttpClient) {}

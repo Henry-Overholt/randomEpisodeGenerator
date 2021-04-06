@@ -8,6 +8,7 @@ body {
   position: relative;
   transition: all 1.75s ease-in-out;
   animation: fadeIn 1.5s ease-in-out forwards;
+  overflow: hidden;
 }
 
 h3 {

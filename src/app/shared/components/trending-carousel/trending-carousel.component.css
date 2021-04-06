@@ -33,7 +33,7 @@ h2 {
   border-radius: 100%;
   border: 2px solid transparent;
   color: #44cf6c;
-  background: whitesmoke;
+  background: linear-gradient(to top right, #29489e, #9c28b0);
   position: absolute;
   top: -10px;
   left: -10px;

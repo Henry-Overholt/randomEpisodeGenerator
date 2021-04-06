@@ -1,18 +1,31 @@
 <body *ngIf="show" id="body">
   <nav>
-    <i class="fas fa-times" (click)="openNav()"></i>
+    <div class="close-container">
+      <i class="fas fa-times" (click)="openNav()" matRipple></i>
+    </div>
     <ul>
-      <li routerLinkActive="active" routerLink="/home" (click)="openNav()">
+      <li
+        routerLinkActive="active"
+        routerLink="/home"
+        (click)="openNav()"
+        matRipple
+      >
         <a>HOME</a>
       </li>
       <li
         routerLinkActive="active"
         routerLink="/search-results"
         (click)="openNav()"
+        matRipple
       >
         <a>SHOWS/MOVIES</a>
       </li>
-      <li routerLinkActive="active" routerLink="/custom" (click)="openNav()">
+      <li
+        routerLinkActive="active"
+        routerLink="/custom"
+        (click)="openNav()"
+        matRipple
+      >
         <a>CUSTOM CHOICES</a>
       </li>
     </ul>
