@@ -22,11 +22,11 @@
       <button
         (click)="applyFilters()"
         id="applyButton"
-        [disabled]="applyButton"
+        [disabled]="disableButton"
       >
         APPLY
       </button>
-      <button (click)="resetFilters()" [disabled]="resetButton">RESET</button>
+      <button (click)="resetFilters()" [disabled]="disableButton">RESET</button>
     </div>
   </div>
 </main>

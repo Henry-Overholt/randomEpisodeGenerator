@@ -9,8 +9,7 @@ export class CollectionFilterComponent implements OnInit {
   @Input() movies: any[];
   @Output() closeClicked: EventEmitter<void> = new EventEmitter<void>();
   @Output() updateFilters: EventEmitter<any[]> = new EventEmitter<any[]>();
-  applyButton = true;
-  resetButton = true;
+  disableButton: boolean = true;
   constructor() {}
 
   ngOnInit(): void {}
@@ -29,5 +28,6 @@ export class CollectionFilterComponent implements OnInit {
 
   checkMovie(i: number): void {
     this.movies[i].isChecked = !this.movies[i].isChecked;
+    this.disableButton = false;
   }
 }

@@ -1,5 +1,6 @@
 main {
   width: 100%;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -160,12 +161,12 @@ span {
 .close {
   display: none;
 }
-randomly-collection-filter {
-  position: absolute;
-  top: 0;
+#collection-filter {
   width: 100%;
   height: 100%;
+  position: absolute;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -185,7 +186,7 @@ randomly-collection-filter {
   randomly-collection-filter {
     width: 100vw;
   }
-  button {
+  .buttonComponent {
     width: 400px;
   }
   .collectionContainer {

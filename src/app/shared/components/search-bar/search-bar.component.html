@@ -1,7 +1,9 @@
 <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm)">
-  <label for="search"> Search: </label>
-  <input type="text" name="search" [placeholder]="placeholder" ngModel />
-  <button>
-    {{ buttonTxt }}
+  <mat-form-field class="mat-form-field">
+    <mat-label> {{ buttonTxt | uppercase }}</mat-label>
+    <input matInput type="text" name="search" ngModel />
+  </mat-form-field>
+  <button [matTooltip]="buttonTxt" matRipple matRippleColor="#9C28b0">
+    <i class="fas fa-search"></i>
   </button>
 </form>

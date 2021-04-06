@@ -1,3 +1,12 @@
 <button (click)="handleClick()">
-  <p>{{ buttonTxt }}</p>
+  <div
+    class="ripple-container"
+    matRipple
+    [matRippleCentered]="false"
+    [matRippleDisabled]="false"
+    [matRippleUnbounded]="false"
+    [matRippleColor]="'#44CF6C'"
+  >
+    <h3 class="buttonText">{{ buttonTxt }}</h3>
+  </div>
 </button>

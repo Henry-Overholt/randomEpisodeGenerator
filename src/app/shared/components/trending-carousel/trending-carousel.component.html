@@ -2,7 +2,6 @@
   <h2>Trending {{ title }}</h2>
   <div class="posterContainer" *ngIf="posters != undefined">
     <div class="poster" *ngFor="let poster of posters; index as i">
-      <p [ngStyle]="getStyle()">{{ i + 1 }}</p>
       <randomly-image-container
         [url]="poster.poster_path"
         className="small"
@@ -10,6 +9,7 @@
         [name]="poster.name"
         (click)="seeDetails(poster.id)"
       ></randomly-image-container>
+      <p [ngStyle]="getStyle()">{{ i + 1 }}</p>
     </div>
   </div>
 </main>

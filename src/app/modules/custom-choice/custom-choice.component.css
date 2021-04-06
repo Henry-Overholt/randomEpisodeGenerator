@@ -7,6 +7,7 @@ body {
 
   animation: fadeIn 1s ease-in forwards;
 }
+
 main {
   margin-top: 20px;
   width: 100%;
@@ -20,10 +21,15 @@ h1 {
   margin: 20px 0px;
   text-align: center;
   font-size: 30px;
+  color: #44cf6c;
+}
+.buttonComponent {
+  width: 80%;
 }
 .randomChoice {
   width: 90%;
-  border: 2px solid grey;
+  border: 2px solid rgba(255, 254, 254, 0.144);
+  color: #44cf6c;
   height: 50px;
   border-radius: 10px;
   display: flex;
@@ -54,8 +60,11 @@ form input {
   flex: 1;
   height: 100%;
   border: none;
-  border-bottom: 2px solid grey;
-  outline-color: lightblue;
+  background: none;
+  border-bottom: 2px solid rgba(255, 254, 254, 0.253);
+  outline-color: #29489e;
+  color: #44cf6c;
+  text-indent: 5px;
   font-size: 20px;
 }
 form button {
@@ -64,7 +73,10 @@ form button {
   height: 40px;
   border: none;
   font-size: 35px;
-  color: orange;
+  color: rgba(255, 254, 254, 0.253);
+}
+form button:hover {
+  color: #44cf6c;
 }
 label {
   text-indent: -1000px;
@@ -77,10 +89,12 @@ label {
   justify-content: flex-start;
   align-items: center;
   overflow: scroll;
+  color: #44cf6c;
 }
 li {
   display: flex;
   width: 100%;
+  color: #44cf6c;
   justify-content: space-between;
   align-items: center;
   margin: 5px;
@@ -88,7 +102,7 @@ li {
 .dot {
   width: 10px;
   height: 10px;
-  background: orange;
+  background: rgba(255, 254, 254, 0.253);
   border-radius: 100%;
   margin-right: 10px;
 }
@@ -100,7 +114,10 @@ li p {
 .fa-trash-alt {
   font-size: 20px;
   margin: 0px 5px;
-  color: orange;
+  color: rgba(255, 254, 254, 0.253);
+}
+.fa-trash-alt:hover {
+  color: #44cf6c;
 }
 .randomChoicesContainer {
   display: flex;
@@ -124,23 +141,14 @@ li p {
 @media screen and (min-width: 718px) {
   body {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      orange 50%,
-      lightblue 50%,
-      lightblue 52%,
-      white 52%
-    );
+    min-height: 90vh;
   }
 
   main {
-    background: white;
-    border: 5px solid lightblue;
+    background: rgba(255, 254, 254, 0.253);
     border-radius: 20px;
     width: 600px;
-    margin-top: 80px;
-    margin-bottom: 200px;
+    height: 90%;
   }
 }
 @media screen and (min-width: 1200px) {

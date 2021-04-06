@@ -28,11 +28,19 @@ import { CreditsListComponent } from './modules/people/credits-list/credits-list
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { BorderCardComponent } from './shared/components/border-card/border-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTabsModule } from '@angular/material/tabs';
+
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { TrendingCarouselComponent } from './shared/components/trending-carousel/trending-carousel.component';
 import { CustomCollectionContainerComponent } from './modules/movie-details/custom-collection-container/custom-collection-container.component';
 import { CollectionFilterComponent } from './modules/collection/collection-filter/collection-filter.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -73,8 +81,16 @@ import { CollectionFilterComponent } from './modules/collection/collection-filte
     YouTubePlayerModule,
     MatTabsModule,
     BrowserAnimationsModule,
+    MatBadgeModule,
+    MatDialogModule,
+    MatRippleModule,
+    MatSnackBarModule,
+    MatInputModule,
+    MatTooltipModule,
+    MatStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [],
 })
 export class AppModule {}
